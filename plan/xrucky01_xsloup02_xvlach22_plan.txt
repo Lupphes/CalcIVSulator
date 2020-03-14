@@ -1,0 +1,16 @@
+Plán projektu CalcIVSulator - xrucky1_xsloup02_xvlach22_plan.txt
+
+Po našem prvním týmovém meetingu jsme se rozhodli zvolit tyto programy:
+   Hlavním komunikačním kanál je "Discord" ve kterém máme vytvořenou soukromou místnost na vlastním serveru. V této místnosti řešíme veškeré součásti projektu. Jedna z hlavních výhod tohoto je, že všichni víme jak ho používat a používáme ho denně.
+       -- V případě nouze můžeme použít přímé zprávy nebo se "pingout" prostřednictvím serveru.
+   -- Všichni na sebe máme školní email, ale pokud ho použijeme, nebude to často. Jde spíše o rezervu.
+
+   Jako plánovací software použijeme "Microsoft Project 2019 Professional". Ulehčí nám hodně práce s plánováním díky velkému množství jeho funkcí.
+       -- Máme možnost si naši práci přímo importovat do kalendáře.
+       -- Součástí tohoto zipu je Microsoft Project a vyexportovaná pdf, kde jsme zaznamenali veškerá data a rozdělili práci v následujících dnech.
+   
+   Všechnu svoji práci budeme nahrávat do "GitHub" repositáře. Máme s ním největší zkušenost a nejlépe se s ním ze všech možných variant pracuje.
+       -- Repositář je nastaven jako "private". Můžeme ho zveřejnit a nebo dát přístup profesorům přes jejich "GitHub" účet. Už jsme přiřadili účet "ivskontrola".
+       -- Odkaz - "https://github.com/TheLupp/CalcIVSulator
+
+    Projekt budeme řešit v jazyku C# s použitím Windows Forms a poběží na doporučeném operačním systému Windows 10.
