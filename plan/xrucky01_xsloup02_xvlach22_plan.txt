@@ -1,16 +1,61 @@
+  _      _     _   __                   __  _        _           
+ | |    (_)   | | /_/                  /_/ | |      | |          
+ | |     _  __| | ___   _   _  __   ___   _| |_ __ _| |__  _   _ 
+ | |    | |/ _` |/ _ \ | | | | \ \ / / | | | __/ _` | '_ \| | | |
+ | |____| | (_| |  __/ | |_| |  \ V /| |_| | || (_| | | | | |_| |
+ |______|_|\__,_|\___|  \__,_|   \_/  \__, |\__\__,_|_| |_|\__,_|
+                                       __/ |                     
+                                      |___/      
+
 Plán projektu CalcIVSulator - xrucky1_xsloup02_xvlach22_plan.txt
 
 Po našem prvním týmovém meetingu jsme se rozhodli zvolit tyto programy:
-   Hlavním komunikačním kanál je "Discord" ve kterém máme vytvořenou soukromou místnost na vlastním serveru. V této místnosti řešíme veškeré součásti projektu. Jedna z hlavních výhod tohoto je, že všichni víme jak ho používat a používáme ho denně.
+   Hlavním komunikačním kanál je "Discord" ve kterém máme vytvořenou soukromou místnost na vlastním serveru. V této místnosti řešíme veškeré součásti projektu. Jedna z hlavních výhod tohoto je, že všichni víme, jak ho používat a používáme ho denně.
        -- V případě nouze můžeme použít přímé zprávy nebo se "pingout" prostřednictvím serveru.
    -- Všichni na sebe máme školní email, ale pokud ho použijeme, nebude to často. Jde spíše o rezervu.
 
    Jako plánovací software použijeme "Microsoft Project 2019 Professional". Ulehčí nám hodně práce s plánováním díky velkému množství jeho funkcí.
-       -- Máme možnost si naši práci přímo importovat do kalendáře.
-       -- Součástí tohoto zipu je Microsoft Project a vyexportovaná pdf, kde jsme zaznamenali veškerá data a rozdělili práci v následujících dnech.
+       -- Máme možnost si rozdělení naší práce přímo importovat do kalendáře.
+       -- Součástí tohoto zipu je Microsoft Project projekt a vyexportované png, kde jsme zaznamenali veškerá data a rozdělili práci v následujících týdnech.
    
    Všechnu svoji práci budeme nahrávat do "GitHub" repositáře. Máme s ním největší zkušenost a nejlépe se s ním ze všech možných variant pracuje.
        -- Repositář je nastaven jako "private". Můžeme ho zveřejnit a nebo dát přístup profesorům přes jejich "GitHub" účet. Už jsme přiřadili účet "ivskontrola".
-       -- Odkaz - "https://github.com/TheLupp/CalcIVSulator
+       -- Odkaz - "https://github.com/TheLupp/CalcIVSulator"
 
     Projekt budeme řešit v jazyku C# s použitím Windows Forms a poběží na doporučeném operačním systému Windows 10.
+
+Celý projekt je napsán v anglickém jazyku kromě dokumentace, která je pro ulehčení napsaná v v češtině.
+
+
+Rozdělení práce:
+Práce na plánu				Ondra,Viktor,Vojta
+Vytvoření kostry knihovny		Viktor
+Testy
+	Základní 4 operace		Ondra
+	Mocnina				Ondra
+	Odmocnina			Viktor
+	Faktoriál			Vojta
+	Goniometrické funkce		Vojta
+	na -1				Viktor
+Knihovna
+	Základní 4 operace		Viktor
+	Mocnina				Vojta
+	Odmocnina			Ondra
+	Faktoriál			Vojta
+	Goniometrické funkce		Viktor
+	na -1				Ondra
+GUI
+	Mock-up				Ondra,Viktor,Vojta
+	GUI nenapojené na knihovnu	Ondra
+	Napojit GUI na knihovnu		Ondra
+Instalátor a budoucnost	
+	Mock-up budoucí verze		Ondra,Viktor,Vojta
+	Instalátor			Vojta
+	Dokumentace instátoru		Vojta
+	Makefile			Viktor
+Uživatelský manuál část 1		Viktor
+Profiling script			Vojta	
+README					Ondra
+Vylepšení?				Ondra,Viktor,Vojta	
+Hodnocení				Ondra,Viktor,Vojta	
+Odevzdání				Ondra
