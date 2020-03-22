@@ -28,15 +28,37 @@ namespace IVSMathLibrary
             return 0;
         }
 
-        public static double Root(double radicand, double degree)
-        {
-            return 0;
+        public static double Root(double radicand, int degree) {
+            if (radicand == 0) {
+                return 0;
+            }
+            else
+            {
+                if (radicand < 0 && degree % 2 == 0)
+                {
+                    // Sudá odmocnina ze záporného čísla neexistuje
+                    return double.NaN;
+                }
+                if (degree == 1)
+                    return radicand;
+                double radicand_n;
+                double precision = 0.0000001f;
+                do
+                {
+                    radicand_n = (radicand / Power(precision, degree - 1) - precision) / degree;
+                    precision = precision + radicand_n;
+                } while (Math.Abs(radicand_n) > 0);
+                return precision;
+
+            }
+            
         }
 
         public static double Power(double base_, int exponent)
         {
             return 0;
         }
+
 
         public static int Factorial(int a)
         {
