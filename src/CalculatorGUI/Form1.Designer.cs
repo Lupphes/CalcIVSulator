@@ -43,10 +43,14 @@
             this.btn_Sub = new System.Windows.Forms.Button();
             this.btn_Add = new System.Windows.Forms.Button();
             this.btn_Res = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btn_PowTo1 = new System.Windows.Forms.Button();
             this.btn_Root = new System.Windows.Forms.Button();
             this.btn_Power = new System.Windows.Forms.Button();
             this.btn_comma = new System.Windows.Forms.Button();
+            this.btn_sin = new System.Windows.Forms.Button();
+            this.btn_cos = new System.Windows.Forms.Button();
+            this.btn_tan = new System.Windows.Forms.Button();
+            this.rtb_Out = new System.Windows.Forms.RichTextBox();
             this.SuspendLayout();
             // 
             // btn_Nbr_3
@@ -126,6 +130,7 @@
             this.btn_Nbr_1.TabIndex = 12;
             this.btn_Nbr_1.Text = "1";
             this.btn_Nbr_1.UseVisualStyleBackColor = false;
+            this.btn_Nbr_1.Click += new System.EventHandler(this.btn_Nbr_1_Click);
             // 
             // btn_Nbr_4
             // 
@@ -245,18 +250,18 @@
             this.btn_Res.Text = "=";
             this.btn_Res.UseVisualStyleBackColor = false;
             // 
-            // button1
+            // btn_PowTo1
             // 
-            this.button1.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button1.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.button1.Location = new System.Drawing.Point(216, 185);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(47, 36);
-            this.button1.TabIndex = 24;
-            this.button1.Text = "1/x";
-            this.button1.UseVisualStyleBackColor = false;
+            this.btn_PowTo1.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.btn_PowTo1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btn_PowTo1.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_PowTo1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.btn_PowTo1.Location = new System.Drawing.Point(216, 185);
+            this.btn_PowTo1.Name = "btn_PowTo1";
+            this.btn_PowTo1.Size = new System.Drawing.Size(47, 36);
+            this.btn_PowTo1.TabIndex = 24;
+            this.btn_PowTo1.Text = "1/𝑥";
+            this.btn_PowTo1.UseVisualStyleBackColor = false;
             // 
             // btn_Root
             // 
@@ -282,6 +287,7 @@
             this.btn_Power.Size = new System.Drawing.Size(47, 36);
             this.btn_Power.TabIndex = 27;
             this.btn_Power.Text = "^";
+            this.btn_Power.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btn_Power.UseVisualStyleBackColor = false;
             // 
             // btn_comma
@@ -297,16 +303,75 @@
             this.btn_comma.Text = ",";
             this.btn_comma.UseVisualStyleBackColor = false;
             // 
+            // btn_sin
+            // 
+            this.btn_sin.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.btn_sin.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btn_sin.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_sin.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.btn_sin.Location = new System.Drawing.Point(4, 101);
+            this.btn_sin.Name = "btn_sin";
+            this.btn_sin.Size = new System.Drawing.Size(47, 36);
+            this.btn_sin.TabIndex = 29;
+            this.btn_sin.Text = "sin";
+            this.btn_sin.UseVisualStyleBackColor = false;
+            // 
+            // btn_cos
+            // 
+            this.btn_cos.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.btn_cos.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btn_cos.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_cos.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.btn_cos.Location = new System.Drawing.Point(57, 101);
+            this.btn_cos.Name = "btn_cos";
+            this.btn_cos.Size = new System.Drawing.Size(47, 36);
+            this.btn_cos.TabIndex = 30;
+            this.btn_cos.Text = "cos";
+            this.btn_cos.UseVisualStyleBackColor = false;
+            // 
+            // btn_tan
+            // 
+            this.btn_tan.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.btn_tan.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btn_tan.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_tan.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.btn_tan.Location = new System.Drawing.Point(110, 101);
+            this.btn_tan.Name = "btn_tan";
+            this.btn_tan.Size = new System.Drawing.Size(47, 36);
+            this.btn_tan.TabIndex = 31;
+            this.btn_tan.Text = "tan";
+            this.btn_tan.UseVisualStyleBackColor = false;
+            // 
+            // rtb_Out
+            // 
+            this.rtb_Out.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.rtb_Out.Font = new System.Drawing.Font("Microsoft YaHei UI", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rtb_Out.Location = new System.Drawing.Point(4, 5);
+            this.rtb_Out.MaxLength = 9;
+            this.rtb_Out.Multiline = false;
+            this.rtb_Out.Name = "rtb_Out";
+            this.rtb_Out.ReadOnly = true;
+            this.rtb_Out.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.rtb_Out.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.None;
+            this.rtb_Out.Size = new System.Drawing.Size(259, 90);
+            this.rtb_Out.TabIndex = 32;
+            this.rtb_Out.Text = "0";
+            this.rtb_Out.ZoomFactor = 2F;
+            // 
             // CalcForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.AliceBlue;
             this.ClientSize = new System.Drawing.Size(265, 307);
+            this.Controls.Add(this.rtb_Out);
+            this.Controls.Add(this.btn_tan);
+            this.Controls.Add(this.btn_cos);
+            this.Controls.Add(this.btn_sin);
             this.Controls.Add(this.btn_comma);
             this.Controls.Add(this.btn_Power);
             this.Controls.Add(this.btn_Root);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btn_PowTo1);
             this.Controls.Add(this.btn_Res);
             this.Controls.Add(this.btn_Add);
             this.Controls.Add(this.btn_Sub);
@@ -348,10 +413,14 @@
         private System.Windows.Forms.Button btn_Sub;
         private System.Windows.Forms.Button btn_Add;
         private System.Windows.Forms.Button btn_Res;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btn_PowTo1;
         private System.Windows.Forms.Button btn_Root;
         private System.Windows.Forms.Button btn_Power;
         private System.Windows.Forms.Button btn_comma;
+        private System.Windows.Forms.Button btn_sin;
+        private System.Windows.Forms.Button btn_cos;
+        private System.Windows.Forms.Button btn_tan;
+        private System.Windows.Forms.RichTextBox rtb_Out;
     }
 }
 

@@ -16,5 +16,10 @@ namespace CalculatorGUI
         {
             InitializeComponent();
         }
+
+        private void btn_Nbr_1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
