@@ -59,6 +59,16 @@ namespace IVSMathLibrary
             return 0;
         }
 
+        public static double ToNegativeOnePower(double base_)
+        {
+            try {
+                return (1 / base_);
+            }
+            catch (DivideByZeroException) {
+                Console.WriteLine("Division of {0} by zero.", base_);
+                return double.NaN;
+            }            
+        }
 
         public static int Factorial(int a)
         {
