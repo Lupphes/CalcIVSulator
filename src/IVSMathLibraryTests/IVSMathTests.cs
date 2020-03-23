@@ -7,18 +7,20 @@ namespace IVSMathLibraryTests
     [TestClass]
     public class IVSMathTests
     {
+
+        // Prepare
+        double precision = 0.0000001f;
+
+        [TestMethod]
+        [ExpectedException(typeof(OverflowException))]
+        public void NumberValidation_Overflow_ReturnExeptions()
+        {
+        }
+
         [TestMethod]
         public void Add_Calculation_ReturnsEqual()
         {
-            // Arrange 
-            double result;
-            double expected = 10;
 
-            // Act
-            result = IVSMath.Add(5, 5);
-
-            // Assert
-            Assert.AreEqual(result, expected);
         }
 
         [TestMethod]
