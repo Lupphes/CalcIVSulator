@@ -47,30 +47,30 @@ namespace IVSMathLibraryTests
         public void Power_Calculation_ReturnsTrue()
         {
             // Positive whole numbers
-            Assert.AreEqual(IVSMath.Power(2, 3), 8);
-            Assert.AreEqual(IVSMath.Power(0, 5), 0);
+            Assert.AreEqual(8, IVSMath.Power(2, 3));
+            Assert.AreEqual(0, IVSMath.Power(0, 5));
 
             // Negative whole numbers
-            Assert.AreEqual(IVSMath.Power(-2, 3), -8);
-            Assert.AreEqual(IVSMath.Power(-2, 4), -16); // Brackets are not going to be implemented
+            Assert.AreEqual(-8, IVSMath.Power(-2, 3));
+            Assert.AreEqual(-16, IVSMath.Power(-2, 4)); // Brackets are not going to be implemented
 
-            Assert.AreEqual(IVSMath.Power(2, -3), 1 / 8);
-            Assert.AreEqual(IVSMath.Power(-2, -4), 1 / 16);
-            Assert.AreEqual(IVSMath.Power(-2, -3), -(1 / 8));
-            Assert.AreEqual(IVSMath.Power(2, -4), -(1 / 16));
+            Assert.AreEqual(1 / 8, IVSMath.Power(2, -3));
+            Assert.AreEqual(1 / 16, IVSMath.Power(-2, -4));
+            Assert.AreEqual(-(1 / 8), IVSMath.Power(-2, -3));
+            Assert.AreEqual(-(1 / 16), IVSMath.Power(2, -4));
 
-            Assert.AreEqual(IVSMath.Power(0, -5), 0);
+            Assert.AreEqual(0, IVSMath.Power(0, -5));
 
             // Positive decimal numbers
-            Assert.AreEqual(IVSMath.Power(2.5, 2), 6.25);
+            Assert.AreEqual(6.25, IVSMath.Power(2.5, 2));
 
             // Negative decimal numbers
-            Assert.AreEqual(IVSMath.Power(2.5, -2), 1 / 6.25);
-            Assert.AreEqual(IVSMath.Power(-2.5, 2), -6.25);
-            Assert.AreEqual(IVSMath.Power(-2.5, -2), -( 1 / 6.25));
+            Assert.AreEqual(1 / 6.25, IVSMath.Power(2.5, -2));
+            Assert.AreEqual(-6.25, IVSMath.Power(-2.5, 2));
+            Assert.AreEqual(-(1 / 6.25), IVSMath.Power(-2.5, -2));
 
             // Positive whole rational numbers
-            Assert.AreEqual(IVSMath.Power(Math.PI, 2), Math.PI * 2, precision);
+            Assert.AreEqual(Math.PI * 2, IVSMath.Power(Math.PI, 2), precision);
         }
 
         [TestMethod]
