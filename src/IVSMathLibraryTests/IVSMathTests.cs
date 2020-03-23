@@ -34,6 +34,12 @@ namespace IVSMathLibraryTests
         }
 
         [TestMethod]
+        [ExpectedException(typeof(DivideByZeroException))]
+        public void Divide_ByZero_ReturnExeptions()
+        {
+        }
+
+        [TestMethod]
         public void Divide_Calculation_ReturnsTrue()
         {
         }
