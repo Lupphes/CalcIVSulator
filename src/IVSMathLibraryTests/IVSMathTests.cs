@@ -47,38 +47,43 @@ namespace IVSMathLibraryTests
         [TestMethod]
         public void Power_CalculationWholeNumbers_ReturnsTrue()
         {
-            Assert.AreEqual(8, IVSMath.Power(2, 3));
-            Assert.AreEqual(0, IVSMath.Power(0, 5));
+            Assert.AreEqual(8, IVSMath.Power(2, 3), 0);
+            Assert.AreEqual(0, IVSMath.Power(0, 5), 0);
         }
 
         public void Power_CalculationNegativeWholeNumbers_ReturnsTrue()
         {
-            Assert.AreEqual(-8, IVSMath.Power(-2, 3));
-            Assert.AreEqual(16, IVSMath.Power(-2, 4)); // Brackets are not going to be implemented
+            Assert.AreEqual(-8, IVSMath.Power(-2, 3), 0);
+            Assert.AreEqual(-16, IVSMath.Power(-2, 4), 0); // Brackets are not going to be implemented
 
-            Assert.AreEqual(1 / 8, IVSMath.Power(2, -3));
-            Assert.AreEqual(1 / 16, IVSMath.Power(-2, -4));
-            Assert.AreEqual(-(1 / 8), IVSMath.Power(-2, -3));
-            Assert.AreEqual(-(1 / 16), IVSMath.Power(2, -4));
+            Assert.AreEqual((1 / 8), IVSMath.Power(2, -3), precision);
+            Assert.AreEqual((1 / 16), IVSMath.Power(2, -4), precision);
+            Assert.AreEqual(-(1 / 8), IVSMath.Power(-2, -3), precision);
+            Assert.AreEqual(-(1 / 16), IVSMath.Power(-2, -4), precision);
+        }
 
-            Assert.AreEqual(0, IVSMath.Power(0, -5));
+        [TestMethod]
+        [ExpectedException(typeof(ArithmeticException))]
+        public void Power_ArithmeticException_ReturnExeptions()
+        {
+            Assert.AreEqual(0, IVSMath.Power(0, -5), 0);
         }
 
         public void Power_CalculationDecimalNumbers_ReturnsTrue()
         {
-            Assert.AreEqual(6.25, IVSMath.Power(2.5, 2));
+            Assert.AreEqual((25 / 4), IVSMath.Power(2.5, 2), precision);
         }
 
         public void Power_CalculationNegativeDecimalNumbers_ReturnsTrue()
         {
-            Assert.AreEqual(1 / 6.25, IVSMath.Power(2.5, -2));
-            Assert.AreEqual(-6.25, IVSMath.Power(-2.5, 2));
-            Assert.AreEqual(-(1 / 6.25), IVSMath.Power(-2.5, -2));
+            Assert.AreEqual((4 / 25), IVSMath.Power(2.5, -2), precision);
+            Assert.AreEqual(-(25 / 4), IVSMath.Power(-2.5, 2), precision);
+            Assert.AreEqual(-(4 / 25), IVSMath.Power(-2.5, -2), precision);
         }
 
         public void Power_CalculationRationalNumbers_ReturnsTrue()
         {
-            Assert.AreEqual(Math.PI * 2, IVSMath.Power(Math.PI, 2), precision);
+            Assert.AreEqual(Math.PI * Math.PI, IVSMath.Power(Math.PI, 2), precision);
         }
 
         [TestMethod]
