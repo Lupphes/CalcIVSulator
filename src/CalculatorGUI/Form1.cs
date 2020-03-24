@@ -67,6 +67,7 @@ namespace CalculatorGUI
                 double buffer;
                 if (tb_Out.Text == "")
                 {
+                    lb_Next.Text = resultValue.ToString() + " " + operationPerfomed;
                     return;
                 }
                 else
