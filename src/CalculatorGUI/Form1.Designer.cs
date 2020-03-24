@@ -278,7 +278,7 @@
             this.btn_PowTo1.TabIndex = 24;
             this.btn_PowTo1.Text = "1/𝑥";
             this.btn_PowTo1.UseVisualStyleBackColor = false;
-            this.btn_PowTo1.Click += new System.EventHandler(this.btn_BO_Click);
+            this.btn_PowTo1.Click += new System.EventHandler(this.btn_SO_Click);
             // 
             // btn_Root
             // 
@@ -335,7 +335,7 @@
             this.btn_sin.TabIndex = 29;
             this.btn_sin.Text = "sin";
             this.btn_sin.UseVisualStyleBackColor = false;
-            this.btn_sin.Click += new System.EventHandler(this.btn_BO_Click);
+            this.btn_sin.Click += new System.EventHandler(this.btn_SO_Click);
             // 
             // btn_cos
             // 
@@ -349,7 +349,7 @@
             this.btn_cos.TabIndex = 30;
             this.btn_cos.Text = "cos";
             this.btn_cos.UseVisualStyleBackColor = false;
-            this.btn_cos.Click += new System.EventHandler(this.btn_BO_Click);
+            this.btn_cos.Click += new System.EventHandler(this.btn_SO_Click);
             // 
             // btn_tan
             // 
@@ -363,7 +363,7 @@
             this.btn_tan.TabIndex = 31;
             this.btn_tan.Text = "tan";
             this.btn_tan.UseVisualStyleBackColor = false;
-            this.btn_tan.Click += new System.EventHandler(this.btn_BO_Click);
+            this.btn_tan.Click += new System.EventHandler(this.btn_SO_Click);
             // 
             // btn_Back
             // 

@@ -72,7 +72,7 @@ namespace CalculatorGUI
                 }
                 else
                 {
-                    if (parseNumber(out buffer, tb_Out.Text))
+                    if (parseDouble(out buffer, tb_Out.Text))
                     {
                         resultValue = Calculate(operationPerfomed, resultValue, buffer);
                         lb_Next.Text = resultValue.ToString() + " " + operationPerfomed;
@@ -85,8 +85,6 @@ namespace CalculatorGUI
                         return;
                     }
                 }
-                    
-                
             }
             else
             {
@@ -97,7 +95,7 @@ namespace CalculatorGUI
                     wasError = true;
                     return;
                 }
-                else if (parseNumber(out result, tb_Out.Text))
+                else if (parseDouble(out result, tb_Out.Text))
                 {
                     resultValue = result;
                     lb_Next.Text = tb_Out.Text + " " + operationPerfomed;
@@ -115,6 +113,19 @@ namespace CalculatorGUI
 
         }
 
+        private void btn_SO_Click(object sender, EventArgs e)
+        {
+            Button button = (Button)sender;
+            operationPerfomed = button.Text;
+
+            resultValue = Calculate(operationPerfomed, resultValue);
+            isChained = false;
+            tb_Out.Text = resultValue.ToString();
+            operationPerfomed = "";
+            calculated = true;
+            lb_Next.Text = "";
+        }
+
         private void btn_Res_Click(object sender, EventArgs e)
         {
             if (tb_Out.Text == "")
@@ -127,7 +138,7 @@ namespace CalculatorGUI
             } else
             {
                 double result;
-                if (parseNumber(out result, tb_Out.Text))
+                if (parseDouble(out result, tb_Out.Text))
                 {
                     resultValue = Calculate(operationPerfomed, resultValue, result);
                     tb_Out.Text = resultValue.ToString();
@@ -147,14 +158,12 @@ namespace CalculatorGUI
             }
         }
 
-        private bool parseNumber(out double result, string number)
+        private bool parseDouble(out double result, string number)
         {
             if (Double.TryParse(number, out result))
                 return true;
             return false;
         }
-
-
 
         private void errorSkipper(object sender, EventArgs e)
         {
@@ -170,42 +179,25 @@ namespace CalculatorGUI
             switch (operation)
             {
                 case "+":
-                    IVSMath.Add(x, y);
-                    return x + y;
-                    break;
+                    return x + y; // IVSMath.Add(x, y);
                 case "-":
-                    IVSMath.Substract(x, y);
-                    return x - y;
-                    break;
+                    return x - y; // IVSMath.Substract(x, y);
                 case "*":
-                    IVSMath.Multiply(x, y);
-                    return x * y;
-                    break;
+                    return x * y; // IVSMath.Multiply(x, y);
                 case "/":
-                    IVSMath.Divide(x, y);
-                    return x / y;
-                    break;
+                    return x / y; // IVSMath.Divide(x, y);
                 case "^":
-                    IVSMath.Power(x,(int)y); // bacha
-                    break;
-                case "1/𝑥":
-                    IVSMath.Power(x, -1);
-                    return 1/x;
-                    break;
+                    return IVSMath.Power(x, Convert.ToInt32(y));
                 case "√":
-                    IVSMath.Root(x, (int)y); // bacha
-                    break;
+                    return IVSMath.Root(x, Convert.ToInt32(y));
+                case "1/𝑥":
+                    return IVSMath.Power(x, -1);
                 case "sin":
-                    IVSMath.Sine(x);
-                    break;
+                    return 8; // IVSMath.Sine(x);
                 case "cos":
-                    IVSMath.Cosine(x);
-                    break;
+                    return IVSMath.Cosine(x);
                 case "tan":
-                    IVSMath.Tangent(x);
-                    break;
-                default:
-                    break;
+                    return IVSMath.Tangent(x);
             }
             return 0;
         }
