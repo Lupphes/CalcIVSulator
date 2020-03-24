@@ -54,7 +54,7 @@ namespace IVSMathLibraryTests
         public void Power_CalculationNegativeWholeNumbers_ReturnsTrue()
         {
             Assert.AreEqual(-8, IVSMath.Power(-2, 3));
-            Assert.AreEqual(-16, IVSMath.Power(-2, 4)); // Brackets are not going to be implemented
+            Assert.AreEqual(16, IVSMath.Power(-2, 4)); // Brackets are not going to be implemented
 
             Assert.AreEqual(1 / 8, IVSMath.Power(2, -3));
             Assert.AreEqual(1 / 16, IVSMath.Power(-2, -4));
