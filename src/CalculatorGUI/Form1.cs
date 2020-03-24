@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using IVSMathLibrary;
 
 namespace CalculatorGUI
 {
@@ -17,122 +18,196 @@ namespace CalculatorGUI
             InitializeComponent();
         }
 
+        double resultValue;
+        string operationPerfomed = "";
+        bool isChained = false;
+        bool calculated = false;
+        bool wasError = false;
 
-        private void btn_Nbr_0_Click(object sender, EventArgs e)
+
+        private void btn_Nbr_Click(object sender, EventArgs e)
         {
-            rtb_Out.Text += "0";
+            if (tb_Out.Text == "0" || wasError || calculated)
+            {
+                tb_Out.Clear();
+                wasError = false;
+                calculated = false;
+            }
+
+            Button button = (Button)sender;
+            tb_Out.Text += button.Text;
         }
 
-        private void btn_Nbr_1_Click(object sender, EventArgs e)
-        {
-            rtb_Out.Text += "1";
-        }
-
-        private void btn_Nbr_2_Click(object sender, EventArgs e)
-        {
-            rtb_Out.Text += "2";
-        }
-
-        private void btn_Nbr_3_Click(object sender, EventArgs e)
-        {
-            rtb_Out.Text += "3";
-        }
-
-        private void btn_Nbr_4_Click(object sender, EventArgs e)
-        {
-            rtb_Out.Text += "4";
-        }
-
-        private void btn_Nbr_5_Click(object sender, EventArgs e)
-        {
-            rtb_Out.Text += "5";
-        }
-
-        private void btn_Nbr_6_Click(object sender, EventArgs e)
-        {
-            rtb_Out.Text += "6";
-        }
-
-        private void btn_Nbr_7_Click(object sender, EventArgs e)
-        {
-            rtb_Out.Text += "7";
-        }
-
-        private void btn_Nbr_8_Click(object sender, EventArgs e)
-        {
-            rtb_Out.Text += "8";
-        }
-
-        private void btn_Nbr_9_Click(object sender, EventArgs e)
-        {
-            rtb_Out.Text += "9";
-        }
-
-        private void btn_Comma_Click(object sender, EventArgs e)
-        {
-            rtb_Out.Text += ",";
-        }
         private void btn_Back_Click(object sender, EventArgs e)
         {
-            rtb_Out.Text = "";
+            string s = tb_Out.Text;
+
+            if (s.Length > 1)
+            {
+                s = s.Substring(0, s.Length - 1);
+            }
+            else
+            {
+                s = "0";
+            }
+
+            tb_Out.Text = s;
+
         }
 
-        // -----------------------------------------------------
-
-        private void btn_Add_Click(object sender, EventArgs e)
+        private void btn_BO_Click(object sender, EventArgs e)
         {
-            rtb_Out.Text += "+";
+
+            Button button = (Button)sender;
+            operationPerfomed = button.Text;
+
+            if (isChained)
+            {
+                
+                double buffer;
+                if (tb_Out.Text == "")
+                {
+                    return;
+                }
+                else
+                {
+                    if (parseNumber(out buffer, tb_Out.Text))
+                    {
+                        resultValue = Calculate(operationPerfomed, resultValue, buffer);
+                        lb_Next.Text = resultValue.ToString() + " " + operationPerfomed;
+
+                    } else
+                    {
+                        tb_Out.Text = "Wrong input";
+                        wasError = true;
+                        isChained = false;
+                        return;
+                    }
+                }
+                    
+                
+            }
+            else
+            {
+                double result;
+                if (tb_Out.Text == "")
+                {
+                    tb_Out.Text = "No input given";
+                    wasError = true;
+                    return;
+                }
+                else if (parseNumber(out result, tb_Out.Text))
+                {
+                    resultValue = result;
+                    lb_Next.Text = tb_Out.Text + " " + operationPerfomed;
+                    isChained = true;
+                }
+                else
+                {
+                    tb_Out.Text = "Wrong input";
+                    wasError = true;
+                    return;
+                }
+
+            }
+            tb_Out.Clear();
+
         }
 
-        private void btn_Sub_Click(object sender, EventArgs e)
-        {
-            rtb_Out.Text += "-";
-        }
-
-        private void btn_Mul_Click(object sender, EventArgs e)
-        {
-            rtb_Out.Text += "*";
-        }
-
-        private void btn_Div_Click(object sender, EventArgs e)
-        {
-            rtb_Out.Text += "/";
-        }
-
-        private void btn_Root_Click(object sender, EventArgs e)
-        {
-            rtb_Out.Text += "sqrt(";
-        }
-
-        private void btn_Power_Click(object sender, EventArgs e)
-        {
-            rtb_Out.Text += "^";
-        }
-
-        private void btn_PowTo1_Click(object sender, EventArgs e)
-        {
-            rtb_Out.Text += "^-1";
-        }
-
-        private void btn_sin_Click(object sender, EventArgs e)
-        {
-            rtb_Out.Text += "sin(";
-        }
-
-        private void btn_cos_Click(object sender, EventArgs e)
-        {
-            rtb_Out.Text += "cos(";
-        }
-
-        private void btn_tan_Click(object sender, EventArgs e)
-        {
-            rtb_Out.Text += "tan(";
-        }
         private void btn_Res_Click(object sender, EventArgs e)
         {
-            string input = rtb_Out.Text;
-            rtb_Out.Text = "Calculating...";
+            if (tb_Out.Text == "")
+            {
+                tb_Out.Text = resultValue.ToString();
+                isChained = false;
+                lb_Next.Text = "";
+                operationPerfomed = "";
+                calculated = true;
+            } else
+            {
+                double result;
+                if (parseNumber(out result, tb_Out.Text))
+                {
+                    resultValue = Calculate(operationPerfomed, resultValue, result);
+                    tb_Out.Text = resultValue.ToString();
+
+                    isChained = false;
+                    calculated = true;
+
+                    lb_Next.Text = "";
+                    operationPerfomed = "";
+                }
+                else
+                {
+                    tb_Out.Text = "Wrong input";
+                    wasError = true;
+                    return;
+                }
+            }
         }
 
+        private bool parseNumber(out double result, string number)
+        {
+            if (Double.TryParse(number, out result))
+                return true;
+            return false;
+        }
+
+
+
+        private void errorSkipper(object sender, EventArgs e)
+        {
+            if (wasError)
+            {
+                tb_Out.Clear();
+                lb_Next.Text = "";
+            }
+        }
+
+        private double Calculate(string operation, double x, double y = 0)
+        {
+            switch (operation)
+            {
+                case "+":
+                    IVSMath.Add(x, y);
+                    return x + y;
+                    break;
+                case "-":
+                    IVSMath.Substract(x, y);
+                    return x - y;
+                    break;
+                case "*":
+                    IVSMath.Multiply(x, y);
+                    return x * y;
+                    break;
+                case "/":
+                    IVSMath.Divide(x, y);
+                    return x / y;
+                    break;
+                case "^":
+                    IVSMath.Power(x,(int)y); // bacha
+                    break;
+                case "1/𝑥":
+                    IVSMath.Power(x, -1);
+                    return 1/x;
+                    break;
+                case "√":
+                    IVSMath.Root(x, (int)y); // bacha
+                    break;
+                case "sin":
+                    IVSMath.Sine(x);
+                    break;
+                case "cos":
+                    IVSMath.Cosine(x);
+                    break;
+                case "tan":
+                    IVSMath.Tangent(x);
+                    break;
+                default:
+                    break;
+            }
+            return 0;
+        }
+                        
     }
 }
