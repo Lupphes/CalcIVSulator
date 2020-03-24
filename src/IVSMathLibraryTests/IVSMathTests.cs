@@ -43,14 +43,16 @@ namespace IVSMathLibraryTests
         public void Root_Calculation_ReturnsTrue()
         {
         }
+
         [TestMethod]
-        public void Power_Calculation_ReturnsTrue()
+        public void Power_CalculationWholeNumbers_ReturnsTrue()
         {
-            // Positive whole numbers
             Assert.AreEqual(8, IVSMath.Power(2, 3));
             Assert.AreEqual(0, IVSMath.Power(0, 5));
+        }
 
-            // Negative whole numbers
+        public void Power_CalculationNegativeWholeNumbers_ReturnsTrue()
+        {
             Assert.AreEqual(-8, IVSMath.Power(-2, 3));
             Assert.AreEqual(-16, IVSMath.Power(-2, 4)); // Brackets are not going to be implemented
 
@@ -60,16 +62,22 @@ namespace IVSMathLibraryTests
             Assert.AreEqual(-(1 / 16), IVSMath.Power(2, -4));
 
             Assert.AreEqual(0, IVSMath.Power(0, -5));
+        }
 
-            // Positive decimal numbers
+        public void Power_CalculationDecimalNumbers_ReturnsTrue()
+        {
             Assert.AreEqual(6.25, IVSMath.Power(2.5, 2));
+        }
 
-            // Negative decimal numbers
+        public void Power_CalculationNegativeDecimalNumbers_ReturnsTrue()
+        {
             Assert.AreEqual(1 / 6.25, IVSMath.Power(2.5, -2));
             Assert.AreEqual(-6.25, IVSMath.Power(-2.5, 2));
             Assert.AreEqual(-(1 / 6.25), IVSMath.Power(-2.5, -2));
+        }
 
-            // Positive whole rational numbers
+        public void Power_CalculationRationalNumbers_ReturnsTrue()
+        {
             Assert.AreEqual(Math.PI * 2, IVSMath.Power(Math.PI, 2), precision);
         }
 
