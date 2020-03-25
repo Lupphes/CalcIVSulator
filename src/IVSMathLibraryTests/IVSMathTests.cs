@@ -178,10 +178,10 @@ namespace IVSMathLibraryTests
                 Assert.AreEqual(0, IVSMath.Tangent(i * Math.PI), precision);        // tan(iPI) = 0
 
             for (int i = -2; i < 3; ++i)
-                Assert.AreEqual(1, IVSMath.Cosine((Math.PI / 4) + i * Math.PI), precision);        // tan(PI/4 + iPI) = 1
+                Assert.AreEqual(1, IVSMath.Tangent((Math.PI / 4) + i * Math.PI), precision);        // tan(PI/4 + iPI) = 1
 
             for (int i = -2; i < 3; ++i)
-                Assert.AreEqual(-1, IVSMath.Cosine(-(Math.PI / 4) + i * Math.PI), precision);          // tan(-PI/4 + iPI) = -1
+                Assert.AreEqual(-1, IVSMath.Tangent(-(Math.PI / 4) + i * Math.PI), precision);          // tan(-PI/4 + iPI) = -1
         }
 
         /*
