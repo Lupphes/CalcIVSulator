@@ -20,50 +20,38 @@ namespace CalculatorGUI
 
         double resultValue;
         string operationPerfomed = "";
-        bool isChained = false;
-        bool calculated = false;
-        bool wasError = false;
+        bool isChained, wasCalculated, wasError = false;
 
-
-        private void btn_Nbr_Click(object sender, EventArgs e)
-        {
-            if (tb_Out.Text == "0" || wasError || calculated)
-            {
+        private void btn_Nbr_Click(object sender, EventArgs e) {
+            if (tb_Out.Text == "0" || wasError || wasCalculated) {
                 tb_Out.Clear();
                 wasError = false;
-                calculated = false;
+                wasCalculated = false;
             }
-
             Button button = (Button)sender;
             tb_Out.Text += button.Text;
         }
 
-        private void btn_Back_Click(object sender, EventArgs e)
-        {
-            string s = tb_Out.Text;
+        private void btn_Back_Click(object sender, EventArgs e) {
+            string str = tb_Out.Text;
 
-            if (s.Length > 1)
-            {
-                s = s.Substring(0, s.Length - 1);
+            if (wasError) {
+                return;
+            } else if (str.Length > 1) {
+                str = str.Substring(0, str.Length - 1);
             }
-            else
-            {
-                s = "0";
+            else {
+                str = "0";
             }
-
-            tb_Out.Text = s;
-
+            tb_Out.Text = str;
         }
 
-        private void btn_BO_Click(object sender, EventArgs e)
-        {
+        private void btn_MultipleValuesOperation_Click(object sender, EventArgs e) {
 
             Button button = (Button)sender;
             operationPerfomed = button.Text;
 
-            if (isChained)
-            {
-                
+            if (isChained) {
                 double buffer;
                 if (tb_Out.Text == "")
                 {
@@ -113,7 +101,7 @@ namespace CalculatorGUI
 
         }
 
-        private void btn_SO_Click(object sender, EventArgs e)
+        private void btn_SingleValueOperation_Click(object sender, EventArgs e)
         {
             Button button = (Button)sender;
             operationPerfomed = button.Text;
@@ -122,7 +110,7 @@ namespace CalculatorGUI
             isChained = false;
             tb_Out.Text = resultValue.ToString();
             operationPerfomed = "";
-            calculated = true;
+            wasCalculated = true;
             lb_Next.Text = "";
         }
 
@@ -134,7 +122,7 @@ namespace CalculatorGUI
                 isChained = false;
                 lb_Next.Text = "";
                 operationPerfomed = "";
-                calculated = true;
+                wasCalculated = true;
             } else
             {
                 double result;
@@ -144,7 +132,7 @@ namespace CalculatorGUI
                     tb_Out.Text = resultValue.ToString();
 
                     isChained = false;
-                    calculated = true;
+                    wasCalculated = true;
 
                     lb_Next.Text = "";
                     operationPerfomed = "";
@@ -186,21 +174,50 @@ namespace CalculatorGUI
                     return x * y; // IVSMath.Multiply(x, y);
                 case "/":
                     return x / y; // IVSMath.Divide(x, y);
+
                 case "^":
-                    return IVSMath.Power(x, Convert.ToInt32(y));
+                    return IVSMath.Power(x, Convert.ToInt32(y)); // bacha
                 case "√":
-                    return IVSMath.Root(x, Convert.ToInt32(y));
-                case "1/𝑥":
-                    return IVSMath.Power(x, -1);
+                    return IVSMath.Root(x, Convert.ToInt32(y)); // bacha
+                case "𝑥^2":
+                    return IVSMath.Power(x, 2);
+                case "√𝑥":
+                    return IVSMath.Root(x, 2);
+                case "!":
+                    return IVSMath.Factorial(x); // bacha
+
                 case "sin":
                     return 8; // IVSMath.Sine(x);
                 case "cos":
                     return IVSMath.Cosine(x);
                 case "tan":
                     return IVSMath.Tangent(x);
+
+                case "1/𝑥":
+                    return IVSMath.Power(x, -1);
             }
             return 0;
         }
-                        
+
+        private void btn_Negative_Click(object sender, EventArgs e)
+        {
+            double result;
+            if (parseDouble(out result, tb_Out.Text))
+            {
+                tb_Out.Text = (result * -1).ToString();
+
+            }           
+        }
+
+        private void btn_Delete_Click(object sender, EventArgs e)
+        {
+            operationPerfomed = "";
+            isChained = false;
+            wasCalculated = false;
+            wasError = false;
+            tb_Out.Clear();
+            lb_Next.Text = "";
+
+        }
     }
 }

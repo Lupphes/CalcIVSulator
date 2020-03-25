@@ -38,7 +38,7 @@ namespace IVSMathLibrary
             return 0;
         }
 
-        public static int Factorial(int a)
+        public static int Factorial(double a)
         {
             return 0;
         }
