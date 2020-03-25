@@ -49,7 +49,7 @@ namespace CalculatorGUI
                 case "√𝑥":
                     return IVSMath.Root(x, 2);
                 case "!":
-                    return IVSMath.Factorial(x); // bacha
+                    return IVSMath.Factorial(Convert.ToInt32(x)); // bacha
                 case "sin":
                     return 8; // IVSMath.Sine(x);
                 case "cos":
