@@ -144,12 +144,12 @@ namespace IVSMathLibraryTests
         [TestMethod]
         public void Root_Cube_RadicandOne_ReturnsTrue()
         {
-            Assert.AreEqual(1, IVSMath.Root(0, 3), 0);
+            Assert.AreEqual(1, IVSMath.Root(1, 3), 0);
         }
         [TestMethod]
         public void Root_Cube_RadicandNegativeOne_ReturnsTrue()
         {
-            Assert.AreEqual(-1, IVSMath.Root(0, 3), 0);
+            Assert.AreEqual(-1, IVSMath.Root(-1, 3), 0);
         }
         [TestMethod]
         public void Root_FirstDegree_ReturnsTrue()
