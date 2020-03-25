@@ -33,7 +33,7 @@ namespace IVSMathLibraryTests
         [TestMethod]
         public void NumberValidation_OverflowDivide_ReturnExeptions()
         {
-            Assert.ThrowsException<OverflowException>(() => IVSMath.Divide(double.Epsilon, 5));
+            Assert.ThrowsException<OverflowException>(() => IVSMath.Divide(double.MaxValue, 0.5));
         }
 
         [TestMethod]
@@ -84,7 +84,7 @@ namespace IVSMathLibraryTests
         [TestMethod]
         public void Substract_CalculationZero_ReturnEqual()
         {
-            Assert.AreEqual(0, IVSMath.Add(0, 0), 0);
+            Assert.AreEqual(0, IVSMath.Substract(0, 0), 0);
         }
 
         [TestMethod]
