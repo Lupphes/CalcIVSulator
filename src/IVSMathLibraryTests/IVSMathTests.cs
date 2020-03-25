@@ -11,38 +11,29 @@ namespace IVSMathLibraryTests
         double precision = 0.0000001f;
 
         [TestMethod]
-        [ExpectedException(typeof(OverflowException))]
         public void NumberValidation_OverflowAdd_ReturnExeptions()
         {
-            IVSMath.Add(double.MaxValue, 1);
-            IVSMath.Add(double.MinValue, -1);
+            Assert.ThrowsException<OverflowException>(() => IVSMath.Add(double.MaxValue, 1));
+            Assert.ThrowsException<OverflowException>(() => IVSMath.Add(double.MinValue, -1));
         }
 
-      
         [TestMethod]
-        [ExpectedException(typeof(OverflowException))]
         public void NumberValidation_OverflowSubstract_ReturnExeptions()
         {
-            IVSMath.Substract(double.MaxValue, -5);
-            IVSMath.Substract(double.MinValue, 5);
+            Assert.ThrowsException<OverflowException>(() => IVSMath.Substract(double.MaxValue, -5));
+            Assert.ThrowsException<OverflowException>(() => IVSMath.Substract(double.MinValue, 5));
         }
-
       
         [TestMethod]
-        [ExpectedException(typeof(OverflowException))]
         public void NumberValidation_OverflowMultiply_ReturnExeptions()
         {
-            IVSMath.Multiply(double.MaxValue, 2);
-            IVSMath.Multiply(double.MinValue, 0.5);
+            Assert.ThrowsException<OverflowException>(() => IVSMath.Multiply(double.MaxValue, 2));
         }
-
       
         [TestMethod]
-        [ExpectedException(typeof(OverflowException))]
         public void NumberValidation_OverflowDivide_ReturnExeptions()
-        { 
-            IVSMath.Divide(double.MaxValue, 0.5);
-            IVSMath.Divide(double.MinValue, 5);
+        {
+            Assert.ThrowsException<OverflowException>(() => IVSMath.Divide(double.Epsilon, 5));
         }
 
         [TestMethod]
@@ -84,10 +75,10 @@ namespace IVSMathLibraryTests
         }
 
         [TestMethod]
-        public void Add_CalculationRationalNumbers_ReturnEqual()
+        public void Add_CalculationIrrationalNumbers_ReturnEqual()
         {
             Assert.AreEqual(2 * Math.PI, IVSMath.Add(Math.PI, Math.PI), precision);
-            Assert.AreEqual(Math.PI, IVSMath.Add(Math.PI, -Math.PI), precision);
+            Assert.AreEqual(0, IVSMath.Add(Math.PI, -Math.PI), 0);
         }
 
         [TestMethod]
@@ -101,7 +92,7 @@ namespace IVSMathLibraryTests
         {
             Assert.AreEqual(0, IVSMath.Substract(5, 5), 0);
             Assert.AreEqual(-5, IVSMath.Substract(0, 5), 0);
-            Assert.AreEqual(-5, IVSMath.Substract(5, 0), 0);
+            Assert.AreEqual(5, IVSMath.Substract(5, 0), 0);
         }
 
         [TestMethod]
@@ -129,7 +120,7 @@ namespace IVSMathLibraryTests
         }
 
         [TestMethod]
-        public void Substract_CalculationRationalNumbers_ReturnEqual()
+        public void Substract_CalculationIrrationalNumbers_ReturnEqual()
         {
             Assert.AreEqual(0, IVSMath.Substract(Math.PI, Math.PI), 0);
             Assert.AreEqual(2 * Math.PI, IVSMath.Substract(Math.PI, -Math.PI), precision);
@@ -178,19 +169,18 @@ namespace IVSMathLibraryTests
         }
 
         [TestMethod]
-        public void Multiply_CalculationRationalNumbers_ReturnTrue()
+        public void Multiply_CalculationIrrationalNumbers_ReturnTrue()
         {
             Assert.AreEqual(Math.PI * Math.PI, IVSMath.Multiply(Math.PI, Math.PI), precision);
             Assert.AreEqual(Math.PI * -Math.PI, IVSMath.Multiply(Math.PI, -Math.PI), precision);
-            Assert.AreEqual(-Math.PI * -Math.PI, IVSMath.Multiply(-Math.PI, Math.PI), precision);
+            Assert.AreEqual(-Math.PI * Math.PI, IVSMath.Multiply(-Math.PI, Math.PI), precision);
             Assert.AreEqual(-Math.PI * -Math.PI, IVSMath.Multiply(-Math.PI, -Math.PI), precision);
         }
 
         [TestMethod]
-        [ExpectedException(typeof(DivideByZeroException))]
         public void Divide_ByZero_ReturnExeptions()
         {
-            IVSMath.Divide(10, 0);
+            Assert.ThrowsException<DivideByZeroException>(() => IVSMath.Divide(10, 0));
         }
 
         [TestMethod]
@@ -211,19 +201,19 @@ namespace IVSMathLibraryTests
         [TestMethod]
         public void Divide_CalculationDecimalNumbers_ReturnTrue()
         {
-            Assert.AreEqual(2, IVSMath.Divide(8.6, 4.3), 0);
+            Assert.AreEqual(2, IVSMath.Divide(8.6, 4.3), precision);
             Assert.AreEqual(0, IVSMath.Divide(0, 5.4), 0);
         }
 
         [TestMethod]
         public void Divide_CalculationNegativeDecimalNumbers_ReturnTrue()
         {
-            Assert.AreEqual(129, IVSMath.Divide(-25.8, -0.2), 0);
+            Assert.AreEqual(129, IVSMath.Divide(-25.8, -0.2), precision);
             Assert.AreEqual(0, IVSMath.Divide(0, -5.9), 0);
         }
 
         [TestMethod]
-        public void Divide_CalculationRationalNumbers_ReturnTrue()
+        public void Divide_CalculationIrrationalNumbers_ReturnTrue()
         {
             Assert.AreEqual(1, IVSMath.Divide(Math.PI, Math.PI));
             Assert.AreEqual(-1, IVSMath.Divide(Math.PI, -Math.PI));
@@ -232,32 +222,32 @@ namespace IVSMathLibraryTests
         }
 
         [TestMethod]
-        public void Root_Calculation_ReturnTrue()
+        public void Root_Calculation_ReturnsTrue()
         {
         }
 
         [TestMethod]
-        public void Power_Calculation_ReturnTrue()
+        public void Power_Calculation_ReturnsTrue()
         {
         }
 
         [TestMethod]
-        public void Inverse_Calculation_ReturnTrue()
+        public void Inverse_Calculation_ReturnsTrue()
         {
         }
 
         [TestMethod]
-        public void Sine_Calculation_ReturnTrue()
+        public void Sine_Calculation_ReturnsTrue()
         {
         }
 
         [TestMethod]
-        public void Cosine_Calculation_ReturnTrue()
+        public void Cosine_Calculation_ReturnsTrue()
         {
         }
 
         [TestMethod]
-        public void Tangent_Calculation_ReturnTrue()
+        public void Tangent_Calculation_ReturnsTrue()
         {
         }
     }
