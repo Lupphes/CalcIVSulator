@@ -72,5 +72,122 @@ namespace IVSMathLibraryTests
         public void Tangent_Calculation_ReturnsTrue()
         {
         }
+
+        /**
+         * Test IVSMath.Factorial method
+         * Inputs natural numbers only
+         * Returns true if OK
+         */
+        [TestMethod]
+        public void Factorial_Calculation_NaturalNumbers_ReturnsTrue()
+        {
+            Assert.AreEqual(1, IVSMath.Factorial(1), 0);
+            Assert.AreEqual(2, IVSMath.Factorial(2), 0);
+            Assert.AreEqual(6, IVSMath.Factorial(3), 0);
+            Assert.AreEqual(24, IVSMath.Factorial(4), 0);
+            Assert.AreEqual(120, IVSMath.Factorial(5), 0);
+            Assert.AreEqual(3628800, IVSMath.Factorial(12), 0);
+        }
+
+        /**
+         * Test IVSMath.Factorial method
+         * Inputs numbers so high that theirs factorials cannot fit into type inteager
+         * Throws exceptions
+         */
+        [TestMethod]
+        public void Factorial_Calculation_TooHighNumbers_ReturnException()
+        {
+            try
+            {
+                IVSMath.Factorial(13);
+                Assert.Fail();
+            }
+            catch (Exception e)
+            {
+                if (e is AssertFailedException)
+                    Assert.Fail();
+            }
+            try
+            {
+                IVSMath.Factorial(14);
+                Assert.Fail();
+            }
+            catch (Exception e)
+            {
+                if (e is AssertFailedException)
+                    Assert.Fail();
+            }
+            try
+            {
+                IVSMath.Factorial(20);
+                Assert.Fail();
+            }
+            catch (Exception e)
+            {
+                if (e is AssertFailedException)
+                    Assert.Fail();
+            }
+        }
+
+        /**
+         * Test IVSMath.Factorial method
+         * Inputs zero
+         * Returns true if OK
+         */
+        [TestMethod]
+        public void Factorial_Calculation_Zero_ReturnsTrue()
+        {
+            Assert.AreEqual(1, IVSMath.Factorial(0), 0);
+        }
+
+        /**
+         * Test IVSMath.Factorial method
+         * Inputs negative numbers
+         * Throws exceptions
+         */
+        [TestMethod]
+        public void Factorial_Calculation_NegativeNumbers_ReturnExceptions()
+        {
+            try
+            {
+                IVSMath.Factorial(-1);
+                Assert.Fail();
+            }
+            catch (Exception e)
+            {
+                if (e is AssertFailedException)
+                    Assert.Fail();
+            }
+            try
+            {
+                IVSMath.Factorial(-2);
+                Assert.Fail();
+            }
+            catch (Exception e)
+            {
+                if (e is AssertFailedException)
+                    Assert.Fail();
+            }
+            try
+            {
+                IVSMath.Factorial(-3);
+                Assert.Fail();
+            }
+            catch (Exception e)
+            {
+                if (e is AssertFailedException)
+                    Assert.Fail();
+            }
+            try
+            {
+                IVSMath.Factorial(-15);
+                Assert.Fail();
+            }
+            catch (Exception e)
+            {
+                if (e is AssertFailedException)
+                    Assert.Fail();
+            }
+        }
     }
 }
