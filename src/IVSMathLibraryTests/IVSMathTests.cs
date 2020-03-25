@@ -44,14 +44,6 @@ namespace IVSMathLibraryTests
         }
 
         [TestMethod]
-        public void Root_Square_RadicandIntegerPositive_ReturnsTrue()
-        {
-            Assert.AreEqual(2, IVSMath.Root(4, 2), precision);
-            Assert.AreEqual(4, IVSMath.Root(16, 2), precision);
-            Assert.AreEqual(2, IVSMath.Root(2, 2) * IVSMath.Root(2, 2), precision);
-        }
-
-        [TestMethod]
         public void NumberValidation_OverflowPower_ReturnExeption()
         {
             Assert.ThrowsException<OverflowException>(() => IVSMath.Power(double.MaxValue, 5));
@@ -117,7 +109,18 @@ namespace IVSMathLibraryTests
         {
             Assert.AreEqual(Math.PI * Math.PI, IVSMath.Power(Math.PI, 2), precision);
         }
-        
+        [TestMethod]
+        public void Power_Calculation_ReturnsTrue()
+        {
+        }
+
+        [TestMethod]
+        public void Root_Square_RadicandIntegerPositive_ReturnsTrue()
+        {
+            Assert.AreEqual(2, IVSMath.Root(4, 2), precision);
+            Assert.AreEqual(4, IVSMath.Root(16, 2), precision);
+            Assert.AreEqual(2, IVSMath.Root(2, 2) * IVSMath.Root(2, 2), precision);
+        }
         [TestMethod]
         public void Root_Square_RadicandRealPositive_ReturnsTrue()
         {
@@ -505,10 +508,6 @@ namespace IVSMathLibraryTests
                 if (e is AssertFailedException)
                     Assert.Fail();
             }
-        }
-        [TestMethod]
-        public void Power_Calculation_ReturnsTrue()
-        {
         }
 
         [TestMethod]
