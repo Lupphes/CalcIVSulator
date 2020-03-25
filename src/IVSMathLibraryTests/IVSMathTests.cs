@@ -61,10 +61,10 @@ namespace IVSMathLibraryTests
             Assert.AreEqual(-8, IVSMath.Power((-2), 3), 0);
             Assert.AreEqual(16, IVSMath.Power((-2), 4), 0); // Brackets are not going to be implemented
 
-            Assert.AreEqual((1 / 8), IVSMath.Power(2, -3), precision);
-            Assert.AreEqual((1 / 16), IVSMath.Power(2, -4), precision);
-            Assert.AreEqual(-(1 / 8), IVSMath.Power((-2), -3), precision);
-            Assert.AreEqual((1 / 16), IVSMath.Power((-2), -4), precision);
+            Assert.AreEqual((1.0 / 8.0), IVSMath.Power(2, -3), precision);
+            Assert.AreEqual((1.0 / 16.0), IVSMath.Power(2, -4), precision);
+            Assert.AreEqual(-(1.0 / 8.0), IVSMath.Power((-2), -3), precision);
+            Assert.AreEqual((1.0 / 16.0), IVSMath.Power((-2), -4), precision);
         }
 
         [TestMethod]
@@ -90,17 +90,17 @@ namespace IVSMathLibraryTests
 
         public void Power_CalculationDecimalNumbers_ReturnsTrue()
         {
-            Assert.AreEqual((25 / 4), IVSMath.Power(2.5, 2), precision);
+            Assert.AreEqual((25.0 / 4.0), IVSMath.Power(2.5, 2), precision);
         }
 
         public void Power_CalculationNegativeDecimalNumbers_ReturnsTrue()
         {
-            Assert.AreEqual((4 / 25), IVSMath.Power(2.5, -2), precision);
-            Assert.AreEqual((25 / 4), IVSMath.Power((-2.5), 2), precision);
-            Assert.AreEqual((4 / 25), IVSMath.Power((-2.5), -2), precision);
+            Assert.AreEqual((4.0 / 25.0), IVSMath.Power(2.5, -2), precision);
+            Assert.AreEqual((25.0 / 4.0), IVSMath.Power((-2.5), 2), precision);
+            Assert.AreEqual((4.0 / 25.0), IVSMath.Power((-2.5), -2), precision);
         }
 
-        public void Power_CalculationRationalNumbers_ReturnsTrue()
+        public void Power_CalculationIrrationalNumbers_ReturnsTrue()
         {
             Assert.AreEqual(Math.PI * Math.PI, IVSMath.Power(Math.PI, 2), precision);
         }
