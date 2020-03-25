@@ -56,6 +56,7 @@ namespace IVSMathLibraryTests
             Assert.AreEqual(1, IVSMath.Power(5, 0), 0);
         }
 
+        [TestMethod]
         public void Power_CalculationNegativeWholeNumbers_ReturnsTrue()
         {
             Assert.AreEqual(-8, IVSMath.Power((-2), 3), 0);
@@ -88,11 +89,13 @@ namespace IVSMathLibraryTests
             }
         }
 
+        [TestMethod]
         public void Power_CalculationDecimalNumbers_ReturnsTrue()
         {
             Assert.AreEqual((25.0 / 4.0), IVSMath.Power(2.5, 2), precision);
         }
 
+        [TestMethod]
         public void Power_CalculationNegativeDecimalNumbers_ReturnsTrue()
         {
             Assert.AreEqual((4.0 / 25.0), IVSMath.Power(2.5, -2), precision);
@@ -100,6 +103,7 @@ namespace IVSMathLibraryTests
             Assert.AreEqual((4.0 / 25.0), IVSMath.Power((-2.5), -2), precision);
         }
 
+        [TestMethod]
         public void Power_CalculationIrrationalNumbers_ReturnsTrue()
         {
             Assert.AreEqual(Math.PI * Math.PI, IVSMath.Power(Math.PI, 2), precision);
