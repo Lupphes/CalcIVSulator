@@ -18,18 +18,27 @@ namespace IVSMathLibraryTests
             IVSMath.Add(double.MinValue, -1);
         }
 
+      
+        [TestMethod]
+        [ExpectedException(typeof(OverflowException))]
         public void NumberValidation_OverflowSubstract_ReturnExeptions()
         {
             IVSMath.Substract(double.MaxValue, -5);
             IVSMath.Substract(double.MinValue, 5);
         }
 
+      
+        [TestMethod]
+        [ExpectedException(typeof(OverflowException))]
         public void NumberValidation_OverflowMultiply_ReturnExeptions()
         {
             IVSMath.Multiply(double.MaxValue, 2);
             IVSMath.Multiply(double.MinValue, 0.5);
         }
 
+      
+        [TestMethod]
+        [ExpectedException(typeof(OverflowException))]
         public void NumberValidation_OverflowDivide_ReturnExeptions()
         { 
             IVSMath.Divide(double.MaxValue, 0.5);
