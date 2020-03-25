@@ -79,7 +79,6 @@ namespace IVSMathLibraryTests
         {
             Assert.AreEqual(2 * Math.PI, IVSMath.Add(Math.PI, Math.PI), precision);
             Assert.AreEqual(Math.PI, IVSMath.Add(Math.PI, -Math.PI), precision);
-
         }
 
         [TestMethod]
