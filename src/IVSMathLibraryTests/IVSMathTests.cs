@@ -87,46 +87,20 @@ namespace IVSMathLibraryTests
             Assert.AreEqual(24, IVSMath.Factorial(4), 0);
             Assert.AreEqual(120, IVSMath.Factorial(5), 0);
             Assert.AreEqual(3628800, IVSMath.Factorial(12), 0);
+            Assert.AreEqual(7.25741561530799E+306, IVSMath.Factorial(170), 0);
         }
 
         /**
          * Test IVSMath.Factorial method
-         * Inputs numbers so high that theirs factorials cannot fit into type inteager
-         * Throws exceptions
+         * Inputs numbers so high that their factorial cannot fit into type double
+         * Throws OverflowException
          */
         [TestMethod]
-        public void Factorial_Calculation_TooHighNumbers_ReturnException()
+        public void Factorial_Calculation_Overflow_ReturnOverflowException()
         {
-            try
-            {
-                IVSMath.Factorial(13);
-                Assert.Fail();
-            }
-            catch (Exception e)
-            {
-                if (e is AssertFailedException)
-                    Assert.Fail();
-            }
-            try
-            {
-                IVSMath.Factorial(14);
-                Assert.Fail();
-            }
-            catch (Exception e)
-            {
-                if (e is AssertFailedException)
-                    Assert.Fail();
-            }
-            try
-            {
-                IVSMath.Factorial(20);
-                Assert.Fail();
-            }
-            catch (Exception e)
-            {
-                if (e is AssertFailedException)
-                    Assert.Fail();
-            }
+            Assert.ThrowsException<OverflowException>(() => IVSMath.Factorial(171));
+            Assert.ThrowsException<OverflowException>(() => IVSMath.Factorial(172));
+            Assert.ThrowsException<OverflowException>(() => IVSMath.Factorial(200));
         }
 
         /**
