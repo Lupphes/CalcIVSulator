@@ -49,6 +49,12 @@ namespace IVSMathLibraryTests
         }
 
         [TestMethod]
+        public void NumberValidation_OverflowPower_ReturnExeption()
+        {
+            Assert.ThrowsException<OverflowException>(() => IVSMath.Power(double.MaxValue, 5));
+        }
+
+        [TestMethod]
         public void Power_CalculationWholeNumbers_ReturnsTrue()
         {
             Assert.AreEqual(8, IVSMath.Power(2, 3), 0);
