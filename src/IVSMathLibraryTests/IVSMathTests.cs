@@ -57,20 +57,43 @@ namespace IVSMathLibraryTests
 
         public void Power_CalculationNegativeWholeNumbers_ReturnsTrue()
         {
-            Assert.AreEqual(-8, IVSMath.Power(-2, 3), 0);
-            Assert.AreEqual(-16, IVSMath.Power(-2, 4), 0); // Brackets are not going to be implemented
+            Assert.AreEqual(-8, IVSMath.Power((-2), 3), 0);
+            Assert.AreEqual(16, IVSMath.Power((-2), 4), 0); // Brackets are not going to be implemented
 
             Assert.AreEqual((1 / 8), IVSMath.Power(2, -3), precision);
             Assert.AreEqual((1 / 16), IVSMath.Power(2, -4), precision);
-            Assert.AreEqual(-(1 / 8), IVSMath.Power(-2, -3), precision);
-            Assert.AreEqual(-(1 / 16), IVSMath.Power(-2, -4), precision);
+            Assert.AreEqual(-(1 / 8), IVSMath.Power((-2), -3), precision);
+            Assert.AreEqual((1 / 16), IVSMath.Power((-2), -4), precision);
         }
 
         [TestMethod]
-        [ExpectedException(typeof(ArithmeticException))]
-        public void Power_ArithmeticException_ReturnExeptions()
+        public void Power_ArithmeticExceptionNegative_ReturnExeptions()
         {
-            Assert.AreEqual(0, IVSMath.Power(0, -5), 0);
+            try
+            {
+                IVSMath.Power(0, -5);
+                Assert.Fail("No exception was thrown.");
+            }
+            catch (Exception ex)
+            {
+                if (ex is DivideByZeroException)
+                    Assert.Fail("Input 0^-5 did not throw exception.");
+            }
+        }
+
+        [TestMethod]
+        public void Power_ArithmeticExceptionZero_ReturnExeptions()
+        {
+            try
+            {
+                IVSMath.Power(0, 0);
+                Assert.Fail("No exception was thrown.");
+            }
+            catch (Exception ex)
+            {
+                if (ex is ArithmeticException)
+                    Assert.Fail("Input 0^0 did not throw exception.");
+            }
         }
 
         public void Power_CalculationDecimalNumbers_ReturnsTrue()
@@ -81,8 +104,8 @@ namespace IVSMathLibraryTests
         public void Power_CalculationNegativeDecimalNumbers_ReturnsTrue()
         {
             Assert.AreEqual((4 / 25), IVSMath.Power(2.5, -2), precision);
-            Assert.AreEqual(-(25 / 4), IVSMath.Power(-2.5, 2), precision);
-            Assert.AreEqual(-(4 / 25), IVSMath.Power(-2.5, -2), precision);
+            Assert.AreEqual((25 / 4), IVSMath.Power((-2.5), 2), precision);
+            Assert.AreEqual((4 / 25), IVSMath.Power((-2.5), -2), precision);
         }
 
         public void Power_CalculationRationalNumbers_ReturnsTrue()
