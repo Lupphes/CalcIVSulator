@@ -32,12 +32,9 @@ namespace IVSMathLibrary
             if (radicand == 0) {
                 return 0;
             }
-            else
-            {
-                if (radicand < 0 && degree % 2 == 0)
-                {
-                    // Sudá odmocnina ze záporného čísla neexistuje
-                    return double.NaN;
+            else {
+                if (radicand < 0 && degree % 2 == 0) {
+                    throw new System.ArithmeticException("Root cannot be negative and even.");
                 }
                 if (degree == 1)
                     return radicand;
@@ -47,11 +44,15 @@ namespace IVSMathLibrary
                 {
                     radicand_n = (radicand / Power(precision, degree - 1) - precision) / degree;
                     precision = precision + radicand_n;
-                } while (Math.Abs(radicand_n) > 0);
+                } while (Absolute(radicand_n) > 0);
                 return precision;
-
             }
-            
+        }
+
+        private static double Absolute(double x) {
+            if (x < 0)
+                return -x;
+            return x;
         }
 
         public static double Power(double base_, int exponent)
@@ -65,8 +66,7 @@ namespace IVSMathLibrary
                 return (1 / base_);
             }
             catch (DivideByZeroException) {
-                Console.WriteLine("Division of {0} by zero.", base_);
-                return double.NaN;
+                throw new System.DivideByZeroException("Divided by zero!");
             }            
         }
 
