@@ -53,6 +53,7 @@ namespace IVSMathLibraryTests
         {
             Assert.AreEqual(8, IVSMath.Power(2, 3), 0);
             Assert.AreEqual(0, IVSMath.Power(0, 5), 0);
+            Assert.AreEqual(1, IVSMath.Power(5, 0), 0);
         }
 
         public void Power_CalculationNegativeWholeNumbers_ReturnsTrue()
@@ -69,16 +70,7 @@ namespace IVSMathLibraryTests
         [TestMethod]
         public void Power_ArithmeticExceptionNegative_ReturnExeptions()
         {
-            try
-            {
-                IVSMath.Power(0, -5);
-                Assert.Fail("No exception was thrown.");
-            }
-            catch (Exception ex)
-            {
-                if (ex is DivideByZeroException)
-                    Assert.Fail("Input 0^-5 did not throw exception.");
-            }
+            Assert.ThrowsException<DivideByZeroException>(() => IVSMath.Power(0, -5));
         }
 
         [TestMethod]
@@ -91,7 +83,7 @@ namespace IVSMathLibraryTests
             }
             catch (Exception ex)
             {
-                if (ex is ArithmeticException)
+                if (ex is AssertFailedException)
                     Assert.Fail("Input 0^0 did not throw exception.");
             }
         }
