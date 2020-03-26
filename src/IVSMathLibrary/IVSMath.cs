@@ -34,7 +34,7 @@ namespace IVSMathLibrary
             }
             else {
                 if (radicand < 0 && degree % 2 == 0) {
-                    throw new System.ArithmeticException("Root cannot be negative and even.");
+                    throw new ArithmeticException("Root cannot be negative and even.");
                 }
                 if (degree == 1)
                     return radicand;
@@ -63,10 +63,13 @@ namespace IVSMathLibrary
         public static double ToNegativeOnePower(double base_)
         {
             try {
+                if (base_ == 0) {
+                    throw new DivideByZeroException("Divided by zero!");
+                }
                 return (1 / base_);
             }
-            catch (DivideByZeroException) {
-                throw new System.DivideByZeroException("Divided by zero!");
+            catch (OverflowException) {
+                throw new OverflowException("Overflow exception");
             }            
         }
 
