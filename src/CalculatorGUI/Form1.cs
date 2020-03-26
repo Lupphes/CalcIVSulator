@@ -33,32 +33,123 @@ namespace CalculatorGUI
             switch (operation)
             {
                 case "+":
-                    return x + y; // IVSMath.Add(x, y);
+                    try {
+                        return x + y; // IVSMath.Add(x, y);
+                    }
+                    catch (OverflowException)
+                    {
+                        tb_Out.Text = "Overflow chyba";
+                        wasError = true;
+                        return double.NaN;
+                    }
                 case "-":
-                    return x - y; // IVSMath.Substract(x, y);
+                    try {
+                        return x - y; // IVSMath.Substract(x, y);
+                    }
+                    catch (OverflowException)
+                    {
+                        tb_Out.Text = "Overflow chyba";
+                        wasError = true;
+                        return double.NaN;
+                    }
                 case "*":
-                    return x * y; // IVSMath.Multiply(x, y);
+                    try {
+                        return x * y; // IVSMath.Multiply(x, y);
+                    }
+                    catch (OverflowException)
+                    {
+                        tb_Out.Text = "Overflow chyba";
+                        wasError = true;
+                        return double.NaN;
+                    }
                 case "/":
-                    return x / y; // IVSMath.Divide(x, y);
+                    try {
+                        return IVSMath.Divide(x, y);
+                    }
+                    catch (OverflowException) {
+                        tb_Out.Text = "Overflow chyba";
+                        wasError = true;
+                        return double.NaN;
+                    }
+                    catch (DivideByZeroException) {
+                        tb_Out.Text = "Dělení nulou";
+                        wasError = true;
+                        return double.NaN;
+                    }                  
                 case "^":
-                    return IVSMath.Power(x, Convert.ToInt32(y)); // bacha
+                    try {
+                        return IVSMath.Power(x, Convert.ToInt32(y));
+                    }
+                    catch (OverflowException) {
+                        tb_Out.Text = "Overflow chyba";
+                        wasError = true;
+                        return double.NaN;
+                    }
+                    catch (DivideByZeroException) {
+                        tb_Out.Text = "Dělení nulou";
+                        wasError = true;
+                        return double.NaN;
+                    }
+                    catch (Exception) {
+                        tb_Out.Text = "Nepovolená operace";
+                        wasError = true;
+                        return double.NaN;
+                    }
                 case "√":
-                    return IVSMath.Root(x, Convert.ToInt32(y)); // bacha
+                    try {
+                        return IVSMath.Root(x, Convert.ToInt32(y));
+                    }
+                    catch (Exception) {
+                        tb_Out.Text = "Nepovolená operace";
+                        wasError = true;
+                        return double.NaN;
+                    }
                 case "𝑥^2":
-                    return IVSMath.Power(x, 2);
+                    try {
+                        return IVSMath.Power(x, 2);
+                    }
+                    catch (OverflowException)
+                    {
+                        tb_Out.Text = "Overflow chyba";
+                        wasError = true;
+                        return double.NaN;
+                    }
                 case "√𝑥":
-                    return IVSMath.Root(x, 2);
+                    try {
+                        return IVSMath.Root(x, 2);
+                    }
+                    catch (Exception)
+                    {
+                        tb_Out.Text = "Nepovolená operace";
+                        wasError = true;
+                        return double.NaN;
+                    }
                 case "!":
-                    return IVSMath.Factorial(Convert.ToInt32(x)); // bacha
+                    return IVSMath.Factorial(Convert.ToInt32(x));
                 case "sin":
                     return 8; // IVSMath.Sine(x);
                 case "cos":
                     return IVSMath.Cosine(x);
                 case "tan":
-                    return IVSMath.Tangent(x);
-
+                    try {
+                        return IVSMath.Tangent(x);
+                    }
+                    catch (Exception)
+                    {
+                        tb_Out.Text = "Nepovolená operace";
+                        wasError = true;
+                        return double.NaN;
+                    }
                 case "1/𝑥":
-                    return IVSMath.Power(x, -1);
+                    try {
+                        return IVSMath.Power(x, -1);
+                    }
+                    catch (DivideByZeroException)
+                    {
+                        tb_Out.Text = "Dělení nulou";
+                        wasError = true;
+                        return double.NaN;
+                    }
             }
             return 0;
         }
@@ -120,6 +211,9 @@ namespace CalculatorGUI
                 else {
                     if (parseDouble(out result, tb_Out.Text)) {
                         resultValue = Calculate(operationPerfomed, resultValue, result);
+                        if (wasError) {
+                            return;
+                        }
                         lb_Next.Text = resultValue.ToString() + " " + operationPerfomed;
 
                     }
@@ -142,6 +236,9 @@ namespace CalculatorGUI
                 if (isChained)
                 {
                     resultValue = Calculate(operationPerfomed, resultValue);
+                    if (wasError){
+                        return;
+                    }
                     isChained = false;
                     tb_Out.Text = resultValue.ToString();
                     operationPerfomed = "";
@@ -158,6 +255,9 @@ namespace CalculatorGUI
                     else {
                         if (parseDouble(out result, tb_Out.Text)) {
                             resultValue = Calculate(operationPerfomed, resultValue, result);
+                            if (wasError) {
+                                return;
+                            }
                             tb_Out.Text = resultValue.ToString();
 
                         }
@@ -185,6 +285,9 @@ namespace CalculatorGUI
                 double result;
                 if (parseDouble(out result, tb_Out.Text)) {
                     resultValue = Calculate(operationPerfomed, resultValue, result);
+                    if (wasError) {
+                        return;
+                    }
                     tb_Out.Text = resultValue.ToString();
 
                     isChained = false;
@@ -194,7 +297,6 @@ namespace CalculatorGUI
                     operationPerfomed = "";
                 }
                 else {
-                    tb_Out.Text = "Wrong input";
                     wasError = true;
                     return;
                 }
