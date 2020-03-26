@@ -196,12 +196,12 @@ namespace IVSMathLibraryTests
             }
         }
 
-/*
+        /*
  * Tests IVSMath.Tangent method
  * Inputs only numbers so the result is integer
  * Return true if OK
  */
-[TestMethod]
+        [TestMethod]
         public void Tangent_Calculation_Integers_ReturnsTrue()
         {
             for (int i = -2; i < 3; ++i)
