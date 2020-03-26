@@ -289,11 +289,6 @@ namespace IVSMathLibraryTests
         }
 
         [TestMethod]
-        public void Power_Calculation_ReturnsTrue()
-        {
-        }
-
-        [TestMethod]
         public void Root_Square_RadicandIntegerPositive_ReturnsTrue()
         {
             Assert.AreEqual(2, IVSMath.Root(4, 2), precision);
@@ -950,7 +945,7 @@ namespace IVSMathLibraryTests
             Assert.AreEqual(6, IVSMath.Factorial(3), 0);
             Assert.AreEqual(24, IVSMath.Factorial(4), 0);
             Assert.AreEqual(120, IVSMath.Factorial(5), 0);
-            Assert.AreEqual(3628800, IVSMath.Factorial(12), 0);
+            Assert.AreEqual(479001600, IVSMath.Factorial(12), 0);
             Assert.AreEqual(7.25741561530799E+306, IVSMath.Factorial(170), 0);
         }
 
