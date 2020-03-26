@@ -168,10 +168,40 @@ namespace IVSMathLibraryTests
 
         /*
          * Tests IVSMath.Tangent method
-         * Inputs only numbers so the result is integer
-         * Return true if OK
+         * Inputs PI/2 and expects exception
+         * Return exception
          */
         [TestMethod]
+        public void Tangent_PIpulException_ReturnsException()
+        {
+            try
+            {
+                IVSMath.Tangent(Math.PI/2);
+                Assert.Fail();
+            }
+            catch (Exception e)
+            {
+                if (e is AssertFailedException)
+                    Assert.Fail();
+            }
+            try
+            {
+                IVSMath.Tangent(-Math.PI / 2);
+                Assert.Fail();
+            }
+            catch (Exception e)
+            {
+                if (e is AssertFailedException)
+                    Assert.Fail();
+            }
+        }
+
+/*
+ * Tests IVSMath.Tangent method
+ * Inputs only numbers so the result is integer
+ * Return true if OK
+ */
+[TestMethod]
         public void Tangent_Calculation_Integers_ReturnsTrue()
         {
             for (int i = -2; i < 3; ++i)
