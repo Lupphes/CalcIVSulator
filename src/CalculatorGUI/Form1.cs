@@ -82,7 +82,7 @@ namespace CalculatorGUI
                 str = str.Substring(0, str.Length - 1);
             }
             else {
-                str = "0";
+                str = "";
             }
             tb_Out.Text = str;
         }
@@ -92,7 +92,7 @@ namespace CalculatorGUI
             Button button = (Button)sender;
             operationPerfomed = button.Text;
 
-            if (!isChained) { // lable. text = something
+            if (!isChained) {
                 double result;
 
                 if (tb_Out.Text == "") {
