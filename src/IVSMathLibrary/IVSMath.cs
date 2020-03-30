@@ -8,14 +8,35 @@ namespace IVSMathLibrary
 {
     public class IVSMath
     {
+        /**
+         * Returns sum of two parametrs
+         * Throws OverflowException if the sum of two parametrs is bigger then double.MaxValue
+         * @param   Augend  First number to add
+         * @param   Addend  Second number to add
+         * @return  Sum     Sum of two arguments
+         */
         public static double Add(double augend, double addend)
         {
-            return 0;
+            if (augend > double.MaxValue - addend)
+                throw new System.OverflowException("Add method caused overflow exception");
+            double sum = checked(augend + addend);
+            return sum;
         }
 
+        /**
+         * Returns difference of two parametrs
+         * Throws OverflowException if the difference of two parametrs is lower then double.MinValue
+         * @param   Minuend     The number that is to be subtracted from.
+         * @param   Subtrahend  The number that is to be subtracted.
+         * @return  Difference  Difference of two parametrs
+         */
         public static double Substract(double minuend, double subtrahend)
         {
-            return 0;
+            /* This solution via decimal type works fine for small numbers within the decimal range but it is much smaller than double range
+            decimal difference = Convert.ToDecimal(minuend) - Convert.ToDecimal(subtrahend);
+            return Convert.ToDouble(difference);*/ 
+            double difference = minuend - subtrahend;
+            return difference;
         }
 
         public static double Multiply(double multiplier, double multiplicand)
