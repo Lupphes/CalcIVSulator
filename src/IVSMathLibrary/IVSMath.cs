@@ -17,10 +17,11 @@ namespace IVSMathLibrary
          */
         public static double Add(double augend, double addend)
         {
-            if (augend > double.MaxValue - addend)                                      // if sum gets highr than double.MaxValue
-                throw new System.OverflowException("Add method caused overflow exception");
+            if (augend > double.MaxValue - addend)                                      // if sum gets higher than double.MaxValue
+                throw new System.OverflowException("The sum is too high.");
             if (addend < 0 && augend < double.MinValue - addend)                        // if sum gets lower than double.MinValue
-                throw new System.OverflowException("Add method caused overflow exception");
+                throw new System.OverflowException("The sum is too low.");
+
             double sum = checked(augend + addend);
             return sum;
         }
@@ -34,10 +35,12 @@ namespace IVSMathLibrary
          */
         public static double Substract(double minuend, double subtrahend)
         {
-            /* This solution via decimal type works fine for small numbers within the decimal range but it is much smaller than double range
-            decimal difference = Convert.ToDecimal(minuend) - Convert.ToDecimal(subtrahend);
-            return Convert.ToDouble(difference);*/ 
-            double difference = minuend - subtrahend;
+            if (minuend < double.MinValue + subtrahend)     // if difference si lower than double.MinValue 
+                throw new System.OverflowException();
+            if (subtrahend < 0 && minuend > double.MaxValue + subtrahend)
+                throw new System.OverflowException();       // if difference is higher than double.MaxValue
+
+            double difference = checked(minuend - subtrahend);
             return difference;
         }
 
