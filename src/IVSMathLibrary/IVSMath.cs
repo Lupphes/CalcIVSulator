@@ -37,15 +37,27 @@ namespace IVSMathLibrary
         {
             if (base_ == 0)
                 throw new DivideByZeroException("Division by zero");
-            if (exponent <= 0)
-                throw new Exception();
             double result = base_;
-            for (int i = 1; i < exponent; i++)
+
+            if (exponent == 0)
             {
-                if (Math.Abs(result) > Math.Abs(double.MaxValue / base_))
-                    throw new OverflowException("Value of the product is too high or too low");
-                result *= base_;
+                result = 1;
+                //Pozor na 0 na 0.
             }
+            else if(exponent > 0)
+                for (int i = 1; i < exponent; i++)
+                {
+                    if (Math.Abs(result) > Math.Abs(double.MaxValue / base_))
+                        throw new OverflowException("Value of the product is too high or too low");
+                    result *= base_;
+                }
+            else if (exponent < 0)
+                for(int i = 1; i < exponent; i++)
+                {
+                    if (Math.Abs(result) > Math.Abs(double.MaxValue / base_))
+                        throw new OverflowException("Value of the product is too high or too low");
+                    result /= base_;
+                }
 
             return result;
         }
