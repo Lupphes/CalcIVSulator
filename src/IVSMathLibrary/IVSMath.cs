@@ -93,10 +93,31 @@ namespace IVSMathLibrary
         {
             return 0;
         }
-
+        
+        /// <summary>
+        /// Calculates the sine of a given angle in RADIANS.
+        /// </summary>
+        /// <param name="a">The angle to calculate the sine of</param>
+        /// <returns>The sine of the angle 'a'</returns>
         public static double Sine(double a)
         {
-            return 0;
+            double result = a;
+            bool add = false;
+            double term = 0;
+            double previousTerm;
+            int i = 3;
+            do
+            {
+                previousTerm = term;
+                term = IVSMath.Power(a, i) / IVSMath.Factorial(i);
+                if (add)
+                    result += term;
+                else
+                    result -= term;
+                add = !add;
+                i += 2;
+            } while (Math.Abs(term - previousTerm) > IVSMath.precision);
+            return result;
         }
 
         public static double Cosine(double a)
