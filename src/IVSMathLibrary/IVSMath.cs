@@ -17,12 +17,16 @@ namespace IVSMathLibrary
         /// <returns>Sum of two arguments</returns>
         public static double Add(double augend, double addend)
         {
-            if (addend > 0 && augend > double.MaxValue - addend)        // if sum gets higher than double.MaxValue
-                throw new OverflowException("The sum is too high.");
+            /*if (addend > 0 && augend > double.MaxValue - addend)        // if sum gets higher than double.MaxValue
+                
             if (addend < 0 && augend < double.MinValue - addend)        // if sum gets lower than double.MinValue
                 throw new OverflowException("The sum is too low.");
 
             double sum = checked(augend + addend);
+            return sum;*/
+            double sum = augend + addend;
+            if (double.IsInfinity(sum))
+                throw new OverflowException("The sum is too high.");
             return sum;
         }
 
