@@ -17,10 +17,10 @@ namespace IVSMathLibrary
          */
         public static double Add(double augend, double addend)
         {
-            if (augend > double.MaxValue - addend)                                      // if sum gets higher than double.MaxValue
-                throw new System.OverflowException("The sum is too high.");
+            if (addend > 0 && augend > double.MaxValue - addend)                        // if sum gets higher than double.MaxValue
+                throw new OverflowException("The sum is too high.");
             if (addend < 0 && augend < double.MinValue - addend)                        // if sum gets lower than double.MinValue
-                throw new System.OverflowException("The sum is too low.");
+                throw new OverflowException("The sum is too low.");
 
             double sum = checked(augend + addend);
             return sum;
@@ -28,31 +28,54 @@ namespace IVSMathLibrary
 
         /**
          * Returns difference of two parametrs
-         * Throws OverflowException if the difference of two parametrs is lower then double.MinValue
+         * Throws OverflowException if the difference of two parametrs is lower then double.MinValue or higher than double.MaxValue
          * @param   Minuend     The number that is to be subtracted from.
          * @param   Subtrahend  The number that is to be subtracted.
          * @return  Difference  Difference of two parametrs
          */
         public static double Substract(double minuend, double subtrahend)
         {
-            if (minuend < double.MinValue + subtrahend)     // if difference si lower than double.MinValue 
-                throw new System.OverflowException();
+            if (subtrahend > 0 && minuend < double.MinValue + subtrahend)               // if difference si lower than double.MinValue 
+                throw new System.OverflowException("The difference is too low");
             if (subtrahend < 0 && minuend > double.MaxValue + subtrahend)
-                throw new System.OverflowException();       // if difference is higher than double.MaxValue
+                throw new System.OverflowException("The difference is too high");       // if difference is higher than double.MaxValue
 
             double difference = checked(minuend - subtrahend);
             return difference;
         }
 
+        /**
+         * Returns product of the two given numbers (multiplier and multiplicand)
+         * Throws OverflowException if the product is too high or too low
+         * @param   multiplier      A number that multiplies the other number
+         * @param   multiplicand    The other number
+         * @return  product         Returns multiplier x multiplicand
+         */
         public static double Multiply(double multiplier, double multiplicand)
         {
+            if (Math.Abs(multiplier) > Math.Abs(double.MaxValue / multiplicand))
+                throw new OverflowException("Value of the product is too high or too low");
 
-            return 0;
+            double product = multiplier * multiplicand;
+            return product;
         }
 
+        /**
+         * Returns quotient of the two given numbers (dividend and divisor)
+         * Throws OverflowException if the quotient is too high or too low??????????????????????????????????????????
+         * @param   dividend    Number that is being seperated by the other number
+         * @param   divisor     The other number
+         * @return  product     Returns dividend / divisor
+         */
         public static double Divide(double dividend, double divisor)
         {
-            return 0;
+            if (divisor == 0)       // if there is division by zero
+                throw new DivideByZeroException("Division by zero");
+            if (Math.Abs(dividend) > Math.Abs(double.MaxValue * divisor))       // if absolute value of quotient is bigger than double.MaxValue
+                throw new OverflowException("Value of the quotient is too high or too low");
+
+            double quotient = checked(dividend / divisor);
+            return quotient;
         }
 
         public static double Root(double radicand, double degree)
