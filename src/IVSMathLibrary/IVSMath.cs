@@ -35,7 +35,19 @@ namespace IVSMathLibrary
 
         public static double Power(double base_, int exponent)
         {
-            return 0;
+            if (base_ == 0)
+                throw new DivideByZeroException("Division by zero");
+            if (exponent <= 0)
+                throw new Exception();
+            double result = base_;
+            for (int i = 1; i < exponent; i++)
+            {
+                if (Math.Abs(result) > Math.Abs(double.MaxValue / base_))
+                    throw new OverflowException("Value of the product is too high or too low");
+                result *= base_;
+            }
+
+            return result;
         }
 
         public static int Factorial(int a)
