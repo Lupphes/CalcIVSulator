@@ -35,31 +35,41 @@ namespace IVSMathLibrary
             return 0;
         }
 
+        /*
+         * Returns a specified number raised to the specified power
+         * Throw Excpetion if the result is about to overflow, there is division by zero, or base_ = exponent = 0
+         * @param   base_       A number to be raised
+         * @param   exponent    A number that specifies a power
+         * @return  power       A number raised to a specified power
+         */
         public static double Power(double base_, int exponent)
         {
-            if (base_ == 0)
-                throw new DivideByZeroException("Division by zero");
-            double result = base_;
+            double result = 1;
+            bool negativeExponent = false;
 
             if (exponent == 0)
             {
-                result = 1;
-                //Pozor na 0 na 0.
+                if (base_ == 0)
+                    throw new Exception("0^0");
+                return 1;
             }
-            else if(exponent > 0)
-                for (int i = 1; i < exponent; i++)
-                {
-                    if (Math.Abs(result) > Math.Abs(double.MaxValue / base_))
-                        throw new OverflowException("Value of the product is too high or too low");
-                    result *= base_;
-                }
             else if (exponent < 0)
-                for(int i = 1; i < exponent; i++)
-                {
-                    if (Math.Abs(result) > Math.Abs(double.MaxValue / base_))
-                        throw new OverflowException("Value of the product is too high or too low");
-                    result /= base_;
-                }
+            {
+                exponent *= -1;
+                negativeExponent = true;
+                if (base_ == 0)
+                    throw new DivideByZeroException("Division by zero");
+            }
+
+            for (int i = 0; i < exponent; i++)
+            {
+                if (Math.Abs(result) > Math.Abs(double.MaxValue / base_))
+                    throw new OverflowException("Value of the product is too high or too low");
+                result *= base_;
+            }
+
+            if (negativeExponent)
+                result = 1 / result;
 
             return result;
         }
