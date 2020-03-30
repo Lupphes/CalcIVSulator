@@ -155,7 +155,7 @@ namespace IVSMathLibraryTests
         [TestMethod]
         public void Multiply_CalculationDecimalNumbers_ReturnTrue()
         {
-            Assert.AreEqual(30.8, IVSMath.Multiply(5.5, 5.6), 0);
+            Assert.AreEqual(30.8, IVSMath.Multiply(5.5, 5.6), precision);
             Assert.AreEqual(0, IVSMath.Multiply(0, 5.4), 0);
             Assert.AreEqual(0, IVSMath.Multiply(5.6, 0), 0);
         }

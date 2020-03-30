@@ -17,9 +17,9 @@ namespace IVSMathLibrary
          */
         public static double Add(double augend, double addend)
         {
-            if (addend > 0 && augend > double.MaxValue - addend)                        // if sum gets higher than double.MaxValue
+            if (addend > 0 && augend > double.MaxValue - addend)        // if sum gets higher than double.MaxValue
                 throw new OverflowException("The sum is too high.");
-            if (addend < 0 && augend < double.MinValue - addend)                        // if sum gets lower than double.MinValue
+            if (addend < 0 && augend < double.MinValue - addend)        // if sum gets lower than double.MinValue
                 throw new OverflowException("The sum is too low.");
 
             double sum = checked(augend + addend);
