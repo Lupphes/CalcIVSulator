@@ -46,6 +46,7 @@ namespace IVSMathLibrary
 
         public static double Multiply(double multiplier, double multiplicand)
         {
+
             return 0;
         }
 
