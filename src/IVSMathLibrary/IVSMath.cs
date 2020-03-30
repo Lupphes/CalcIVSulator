@@ -8,6 +8,8 @@ namespace IVSMathLibrary
 {
     public class IVSMath
     {
+        private static readonly double precision = 0.0000001f;
+
         public static double Add(double augend, double addend)
         {
             return 0;
