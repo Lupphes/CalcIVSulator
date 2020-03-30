@@ -789,7 +789,7 @@ namespace IVSMathLibraryTests
             for(int i = 0; i < 5; ++i)
             {
                 sine = IVSMath.Sine(values[i]);
-                for (int j = -2; j < 2; ++j)
+                for (int j = -2; j < 2; ++j) 
                     Assert.AreEqual(sine, IVSMath.Sine(values[i] + 2 * j * Math.PI), precision);    // sin(1.5) = sin(1.5 + 2jPI)
             }
         }
@@ -809,7 +809,7 @@ namespace IVSMathLibraryTests
                 Assert.AreEqual(1, IVSMath.Cosine(2 * i * Math.PI), precision);   // cos(2iPI) = 1
 
             for (int i = -2; i < 3; ++i)
-                Assert.AreEqual(-1, IVSMath.Sine(Math.PI + 2 * i * Math.PI), precision);     // cos(PI + 2iPI) = -1  
+                Assert.AreEqual(-1, IVSMath.Cosine(Math.PI + 2 * i * Math.PI), precision);     // cos(PI + 2iPI) = -1  
         }
 
         /*
