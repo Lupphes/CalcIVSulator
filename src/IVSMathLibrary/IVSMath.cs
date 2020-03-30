@@ -8,13 +8,13 @@ namespace IVSMathLibrary
 {
     public class IVSMath
     {
-        /**
-         * Returns sum of two parametrs
-         * Throws OverflowException if the sum of two parametrs is bigger then double.MaxValue or lower than double.MinValue
-         * @param   Augend  First number to add
-         * @param   Addend  Second number to add
-         * @return  Sum     Sum of two arguments
-         */
+        /// <summary>
+        /// Returns sum of two parametrs. 
+        /// Throws OverflowException if the sum of two parametrs is bigger then double.MaxValue or lower than double.MinValue
+        /// </summary>
+        /// <param name="augend">First number to add</param>
+        /// <param name="addend">Second number to add</param>
+        /// <returns>Sum of two arguments</returns>
         public static double Add(double augend, double addend)
         {
             if (addend > 0 && augend > double.MaxValue - addend)        // if sum gets higher than double.MaxValue
@@ -26,13 +26,13 @@ namespace IVSMathLibrary
             return sum;
         }
 
-        /**
-         * Returns difference of two parametrs
-         * Throws OverflowException if the difference of two parametrs is lower then double.MinValue or higher than double.MaxValue
-         * @param   Minuend     The number that is to be subtracted from.
-         * @param   Subtrahend  The number that is to be subtracted.
-         * @return  Difference  Difference of two parametrs
-         */
+        /// <summary>
+        /// Returns difference of two parametrs.
+        /// Throws OverflowException if the difference of two parametrs is lower then double.MinValue or higher than double.MaxValue
+        /// </summary>
+        /// <param name="minuend">The number that is to be subtracted from.</param>
+        /// <param name="subtrahend">The number that is to be subtracted.</param>
+        /// <returns>Difference of two parametrs</returns>
         public static double Substract(double minuend, double subtrahend)
         {
             if (subtrahend > 0 && minuend < double.MinValue + subtrahend)               // if difference si lower than double.MinValue 
@@ -44,13 +44,13 @@ namespace IVSMathLibrary
             return difference;
         }
 
-        /**
-         * Returns product of the two given numbers (multiplier and multiplicand)
-         * Throws OverflowException if the product is too high or too low
-         * @param   multiplier      A number that multiplies the other number
-         * @param   multiplicand    The other number
-         * @return  product         Returns multiplier x multiplicand
-         */
+        /// <summary>
+        /// Returns product of the two given numbers.
+        /// Throws OverflowException if the product is too high or too low.
+        /// </summary>
+        /// <param name="multiplier">A number that multiplies the other number</param>
+        /// <param name="multiplicand">The other number</param>
+        /// <returns>Returns multiplier x multiplicand</returns>
         public static double Multiply(double multiplier, double multiplicand)
         {
             if (Math.Abs(multiplier) > Math.Abs(double.MaxValue / multiplicand))
@@ -59,14 +59,14 @@ namespace IVSMathLibrary
             double product = multiplier * multiplicand;
             return product;
         }
-
-        /**
-         * Returns quotient of the two given numbers (dividend and divisor)
-         * Throws OverflowException if the quotient is too high or too low??????????????????????????????????????????
-         * @param   dividend    Number that is being seperated by the other number
-         * @param   divisor     The other number
-         * @return  product     Returns dividend / divisor
-         */
+        
+        /// <summary>
+        /// Returns quotient of the two given numbers
+        /// Throws OverflowException if the quotient is too high
+        /// </summary>
+        /// <param name="dividend">Number that is being seperated by the other number</param>
+        /// <param name="divisor">The other number</param>
+        /// <returns>Returns dividend / divisor</returns>
         public static double Divide(double dividend, double divisor)
         {
             if (divisor == 0)       // if there is division by zero
