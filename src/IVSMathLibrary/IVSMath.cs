@@ -40,9 +40,19 @@ namespace IVSMathLibrary
             return 0;
         }
 
-        public static int Factorial(int a)
+        public static double Factorial(int a)
         {
-            return 0;
+            if (a < 0)
+                throw new ArithmeticException();
+            
+            double result = 1;
+            for (; a > 0; a--)
+                result *= a;
+            
+            if (Double.IsInfinity(result))
+                throw new OverflowException();
+            else
+                return result;
         }
 
         public static double Inverse(double a)
