@@ -10,14 +10,16 @@ namespace IVSMathLibrary
     {
         /**
          * Returns sum of two parametrs
-         * Throws OverflowException if the sum of two parametrs is bigger then double.MaxValue
+         * Throws OverflowException if the sum of two parametrs is bigger then double.MaxValue or lower than double.MinValue
          * @param   Augend  First number to add
          * @param   Addend  Second number to add
          * @return  Sum     Sum of two arguments
          */
         public static double Add(double augend, double addend)
         {
-            if (augend > double.MaxValue - addend)
+            if (augend > double.MaxValue - addend)                                      // if sum gets highr than double.MaxValue
+                throw new System.OverflowException("Add method caused overflow exception");
+            if (addend < 0 && augend < double.MinValue - addend)                        // if sum gets lower than double.MinValue
                 throw new System.OverflowException("Add method caused overflow exception");
             double sum = checked(augend + addend);
             return sum;
