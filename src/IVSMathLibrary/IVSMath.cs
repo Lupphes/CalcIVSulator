@@ -33,13 +33,13 @@ namespace IVSMathLibrary
             return 0;
         }
 
-        /*
-         * Returns a specified number raised to the specified power
-         * Throw Excpetion if the result is about to overflow, there is division by zero, or base_ = exponent = 0
-         * @param   base_       A number to be raised
-         * @param   exponent    A number that specifies a power
-         * @return  power       A number raised to a specified power
-         */
+        /// <summary>
+        /// Returns a specified number raised to the specified power
+        /// Throws Excpetion if the result is about to overflow, there is division by zero, or base_ = exponent = 0
+        /// </summary>
+        /// <param name="base_">A number to be raised</param>
+        /// <param name="exponent">A number that specifies a power</param>
+        /// <returns>A number raised to a specified power</returns>
         public static double Power(double base_, int exponent)
         {
             double result = 1;
@@ -53,7 +53,7 @@ namespace IVSMathLibrary
             }
             else if (exponent < 0)
             {
-                exponent *= -1;
+                exponent = -exponent;
                 negativeExponent = true;
                 if (base_ == 0)
                     throw new DivideByZeroException("Division by zero");
@@ -61,14 +61,16 @@ namespace IVSMathLibrary
 
             for (int i = 0; i < exponent; i++)
             {
-                if (Math.Abs(result) > Math.Abs(double.MaxValue / base_))
-                    throw new OverflowException("Value of the product is too high or too low");
+                /*if (Math.Abs(result) > Math.Abs(double.MaxValue / base_))
+                    throw new OverflowException("Value of the product is too high or too low");*/
                 result *= base_;
+                if (double.IsInfinity(result))
+                    throw new OverflowException("Value of the product is too high or too low");
             }
 
             if (negativeExponent)
                 result = 1 / result;
-
+            result = Inverse(result);
             return result;
         }
 
