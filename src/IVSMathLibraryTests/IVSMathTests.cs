@@ -820,13 +820,13 @@ namespace IVSMathLibraryTests
         [TestMethod]
         public void Cosine_Calculation_DecimalNumbers_ReturnsTrue()
         {
-            Assert.AreEqual(0.5403020, IVSMath.Cosine(1), precision);
-            Assert.AreEqual(-0.4161468, IVSMath.Cosine(2), precision);
-            Assert.AreEqual(-0.6536436, IVSMath.Cosine(4), precision);
-            Assert.AreEqual(0.2836621, IVSMath.Cosine(5), precision);
+            Assert.AreEqual(0.540302305868139717400936607442976603732310420617922227670, IVSMath.Cosine(1), precision);
+            Assert.AreEqual(-0.41614683654714238699756822950076218976600077107554489075, IVSMath.Cosine(2), precision);
+            Assert.AreEqual(-0.65364362086361191463916818309775038142413359664621824700, IVSMath.Cosine(4), precision);
+            Assert.AreEqual(0.283662185463226264466639171513557308334422592252215944930, IVSMath.Cosine(5), precision);
 
             Assert.AreEqual(0.9689124, IVSMath.Cosine(0.25), precision);
-            Assert.AreEqual(-0.0123886, IVSMath.Cosine(4.7), precision);
+            Assert.AreEqual(-0.0123887, IVSMath.Cosine(4.7), precision);
         }
 
         /*
