@@ -8,7 +8,7 @@ namespace IVSMathLibrary
 {
     public class IVSMath
     {
-        private static readonly double precision = 0.0000001f;
+        private static readonly double precision = 0.0000000001;
 
         public static double Add(double augend, double addend)
         {
@@ -145,10 +145,35 @@ namespace IVSMathLibrary
             } while (Math.Abs(term - previousTerm) > IVSMath.precision);
             return result;
         }
+        /// <summary>
+        /// Checks whether a given angle (in RADIANS) is valid for the tangent function.
+        /// </summary>
+        /// <param name="a">The angle to check the validity in the tangent function of</param>
+        /// <returns>Whether the given angle is valid for the tangent function</returns>
+        private static bool isValidTanAngle(double a)
+        {
+            a = Math.Abs(a);
+            return ((a % (Math.PI / 2)) < IVSMath.precision) && (Math.Round(a / (Math.PI / 2)) % 2 == 1);
+        }
 
+        /// <summary>
+        /// Calculates the tangent of a given angle in RADIANS.
+        /// </summary>
+        /// <param name="a">The angle to compute the tangent of</param>
+        /// <exception cref="ArithmeticException">The specified angle is invalid.</exception>
+        /// <exception cref="OverflowException">The result is too large to be stored by a double</exception>
+        /// <returns>The tangent of the given angle</returns>
         public static double Tangent(double a)
         {
-            return 0;
+            if (IVSMath.isValidTanAngle(a))
+                throw new ArithmeticException();
+            
+            double result = IVSMath.Sine(a) / IVSMath.Cosine(a);
+            
+            if (Double.IsInfinity(result))
+                throw new OverflowException();
+            
+            return result;
         }
     }
 }
