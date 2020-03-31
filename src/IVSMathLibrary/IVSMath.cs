@@ -119,10 +119,31 @@ namespace IVSMathLibrary
             } while (Math.Abs(term - previousTerm) > IVSMath.precision);
             return result;
         }
-
+        
+        /// <summary>
+        /// Calculates the cosine of a given angle in RADIANS.
+        /// </summary>
+        /// <param name="a">The angle to calculate the cosine of</param>
+        /// <returns>The cosine of the given angle</returns>
         public static double Cosine(double a)
         {
-            return 0;
+            double result = 1;
+            bool add = false;
+            double term = 0;
+            double previousTerm;
+            int i = 2;
+            do
+            {
+                previousTerm = term;
+                term = IVSMath.Power(a, i) / IVSMath.Factorial(i);
+                if (add)
+                    result += term;
+                else
+                    result -= term;
+                add = !add;
+                i += 2;
+            } while (Math.Abs(term - previousTerm) > IVSMath.precision);
+            return result;
         }
 
         public static double Tangent(double a)
