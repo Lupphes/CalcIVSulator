@@ -904,13 +904,13 @@ namespace IVSMathLibraryTests
         [TestMethod]
         public void Tangent_Calculation_DecimalNumbers_ReturnsTrue()
         {
-            Assert.AreEqual(1.5574077, IVSMath.Tangent(1), precision);
-            Assert.AreEqual(-2.1850398, IVSMath.Tangent(2), precision);
-            Assert.AreEqual(1.1578212, IVSMath.Tangent(4), precision);
-            Assert.AreEqual(-3.380515, IVSMath.Tangent(5), precision);
+            Assert.AreEqual(1.557407724654902230506974807458360173087250772381520038383, IVSMath.Tangent(1), precision);
+            Assert.AreEqual(-2.18503986326151899164330610231368254343201774622766316456, IVSMath.Tangent(2), precision);
+            Assert.AreEqual(1.157821282349577583137342418267323923119762767367142130084, IVSMath.Tangent(4), precision);
+            Assert.AreEqual(-3.38051500624658563698270587944734390870956920828545987717, IVSMath.Tangent(5), precision);
 
-            Assert.AreEqual(0.2553419, IVSMath.Tangent(0.25), precision);
-            Assert.AreEqual(80.712762, IVSMath.Tangent(4.7), precision);
+            Assert.AreEqual(0.255341921221036266504482236490473678204201638800822621740, IVSMath.Tangent(0.25), precision);
+            Assert.AreEqual(80.71276296747361169735821765792218589590549715980917724763, IVSMath.Tangent(4.7), precision);
         }
 
         /*
