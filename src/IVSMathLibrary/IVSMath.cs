@@ -28,24 +28,33 @@ namespace IVSMathLibrary
             return 0;
         }
 
-        public static double Root(double radicand, int degree) {
-            if (radicand == 0) {
-                return 0;
+        public static double Root(double radicand, int degree)
+        {
+            if (radicand < 0 && degree % 2 == 0) {
+                throw new ArithmeticException("Root cannot be negative and even.");
             }
-            else {
-                if (radicand < 0 && degree % 2 == 0) {
-                    throw new ArithmeticException("Root cannot be negative and even.");
+            else if (degree == 0) {
+                throw new ArithmeticException("Cannot root on 0 degree.");
+            }
+            else
+            {
+                if (radicand == 0) {
+                    return 0;
                 }
                 if (degree == 1)
                     return radicand;
                 double radicand_n;
-                double precision = 0.0000001f;
-                do
-                {
-                    radicand_n = (radicand / Power(precision, degree - 1) - precision) / degree;
-                    precision = precision + radicand_n;
+                double value = 0.0000001f;
+                double previous = double.NaN;
+                do {
+                    radicand_n = (radicand / Power(value, degree - 1) - value) / degree;
+                    value = value + radicand_n;
+                    if (previous == radicand_n) {
+                        break;
+                    }
+                    previous = radicand_n;
                 } while (Absolute(radicand_n) > 0);
-                return precision;
+                return value;
             }
         }
 
