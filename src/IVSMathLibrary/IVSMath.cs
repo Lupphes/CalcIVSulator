@@ -40,37 +40,32 @@ namespace IVSMathLibrary
         /// <param name="base_">A number to be raised</param>
         /// <param name="exponent">A number that specifies a power</param>
         /// <returns>A number raised to a specified power</returns>
-        public static double Power(double base_, int exponent)
+        public static double Power(double base_, int exponent, bool ignoreInfinity = false)
         {
             double result = 1;
             bool negativeExponent = false;
 
-            if (exponent == 0)
-            {
+            if (exponent == 0) {
                 if (base_ == 0)
-                    throw new Exception("0^0");
-                return 1;
+                    throw new ArithmeticException("0^0 is undefined.");
+                return result;
             }
-            else if (exponent < 0)
-            {
+            else if (exponent < 0) {
                 exponent = -exponent;
                 negativeExponent = true;
                 if (base_ == 0)
-                    throw new DivideByZeroException("Division by zero");
+                    throw new DivideByZeroException("Division by zero!");
             }
 
-            for (int i = 0; i < exponent; i++)
-            {
-                /*if (Math.Abs(result) > Math.Abs(double.MaxValue / base_))
-                    throw new OverflowException("Value of the product is too high or too low");*/
+            for (int i = 0; i < exponent; i++) {
                 result *= base_;
-                if (double.IsInfinity(result))
-                    throw new OverflowException("Value of the product is too high or too low");
+                if (double.IsInfinity(result) && !ignoreInfinity)
+                    throw new OverflowException("Value of the product is too high or too low!");
             }
 
-            if (negativeExponent)
-                result = 1 / result;
-            result = Inverse(result);
+            if (negativeExponent) {
+                result = Inverse(result);
+            }
             return result;
         }
 
