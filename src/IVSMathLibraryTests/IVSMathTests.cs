@@ -9,7 +9,7 @@ namespace IVSMathLibraryTests
     {
 
         // Prepare
-        double precision = 0.0000001f;
+        double precision = 0.0000001;
 
         [TestMethod]
         [ExpectedException(typeof(OverflowException))]
@@ -51,6 +51,7 @@ namespace IVSMathLibraryTests
             Assert.AreEqual(4, IVSMath.Root(16, 2), precision);
             Assert.AreEqual(2, IVSMath.Root(2, 2) * IVSMath.Root(2, 2), precision);
         }
+
         [TestMethod]
         public void Root_Square_RadicandRealPositive_ReturnsTrue()
         {
@@ -58,10 +59,12 @@ namespace IVSMathLibraryTests
             Assert.AreEqual(0.5, IVSMath.Root(0.5, 2) * IVSMath.Root(0.5, 2), precision);
             Assert.AreEqual(138.6576, IVSMath.Root(138.6576, 2) * IVSMath.Root(138.6576, 2), precision);
         }
+
         [TestMethod]
         public void Root_Square_RadicandIntegerNegative_ReturnsExceptions()
         {
-            try {
+            try
+            {
                 IVSMath.Root(-2, 2);
                 Assert.Fail();
             }
@@ -71,6 +74,7 @@ namespace IVSMathLibraryTests
                     Assert.Fail();
             }
         }
+
         [TestMethod]
         public void Root_Square_RadicandRealNegative_ReturnsExceptions()
         {
@@ -85,16 +89,19 @@ namespace IVSMathLibraryTests
                     Assert.Fail();
             }
         }
+
         [TestMethod]
         public void Root_Square_RadicandZero_ReturnsTrue()
         {
             Assert.AreEqual(0, IVSMath.Root(0, 2), 0);
         }
+
         [TestMethod]
         public void Root_Square_RadicandOne_ReturnsTrue()
         {
             Assert.AreEqual(1, IVSMath.Root(1, 2), 0);
         }
+
         [TestMethod]
         public void Root_Cube_RadicandIntegerPositive_ReturnsTrue()
         {
@@ -103,6 +110,7 @@ namespace IVSMathLibraryTests
             double root = IVSMath.Root(3, 3);
             Assert.AreEqual(3, root * root * root, precision);
         }
+
         [TestMethod]
         public void Root_Cube_RadicandRealPositive_ReturnsTrue()
         {
@@ -114,6 +122,7 @@ namespace IVSMathLibraryTests
             root = IVSMath.Root(1568.13148, 3);
             Assert.AreEqual(1568.13148, root * root * root, precision);
         }
+
         [TestMethod]
         public void Root_Cube_RadicandIntegerNegative_ReturnsTrue()
         {
@@ -125,6 +134,7 @@ namespace IVSMathLibraryTests
             root = IVSMath.Root(-3, 3);
             Assert.AreEqual(-3, root * root * root, precision);
         }
+
         [TestMethod]
         public void Root_Cube_RadicandRealNegative_ReturnsTrue()
         {
@@ -136,21 +146,25 @@ namespace IVSMathLibraryTests
             root = IVSMath.Root(-1568.13148, 3);
             Assert.AreEqual(-1568.13148, root * root * root, precision);
         }
+
         [TestMethod]
         public void Root_Cube_RadicandZero_ReturnsTrue()
         {
             Assert.AreEqual(0, IVSMath.Root(0, 3), 0);
         }
+
         [TestMethod]
         public void Root_Cube_RadicandOne_ReturnsTrue()
         {
             Assert.AreEqual(1, IVSMath.Root(1, 3), 0);
         }
+
         [TestMethod]
         public void Root_Cube_RadicandNegativeOne_ReturnsTrue()
         {
             Assert.AreEqual(-1, IVSMath.Root(-1, 3), 0);
         }
+
         [TestMethod]
         public void Root_FirstDegree_ReturnsTrue()
         {
@@ -162,10 +176,13 @@ namespace IVSMathLibraryTests
             Assert.AreEqual(-3.141592, IVSMath.Root(-3.141592, 1), 0);
 
         }
+
         [TestMethod]
         public void Root_VariousDegrees_RadicandPositive_ReturnsTrue()
         {
-            double radicand, degree, root, acc;
+            precision = 0.001;
+            double radicand, root, acc;
+            int degree;
             radicand = 3154653;
             degree = 17;
             root = IVSMath.Root(radicand, degree);
@@ -189,7 +206,7 @@ namespace IVSMathLibraryTests
             for (int i = 0; i < degree; i++)
                 acc *= root;
             Assert.AreEqual(radicand, acc, precision);
-            
+
             radicand = 0.56598;
             degree = 4;
             root = IVSMath.Root(radicand, degree);
@@ -198,6 +215,7 @@ namespace IVSMathLibraryTests
                 acc *= root;
             Assert.AreEqual(radicand, acc, precision);
         }
+
         [TestMethod]
         public void Root_VariousDegrees_RadicandNegativeInvalid_ReturnsExceptions()
         {
@@ -232,10 +250,13 @@ namespace IVSMathLibraryTests
                     Assert.Fail();
             }
         }
+
         [TestMethod]
         public void Root_VariousDegrees_RadicandNegativeValid_ReturnsTrue()
         {
-            double radicand, degree, root, acc;
+            precision = 0.001;
+            double radicand, root, acc;
+            int degree;
             radicand = -3154653;
             degree = 17;
             root = IVSMath.Root(radicand, degree);
@@ -268,6 +289,7 @@ namespace IVSMathLibraryTests
                 acc *= root;
             Assert.AreEqual(radicand, acc, precision);
         }
+
         [TestMethod]
         public void Root_VariousDegrees_RadicandZero_ReturnsTrue()
         {
@@ -276,6 +298,7 @@ namespace IVSMathLibraryTests
             Assert.AreEqual(0, IVSMath.Root(0, 1987), 0);
             Assert.AreEqual(0, IVSMath.Root(0, 241628), 0);
         }
+
         [TestMethod]
         public void Root_VariousDegrees_RadicandOne_ReturnsTrue()
         {
@@ -284,6 +307,8 @@ namespace IVSMathLibraryTests
             Assert.AreEqual(1, IVSMath.Root(1, 1987), 0);
             Assert.AreEqual(1, IVSMath.Root(1, 241628), 0);
         }
+
+        [TestMethod]
         public void Root_VariousDegrees_RadicandNegativeOne_Valid_ReturnsTrue()
         {
             Assert.AreEqual(-1, IVSMath.Root(-1, 13), 0);
@@ -291,6 +316,7 @@ namespace IVSMathLibraryTests
             Assert.AreEqual(-1, IVSMath.Root(-1, 1987), 0);
             Assert.AreEqual(-1, IVSMath.Root(-1, 241627), 0);
         }
+
         [TestMethod]
         public void Root_ZerothDegree_ReturnsExceptions()
         {
@@ -365,12 +391,13 @@ namespace IVSMathLibraryTests
                     Assert.Fail();
             }
         }
+
         [TestMethod]
         public void Root_NegativeDegrees_ReturnsExceptions()
         {
             try
             {
-                IVSMath.Root(132165, -1);
+                IVSMath.Root(-2, 2);
                 Assert.Fail();
             }
             catch (Exception e)
@@ -380,7 +407,7 @@ namespace IVSMathLibraryTests
             }
             try
             {
-                IVSMath.Root(134.1234, -127);
+                IVSMath.Root(-134.1234, -128);
                 Assert.Fail();
             }
             catch (Exception e)
@@ -390,7 +417,7 @@ namespace IVSMathLibraryTests
             }
             try
             {
-                IVSMath.Root(-132154, -35);
+                IVSMath.Root(-132154, -36);
                 Assert.Fail();
             }
             catch (Exception e)
@@ -410,7 +437,7 @@ namespace IVSMathLibraryTests
             }
             try
             {
-                IVSMath.Root(0, -9);
+                IVSMath.Root(-1, -14);
                 Assert.Fail();
             }
             catch (Exception e)
@@ -420,17 +447,7 @@ namespace IVSMathLibraryTests
             }
             try
             {
-                IVSMath.Root(-1, -13);
-                Assert.Fail();
-            }
-            catch (Exception e)
-            {
-                if (e is AssertFailedException)
-                    Assert.Fail();
-            }
-            try
-            {
-                IVSMath.Root(1, -18);
+                IVSMath.Root(-1, -18);
                 Assert.Fail();
             }
             catch (Exception e)
