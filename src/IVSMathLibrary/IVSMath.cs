@@ -28,43 +28,32 @@ namespace IVSMathLibrary
             return 0;
         }
 
-        public static double Root(double radicand, int degree)
-        {
+        public static double Root(double radicand, int degree) {
             if (radicand < 0 && degree % 2 == 0) {
                 throw new ArithmeticException("Root cannot be negative and even.");
             }
             else if (degree == 0) {
                 throw new ArithmeticException("Cannot root on 0 degree.");
             }
-            else
-            {
+            else {
+                double radicand_n, dx;
+                double precision = 0.00000000001;
                 if (radicand == 0) {
                     return 0;
                 }
-                if (degree == 1)
+                else if (radicand == 1 || radicand == -1)
                     return radicand;
-                double radicand_n;
-                double value = 0.0000001f;
-                double previous = double.NaN;
-                do {
-                    radicand_n = (radicand / Power(value, degree - 1) - value) / degree;
-                    value = value + radicand_n;
-                    if (previous == radicand_n) {
-                        break;
-                    }
-                    previous = radicand_n;
-                } while (Absolute(radicand_n) > 0);
-                return value;
+                radicand_n = radicand * 0.5;
+                dx = (radicand / Power(radicand_n, degree - 1, true) - radicand_n) / degree;
+                while (dx >= precision || dx <= -precision) {
+                    radicand_n = radicand_n + dx;
+                    dx = (radicand / Power(radicand_n, degree - 1, true) - radicand_n) / degree;
+                }
+                return radicand_n;
             }
         }
 
-        private static double Absolute(double x) {
-            if (x < 0)
-                return -x;
-            return x;
-        }
-
-        public static double Power(double base_, int exponent)
+        public static double Power(double base_, int exponent, bool ignoreInfinity = false)
         {
             return 0;
         }
@@ -74,17 +63,16 @@ namespace IVSMathLibrary
             return 0;
         }
 
-        public static double Inverse(double a)
-        {
+        public static double Inverse(double base_) {
             try {
-                if (a == 0) {
+                if (base_ == 0) {
                     throw new DivideByZeroException("Divided by zero!");
                 }
-                return (1 / a);
+                return (1 / base_);
             }
             catch (OverflowException) {
                 throw new OverflowException("Overflow exception");
-            } 
+            }
         }
 
         public static double Sine(double a)
