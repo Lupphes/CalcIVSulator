@@ -28,6 +28,12 @@ namespace IVSMathLibrary
             return 0;
         }
 
+        /// <summary>
+        /// Calculates the Nth root of given number.
+        /// </summary>
+        /// <param name="radicand">Number which is having its square Nth root taken.</param>
+        /// <param name="degree">The value of N.</param>
+        /// <returns>If the function is successful, it returns value of Nth root.</returns>
         public static double Root(double radicand, int degree) {
             if (radicand < 0 && degree % 2 == 0) {
                 throw new ArithmeticException("Root cannot be negative and even.");
@@ -63,6 +69,11 @@ namespace IVSMathLibrary
             return 0;
         }
 
+        /// <summary>
+        /// Calculates the Inverse of given number.
+        /// </summary>
+        /// <param name="base_">Number which is inversed</param>
+        /// <returns>If the function is successful, it returns inversed number.</returns>
         public static double Inverse(double base_) {
             try {
                 if (base_ == 0) {
