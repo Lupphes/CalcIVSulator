@@ -69,19 +69,6 @@ namespace IVSMathLibrary
             return 0;
         }
 
-        public static double ToNegativeOnePower(double base_)
-        {
-            try {
-                if (base_ == 0) {
-                    throw new DivideByZeroException("Divided by zero!");
-                }
-                return (1 / base_);
-            }
-            catch (OverflowException) {
-                throw new OverflowException("Overflow exception");
-            }            
-        }
-
         public static int Factorial(int a)
         {
             return 0;
@@ -89,7 +76,15 @@ namespace IVSMathLibrary
 
         public static double Inverse(double a)
         {
-            return 0;
+            try {
+                if (a == 0) {
+                    throw new DivideByZeroException("Divided by zero!");
+                }
+                return (1 / a);
+            }
+            catch (OverflowException) {
+                throw new OverflowException("Overflow exception");
+            } 
         }
 
         public static double Sine(double a)
