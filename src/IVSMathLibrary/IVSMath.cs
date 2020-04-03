@@ -37,6 +37,8 @@ namespace IVSMathLibrary
         /// Returns a specified number raised to the specified power
         /// Throws Excpetion if the result is about to overflow, there is division by zero, or base_ = exponent = 0
         /// </summary>
+        /// <exception cref="ArithmeticException">Thrown when there is 0^0 operation which is not allowed</exception>
+        /// <exception cref="DivideByZeroException">Thrown when exponent is negative and base is zero which is not allowed operation</exception>
         /// <param name="base_">A number to be raised</param>
         /// <param name="exponent">A number that specifies a power</param>
         /// <param name="ignoreInfinity">Specifies if method should ignore infinity or not. False by default</param>
