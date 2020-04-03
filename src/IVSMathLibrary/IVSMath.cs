@@ -24,10 +24,15 @@ namespace IVSMathLibrary
 
             double sum = checked(augend + addend);
             return sum;*/
-            double sum = augend + addend;
-            if (double.IsInfinity(sum))
-                throw new OverflowException("The sum is too high.");
-            return sum;
+            try
+            {
+                double sum = augend + addend;
+                return sum;
+            }
+            catch
+            {
+                throw new OverflowException("Overflow Exception!");
+            }
         }
 
         /// <summary>
