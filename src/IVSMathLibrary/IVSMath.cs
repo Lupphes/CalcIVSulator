@@ -39,6 +39,7 @@ namespace IVSMathLibrary
         /// </summary>
         /// <param name="base_">A number to be raised</param>
         /// <param name="exponent">A number that specifies a power</param>
+        /// <param name="ignoreInfinity">Specifies if method should ignore infinity or not. False by default</param>
         /// <returns>A number raised to a specified power</returns>
         public static double Power(double base_, int exponent, bool ignoreInfinity = false)
         {
