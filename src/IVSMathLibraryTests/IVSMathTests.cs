@@ -946,7 +946,7 @@ namespace IVSMathLibraryTests
             Assert.AreEqual(24, IVSMath.Factorial(4), 0);
             Assert.AreEqual(120, IVSMath.Factorial(5), 0);
             Assert.AreEqual(479001600, IVSMath.Factorial(12), 0);
-            Assert.AreEqual(7.25741561530799E+306, IVSMath.Factorial(170), 0);
+            Assert.AreEqual(7.2574156153079989673967282111292631147169916812964513E+306, IVSMath.Factorial(170), 1E+295); //MSTest doesn't do significant-figures comparing; it does absolute. So we need to use a "lower" precision here.
         }
 
         /**
