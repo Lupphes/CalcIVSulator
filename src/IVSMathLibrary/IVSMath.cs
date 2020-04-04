@@ -33,13 +33,15 @@ namespace IVSMathLibrary
         /// </summary>
         /// <param name="radicand">Number which is having its square Nth root taken.</param>
         /// <param name="degree">The value of N.</param>
+        /// <exception cref="ArithmeticException">Thrown when radicand is negative and degree even at the same time.</exception>
+        /// <exception cref="ArithmeticException">Thrown when degree is zero which cannot be processed.</exception>
         /// <returns>If the function is successful, it returns value of Nth root.</returns>
         public static double Root(double radicand, int degree) {
             if (radicand < 0 && degree % 2 == 0) {
-                throw new ArithmeticException("Root cannot be negative and even.");
+                throw new ArithmeticException("Radicand cannot be negative and degree even at the same time.");
             }
             else if (degree == 0) {
-                throw new ArithmeticException("Cannot root on 0 degree.");
+                throw new ArithmeticException("Cannot make a root on 0th degree.");
             }
             else {
                 double radicand_n, dx;
@@ -73,6 +75,8 @@ namespace IVSMathLibrary
         /// Calculates the Inverse of given number.
         /// </summary>
         /// <param name="base_">Number which is inversed</param>
+        /// <exception cref="DivideByZeroException">Given number cannot be zero.</exception>
+        /// <exception cref="OverflowException">When the number is too high/low</exception>
         /// <returns>If the function is successful, it returns inversed number.</returns>
         public static double Inverse(double base_) {
             try {
