@@ -28,40 +28,12 @@ namespace IVSMathLibrary
             return 0;
         }
 
-        /// <summary>
-        /// Calculates the Nth root of given number.
-        /// </summary>
-        /// <param name="radicand">Number which is having its square Nth root taken.</param>
-        /// <param name="degree">The value of N.</param>
-        /// <exception cref="ArithmeticException">Thrown when radicand is negative and degree even at the same time.</exception>
-        /// <exception cref="ArithmeticException">Thrown when degree is zero which cannot be processed.</exception>
-        /// <returns>If the function is successful, it returns value of Nth root.</returns>
-        public static double Root(double radicand, int degree) {
-            if (radicand < 0 && degree % 2 == 0) {
-                throw new ArithmeticException("Radicand cannot be negative and degree even at the same time.");
-            }
-            else if (degree == 0) {
-                throw new ArithmeticException("Cannot make a root on 0th degree.");
-            }
-            else {
-                double radicand_n, dx;
-                double precision = 0.00000000001;
-                if (radicand == 0) {
-                    return 0;
-                }
-                else if (radicand == 1 || radicand == -1)
-                    return radicand;
-                radicand_n = radicand * 0.5;
-                dx = (radicand / Power(radicand_n, degree - 1, true) - radicand_n) / degree;
-                while (dx >= precision || dx <= -precision) {
-                    radicand_n = radicand_n + dx;
-                    dx = (radicand / Power(radicand_n, degree - 1, true) - radicand_n) / degree;
-                }
-                return radicand_n;
-            }
+        public static double Root(double radicand, double degree)
+        {
+            return 0;
         }
 
-        public static double Power(double base_, int exponent, bool ignoreInfinity = false)
+        public static double Power(double base_, int exponent)
         {
             return 0;
         }
@@ -71,23 +43,9 @@ namespace IVSMathLibrary
             return 0;
         }
 
-        /// <summary>
-        /// Calculates the Inverse of given number.
-        /// </summary>
-        /// <param name="base_">Number which is inversed</param>
-        /// <exception cref="DivideByZeroException">Given number cannot be zero.</exception>
-        /// <exception cref="OverflowException">When the number is too high/low</exception>
-        /// <returns>If the function is successful, it returns inversed number.</returns>
-        public static double Inverse(double base_) {
-            try {
-                if (base_ == 0) {
-                    throw new DivideByZeroException("Divided by zero!");
-                }
-                return (1 / base_);
-            }
-            catch (OverflowException) {
-                throw new OverflowException("Overflow exception");
-            }
+        public static double Inverse(double a)
+        {
+            return 0;
         }
 
         public static double Sine(double a)
