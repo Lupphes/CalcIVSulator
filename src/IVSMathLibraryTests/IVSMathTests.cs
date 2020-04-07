@@ -106,7 +106,7 @@ namespace IVSMathLibraryTests
         [TestMethod]
         public void Substract_CalculationDecimalNumbers_ReturnEqual()
         {
-            Assert.AreEqual(-0.1, IVSMath.Substract(5.5, 5.6), 0);
+            Assert.AreEqual(-0.1, IVSMath.Substract(5.5, 5.6), precision);
             Assert.AreEqual(-5.4, IVSMath.Substract(0, 5.4), 0);
             Assert.AreEqual(5.6, IVSMath.Substract(5.6, 0), 0);
         }
@@ -114,7 +114,7 @@ namespace IVSMathLibraryTests
         [TestMethod]
         public void Substract_CalculationNegativeDecimalNumbers_ReturnEqual()
         {
-            Assert.AreEqual(-0.8, IVSMath.Substract(-5.9, -5.1));
+            Assert.AreEqual(-0.8, IVSMath.Substract(-5.9, -5.1), precision);
             Assert.AreEqual(5.9, IVSMath.Substract(0, -5.9));
             Assert.AreEqual(-5.2, IVSMath.Substract(-5.2, 0));
         }
@@ -155,7 +155,7 @@ namespace IVSMathLibraryTests
         [TestMethod]
         public void Multiply_CalculationDecimalNumbers_ReturnTrue()
         {
-            Assert.AreEqual(30.8, IVSMath.Multiply(5.5, 5.6), 0);
+            Assert.AreEqual(30.8, IVSMath.Multiply(5.5, 5.6), precision);
             Assert.AreEqual(0, IVSMath.Multiply(0, 5.4), 0);
             Assert.AreEqual(0, IVSMath.Multiply(5.6, 0), 0);
         }
