@@ -74,6 +74,15 @@ namespace IVSMathLibrary
             return result;
         }
 
+
+        /// <summary>
+        /// Calculates the factorial of a given non-negative whole number.
+        /// Note: returns a double, so not all digits are computed after a certain threshold.
+        /// </summary>
+        /// <exception cref="ArithmeticException">The given number is outside the domain of the factorial function.</exception>
+        /// <exception cref="OverflowException">The resulting factorial is too large to be stored by a double.</exception>
+        /// <param name="a">The number to calculate the factorial of</param>
+        /// <returns>The factorial of the given number</returns>
         public static double Factorial(int a)
         {
             if (a < 0)
