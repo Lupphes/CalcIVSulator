@@ -134,7 +134,7 @@ namespace IVSMathLibrary
                 radicand_n = radicand * 0.5;
                 dx = (radicand / Power(radicand_n, degree - 1, true) - radicand_n) / degree;
                 while (dx >= precision || dx <= -precision) {
-                    radicand_n = radicand_n + dx;
+                    radicand_n += dx;
                     dx = (radicand / Power(radicand_n, degree - 1, true) - radicand_n) / degree;
                 }
                 if (negative) {
@@ -281,7 +281,7 @@ namespace IVSMathLibrary
         /// </summary>
         /// <param name="a">The angle to check the validity in the tangent function of</param>
         /// <returns>Whether the given angle is valid for the tangent function</returns>
-        private static bool isValidTanAngle(double a)
+        private static bool IsValidTanAngle(double a)
         {
             a = Math.Abs(a);
             return ((a % (Math.PI / 2)) < 1e-70) && (Math.Round(a / (Math.PI / 2)) % 2 == 1); //Being as close as 1e-66-ish can still return a valid tangent.
@@ -296,7 +296,7 @@ namespace IVSMathLibrary
         /// <returns>The tangent of the given angle</returns>
         public static double Tangent(double a)
         {
-            if (IVSMath.isValidTanAngle(a))
+            if (IVSMath.IsValidTanAngle(a))
                 throw new ArithmeticException();
             
             double result = IVSMath.Sine(a) / IVSMath.Cosine(a);

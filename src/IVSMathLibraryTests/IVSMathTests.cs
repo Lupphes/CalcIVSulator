@@ -8,7 +8,7 @@ namespace IVSMathLibraryTests
     public class IVSMathTests
     {
         // Prepare
-        double precision = 0.0000001f;
+        readonly double precision = 0.0000001f;
 
         [TestMethod]
         [Timeout(2000)]
@@ -899,11 +899,9 @@ namespace IVSMathLibraryTests
         public void Sine_Calculation_PeriodicityTest_ReturnsTrue()
         {
             double[] values = { 1.5, 2.6, 3.82, 5.123, 8.73 };
-            double sine = 0.0;
-
-            for(int i = 0; i < 5; ++i)
+            for (int i = 0; i < 5; ++i)
             {
-                sine = IVSMath.Sine(values[i]);
+                double sine = IVSMath.Sine(values[i]);
                 for (int j = -2; j < 2; ++j) 
                     Assert.AreEqual(sine, IVSMath.Sine(values[i] + 2 * j * Math.PI), precision);    // sin(1.5) = sin(1.5 + 2jPI)
             }
@@ -956,11 +954,9 @@ namespace IVSMathLibraryTests
         public void Cosine_Calculation_PeriodicityTest_ReturnsTrue()
         {
             double[] values = { 1.5, 2.6, 3.82, 5.123, 8.73 };
-            double cosine = 0.0;
-
             for (int i = 0; i < 5; ++i)
             {
-                cosine = IVSMath.Cosine(values[i]);
+                double cosine = IVSMath.Cosine(values[i]);
                 for (int j = -2; j < 2; ++j)
                     Assert.AreEqual(cosine, IVSMath.Cosine(values[i] + 2 * j * Math.PI), precision);    // cos(1.5) = cos(1.5 + 2jPI)
             }
@@ -1044,11 +1040,9 @@ namespace IVSMathLibraryTests
         public void Tangent_Calculation_PeriodicityTest_ReturnsTrue()
         {
             double[] values = { 1.5, 2.6, 3.82, 5.123, 8.73 };
-            double tangent = 0.0;
-
             for (int i = 0; i < 5; ++i)
             {
-                tangent = IVSMath.Tangent(values[i]);
+                double tangent = IVSMath.Tangent(values[i]);
                 for (int j = -2; j < 2; ++j)
                     Assert.AreEqual(tangent, IVSMath.Tangent(values[i] + j * Math.PI), precision);    // tan(1.5) = tan(1.5 + jPI)
             }
