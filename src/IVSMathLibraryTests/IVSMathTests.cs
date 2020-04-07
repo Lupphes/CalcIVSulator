@@ -846,7 +846,12 @@ namespace IVSMathLibraryTests
             Assert.AreEqual(-(5000.0 / 823.0), IVSMath.Inverse(-0.1646), precision);
             Assert.AreEqual(-(50.0 / 21.0), IVSMath.Inverse(-0.42), precision);
         }
-      
+        [TestMethod]
+        [Timeout(2000)]
+        public void Inverse_CalculationOverflow_ReturnsExceptions()
+        {
+            Assert.ThrowsException<OverflowException>(() => IVSMath.Inverse(Double.Epsilon));
+        }
         /*
          * Tests IVSMath.Sine method
          * Inputs only numbers so the result is integer
@@ -1048,7 +1053,6 @@ namespace IVSMathLibraryTests
                     Assert.AreEqual(tangent, IVSMath.Tangent(values[i] + j * Math.PI), precision);    // tan(1.5) = tan(1.5 + jPI)
             }
         }
-
         /**
          * Test IVSMath.Factorial method
          * Inputs natural numbers only
