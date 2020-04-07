@@ -215,15 +215,14 @@ namespace IVSMathLibrary
         /// <exception cref="OverflowException">When the number is too high/low</exception>
         /// <returns>If the function is successful, it returns inversed number.</returns>
         public static double Inverse(double base_) {
-            try {
-                if (base_ == 0) {
-                    throw new DivideByZeroException("Divided by zero!");
-                }
-                return (1 / base_);
+            double result;
+            if (base_ == 0) {
+                throw new DivideByZeroException("Divided by zero!");
             }
-            catch (OverflowException) {
-                throw new OverflowException("Overflow exception");
-            }
+            result = 1 / base_;
+            if (Double.IsInfinity(result))
+                throw new OverflowException();
+            return result;
         }
         
         /// <summary>
@@ -285,7 +284,7 @@ namespace IVSMathLibrary
         private static bool isValidTanAngle(double a)
         {
             a = Math.Abs(a);
-            return ((a % (Math.PI / 2)) < IVSMath.precision) && (Math.Round(a / (Math.PI / 2)) % 2 == 1);
+            return ((a % (Math.PI / 2)) < 1e-70) && (Math.Round(a / (Math.PI / 2)) % 2 == 1); //Being as close as 1e-66-ish can still return a valid tangent.
         }
 
         /// <summary>
