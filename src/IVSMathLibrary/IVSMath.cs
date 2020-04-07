@@ -111,6 +111,10 @@ namespace IVSMathLibrary
             if (radicand < 0 && degree % 2 == 0) {
                 throw new ArithmeticException("Radicand cannot be negative and degree even at the same time.");
             }
+            if (radicand == 0 && degree < 0)
+            {
+                throw new ArithmeticException("Root of zero on negative degree is not allowed.");
+            }
             else if (degree == 0) {
                 throw new ArithmeticException("Cannot make a root on 0th degree.");
             }
@@ -122,11 +126,19 @@ namespace IVSMathLibrary
                 }
                 else if (radicand == 1 || radicand == -1)
                     return radicand;
+                bool negative = false;
+                if (degree < 0) {
+                    negative = true;
+                    degree = -degree;
+                }
                 radicand_n = radicand * 0.5;
                 dx = (radicand / Power(radicand_n, degree - 1, true) - radicand_n) / degree;
                 while (dx >= precision || dx <= -precision) {
                     radicand_n = radicand_n + dx;
                     dx = (radicand / Power(radicand_n, degree - 1, true) - radicand_n) / degree;
+                }
+                if (negative) {
+                    radicand_n = Inverse(radicand_n);
                 }
                 return radicand_n;
             }
