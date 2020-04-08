@@ -71,10 +71,10 @@ namespace IVSMathLibrary
         public static double Multiply(double multiplier, double multiplicand)
         {
             double product;
-            
-            if(double.IsInfinity(product = multiplier * multiplicand))
+
+            if (double.IsInfinity(product = multiplier * multiplicand))
                 throw new OverflowException("Value of the product is too high or too low");
-            
+
             return product;
         }
 
@@ -107,37 +107,45 @@ namespace IVSMathLibrary
         /// <exception cref="ArithmeticException">Thrown when radicand is negative and degree even at the same time.</exception>
         /// <exception cref="ArithmeticException">Thrown when degree is zero which cannot be processed.</exception>
         /// <returns>If the function is successful, it returns value of Nth root.</returns>
-        public static double Root(double radicand, int degree) {
-            if (radicand < 0 && degree % 2 == 0) {
+        public static double Root(double radicand, int degree)
+        {
+            if (radicand < 0 && degree % 2 == 0)
+            {
                 throw new ArithmeticException("Radicand cannot be negative and degree even at the same time.");
             }
             if (radicand == 0 && degree < 0)
             {
                 throw new ArithmeticException("Root of zero on negative degree is not allowed.");
             }
-            else if (degree == 0) {
+            else if (degree == 0)
+            {
                 throw new ArithmeticException("Cannot make a root on 0th degree.");
             }
-            else {
+            else
+            {
                 double radicand_n, dx;
                 double precision = 0.00000000001;
-                if (radicand == 0) {
+                if (radicand == 0)
+                {
                     return 0;
                 }
                 else if (radicand == 1 || radicand == -1)
                     return radicand;
                 bool negative = false;
-                if (degree < 0) {
+                if (degree < 0)
+                {
                     negative = true;
                     degree = -degree;
                 }
                 radicand_n = radicand * 0.5;
                 dx = (radicand / Power(radicand_n, degree - 1, true) - radicand_n) / degree;
-                while (dx >= precision || dx <= -precision) {
+                while (dx >= precision || dx <= -precision)
+                {
                     radicand_n += dx;
                     dx = (radicand / Power(radicand_n, degree - 1, true) - radicand_n) / degree;
                 }
-                if (negative) {
+                if (negative)
+                {
                     radicand_n = Inverse(radicand_n);
                 }
                 return radicand_n;
@@ -159,25 +167,29 @@ namespace IVSMathLibrary
             double result = 1;
             bool negativeExponent = false;
 
-            if (exponent == 0) {
+            if (exponent == 0)
+            {
                 if (base_ == 0)
                     throw new ArithmeticException("0^0 is undefined.");
                 return result;
             }
-            else if (exponent < 0) {
+            else if (exponent < 0)
+            {
                 exponent = -exponent;
                 negativeExponent = true;
                 if (base_ == 0)
                     throw new DivideByZeroException("Division by zero!");
             }
 
-            for (int i = 0; i < exponent; i++) {
+            for (int i = 0; i < exponent; i++)
+            {
                 result *= base_;
                 if (double.IsInfinity(result) && !ignoreInfinity)
                     throw new OverflowException("Value of the product is too high or too low!");
             }
 
-            if (negativeExponent) {
+            if (negativeExponent)
+            {
                 result = Inverse(result);
             }
             return result;
@@ -196,11 +208,11 @@ namespace IVSMathLibrary
         {
             if (a < 0)
                 throw new ArithmeticException();
-            
+
             double result = 1;
             for (; a > 0; a--)
                 result *= a;
-            
+
             if (Double.IsInfinity(result))
                 throw new OverflowException();
             else
@@ -214,9 +226,11 @@ namespace IVSMathLibrary
         /// <exception cref="DivideByZeroException">Given number cannot be zero.</exception>
         /// <exception cref="OverflowException">When the number is too high/low</exception>
         /// <returns>If the function is successful, it returns inversed number.</returns>
-        public static double Inverse(double base_) {
+        public static double Inverse(double base_)
+        {
             double result;
-            if (base_ == 0) {
+            if (base_ == 0)
+            {
                 throw new DivideByZeroException("Divided by zero!");
             }
             result = 1 / base_;
@@ -224,7 +238,7 @@ namespace IVSMathLibrary
                 throw new OverflowException();
             return result;
         }
-        
+
         /// <summary>
         /// Calculates the sine of a given angle in RADIANS.
         /// </summary>
@@ -250,7 +264,7 @@ namespace IVSMathLibrary
             } while (Math.Abs(term - previousTerm) > IVSMath.precision);
             return result;
         }
-        
+
         /// <summary>
         /// Calculates the cosine of a given angle in RADIANS.
         /// </summary>
@@ -298,12 +312,12 @@ namespace IVSMathLibrary
         {
             if (IVSMath.IsValidTanAngle(a))
                 throw new ArithmeticException();
-            
+
             double result = IVSMath.Sine(a) / IVSMath.Cosine(a);
-            
+
             if (Double.IsInfinity(result))
                 throw new OverflowException();
-            
+
             return result;
         }
     }
