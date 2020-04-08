@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -34,7 +35,7 @@ namespace CalculatorGUI
             {
                 case "+":
                     try {
-                        return x + y; // IVSMath.Add(x, y);
+                        return IVSMath.Add(x, y);
                     }
                     catch (OverflowException)
                     {
@@ -44,7 +45,7 @@ namespace CalculatorGUI
                     }
                 case "-":
                     try {
-                        return x - y; // IVSMath.Substract(x, y);
+                        return IVSMath.Substract(x, y);
                     }
                     catch (OverflowException)
                     {
@@ -54,7 +55,7 @@ namespace CalculatorGUI
                     }
                 case "*":
                     try {
-                        return x * y; // IVSMath.Multiply(x, y);
+                        return IVSMath.Multiply(x, y);
                     }
                     catch (OverflowException)
                     {
@@ -90,7 +91,7 @@ namespace CalculatorGUI
                         wasError = true;
                         return double.NaN;
                     }
-                    catch (Exception) {
+                    catch (ArithmeticException) {
                         tb_Out.Text = "Nepovolená operace";
                         wasError = true;
                         return double.NaN;
@@ -99,7 +100,7 @@ namespace CalculatorGUI
                     try {
                         return IVSMath.Root(x, Convert.ToInt32(y));
                     }
-                    catch (Exception) {
+                    catch (ArithmeticException) {
                         tb_Out.Text = "Nepovolená operace";
                         wasError = true;
                         return double.NaN;
@@ -118,23 +119,43 @@ namespace CalculatorGUI
                     try {
                         return IVSMath.Root(x, 2);
                     }
-                    catch (Exception)
+                    catch (ArithmeticException)
                     {
                         tb_Out.Text = "Nepovolená operace";
                         wasError = true;
                         return double.NaN;
                     }
                 case "!":
-                    return IVSMath.Factorial(Convert.ToInt32(x));
+                    try { 
+                    return IVSMath.Factorial((int)x);
+                    }
+                    catch (OverflowException)
+                    {
+                        tb_Out.Text = "Overflow chyba";
+                        wasError = true;
+                        return double.NaN;
+                    }
+                    catch (ArithmeticException)
+                    {
+                        tb_Out.Text = "Nepovolená operace";
+                        wasError = true;
+                        return double.NaN;
+                    }
                 case "sin":
-                    return 8; // IVSMath.Sine(x);
+                    return IVSMath.Sine(x);
                 case "cos":
                     return IVSMath.Cosine(x);
                 case "tan":
                     try {
                         return IVSMath.Tangent(x);
                     }
-                    catch (Exception)
+                    catch (OverflowException)
+                    {
+                        tb_Out.Text = "Overflow chyba";
+                        wasError = true;
+                        return double.NaN;
+                    }
+                    catch (ArithmeticException)
                     {
                         tb_Out.Text = "Nepovolená operace";
                         wasError = true;
@@ -147,6 +168,12 @@ namespace CalculatorGUI
                     catch (DivideByZeroException)
                     {
                         tb_Out.Text = "Dělení nulou";
+                        wasError = true;
+                        return double.NaN;
+                    }
+                    catch (OverflowException)
+                    {
+                        tb_Out.Text = "Overflow chyba";
                         wasError = true;
                         return double.NaN;
                     }
@@ -300,6 +327,26 @@ namespace CalculatorGUI
                     wasError = true;
                     return;
                 }
+            }
+        }
+
+        private void CalcForm_Load(object sender, EventArgs e)
+        {
+            this.KeyPreview = true;
+            this.KeyDown += new KeyEventHandler(CalcForm_Load);
+        }
+
+        private void CalcForm_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode.ToString() == "F1")
+            {
+                ProcessStartInfo startInfo = new ProcessStartInfo("dokumentace.pdf");
+                Process.Start(startInfo);
+            }
+            if (e.KeyCode.ToString() == "F2")
+            {
+                About about = new About();
+                about.ShowDialog();
             }
         }
 

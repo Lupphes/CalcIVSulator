@@ -400,6 +400,7 @@
             // 
             this.tb_Out.Font = new System.Drawing.Font("Microsoft YaHei UI", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tb_Out.Location = new System.Drawing.Point(4, 47);
+            this.tb_Out.MaxLength = 15;
             this.tb_Out.Name = "tb_Out";
             this.tb_Out.ReadOnly = true;
             this.tb_Out.Size = new System.Drawing.Size(312, 48);
@@ -517,6 +518,8 @@
             this.MinimizeBox = false;
             this.Name = "CalcForm";
             this.Text = "CalcIVSulator";
+            this.Load += new System.EventHandler(this.CalcForm_Load);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.CalcForm_KeyDown);
             this.ResumeLayout(false);
             this.PerformLayout();
 
