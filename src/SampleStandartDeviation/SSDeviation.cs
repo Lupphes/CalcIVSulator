@@ -42,7 +42,7 @@ namespace SampleStandartDeviation
             SSDeviation = IVSMath.Root(SSDeviationSq, 2);       // SSDeviation = SSDeviationSq^1/2
             // s = ((1/(N-1))*(squaresum-count*average^2))^1/2
 
-            Console.WriteLine("SSDeviation: " + SSDeviation);
+            Console.WriteLine(SSDeviation);
         }
     }
 }
