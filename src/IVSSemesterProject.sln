@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IVSMathLibrary", "IVSMathLi
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IVSMathLibraryTests", "IVSMathLibraryTests\IVSMathLibraryTests.csproj", "{CA2639B3-0115-4DCF-8A30-44D138F432D4}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SampleStandartDeviation", "SampleStandartDeviation\SampleStandartDeviation.csproj", "{DF933B24-79BE-42AB-8BE4-D4BF3A6DAA68}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{CA2639B3-0115-4DCF-8A30-44D138F432D4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CA2639B3-0115-4DCF-8A30-44D138F432D4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CA2639B3-0115-4DCF-8A30-44D138F432D4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DF933B24-79BE-42AB-8BE4-D4BF3A6DAA68}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DF933B24-79BE-42AB-8BE4-D4BF3A6DAA68}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DF933B24-79BE-42AB-8BE4-D4BF3A6DAA68}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DF933B24-79BE-42AB-8BE4-D4BF3A6DAA68}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
