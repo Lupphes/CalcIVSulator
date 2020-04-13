@@ -40,7 +40,7 @@ Kalkulačka a matematická knihovna je otestovaná v těchto systémech:
 TO DO!
 
 ## Licence
-Celý projekt je publikován pod licencí GPLv3. 
+Celý projekt je publikován pod licencí [GPLv3][license]. 
 
 
    [loginRUC]: <https://www.vutbr.cz/lide/viktor-rucky-221908>
@@ -50,3 +50,4 @@ Celý projekt je publikován pod licencí GPLv3.
    [githubSL]: <https://github.com/TheLupp>
    [githubVL]: <https://github.com/vlachvojta>
    [dokumentace]: <https://github.com/TheLupp/CalcIVSulator/blob/master/dokumentace.pdf>
+   [license]: <https://github.com/TheLupp/CalcIVSulator/blob/master/LICENSE>
