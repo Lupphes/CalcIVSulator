@@ -238,6 +238,7 @@ namespace CalculatorGUI
                 else {
                     if (parseDouble(out result, tb_Out.Text)) {
                         resultValue = Calculate(operationPerfomed, resultValue, result);
+                        resultValue = Math.Round(resultValue, 9);
                         if (wasError) {
                             return;
                         }
@@ -263,6 +264,7 @@ namespace CalculatorGUI
                 if (isChained)
                 {
                     resultValue = Calculate(operationPerfomed, resultValue);
+                    resultValue = Math.Round(resultValue, 9);
                     if (wasError){
                         return;
                     }
@@ -281,7 +283,8 @@ namespace CalculatorGUI
                     }
                     else {
                         if (parseDouble(out result, tb_Out.Text)) {
-                            resultValue = Calculate(operationPerfomed, resultValue, result);
+                            resultValue = Calculate(operationPerfomed, result);
+                            resultValue = Math.Round(resultValue, 9);
                             if (wasError) {
                                 return;
                             }
@@ -312,6 +315,7 @@ namespace CalculatorGUI
                 double result;
                 if (parseDouble(out result, tb_Out.Text)) {
                     resultValue = Calculate(operationPerfomed, resultValue, result);
+                    resultValue = Math.Round(resultValue, 9);
                     if (wasError) {
                         return;
                     }
