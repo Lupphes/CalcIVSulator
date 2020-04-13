@@ -20,7 +20,7 @@ namespace CalculatorGUI
 
         double resultValue;
         string operationPerfomed = "";
-        bool isChained, wasCalculated, wasError = false;
+        bool isChained, wasCalculated, wasError, comma = false;
 
         private bool parseDouble(out double result, string number)
         {
@@ -40,6 +40,7 @@ namespace CalculatorGUI
                     catch (OverflowException)
                     {
                         tb_Out.Text = "Overflow chyba";
+                        comma = false;
                         wasError = true;
                         return double.NaN;
                     }
@@ -50,6 +51,7 @@ namespace CalculatorGUI
                     catch (OverflowException)
                     {
                         tb_Out.Text = "Overflow chyba";
+                        comma = false;
                         wasError = true;
                         return double.NaN;
                     }
@@ -61,6 +63,7 @@ namespace CalculatorGUI
                     {
                         tb_Out.Text = "Overflow chyba";
                         wasError = true;
+                        comma = false;
                         return double.NaN;
                     }
                 case "/":
@@ -70,11 +73,13 @@ namespace CalculatorGUI
                     catch (OverflowException) {
                         tb_Out.Text = "Overflow chyba";
                         wasError = true;
+                        comma = false;
                         return double.NaN;
                     }
                     catch (DivideByZeroException) {
                         tb_Out.Text = "Dělení nulou";
                         wasError = true;
+                        comma = false;
                         return double.NaN;
                     }                  
                 case "^":
@@ -84,16 +89,19 @@ namespace CalculatorGUI
                     catch (OverflowException) {
                         tb_Out.Text = "Overflow chyba";
                         wasError = true;
+                        comma = false;
                         return double.NaN;
                     }
                     catch (DivideByZeroException) {
                         tb_Out.Text = "Dělení nulou";
                         wasError = true;
+                        comma = false;
                         return double.NaN;
                     }
                     catch (ArithmeticException) {
                         tb_Out.Text = "Nepovolená operace";
                         wasError = true;
+                        comma = false;
                         return double.NaN;
                     }
                 case "√":
@@ -103,6 +111,7 @@ namespace CalculatorGUI
                     catch (ArithmeticException) {
                         tb_Out.Text = "Nepovolená operace";
                         wasError = true;
+                        comma = false;
                         return double.NaN;
                     }
                 case "𝑥^2":
@@ -113,6 +122,7 @@ namespace CalculatorGUI
                     {
                         tb_Out.Text = "Overflow chyba";
                         wasError = true;
+                        comma = false;
                         return double.NaN;
                     }
                 case "√𝑥":
@@ -123,6 +133,7 @@ namespace CalculatorGUI
                     {
                         tb_Out.Text = "Nepovolená operace";
                         wasError = true;
+                        comma = false;
                         return double.NaN;
                     }
                 case "!":
@@ -133,12 +144,14 @@ namespace CalculatorGUI
                     {
                         tb_Out.Text = "Overflow chyba";
                         wasError = true;
+                        comma = false;
                         return double.NaN;
                     }
                     catch (ArithmeticException)
                     {
                         tb_Out.Text = "Nepovolená operace";
                         wasError = true;
+                        comma = false;
                         return double.NaN;
                     }
                 case "sin":
@@ -153,12 +166,14 @@ namespace CalculatorGUI
                     {
                         tb_Out.Text = "Overflow chyba";
                         wasError = true;
+                        comma = false;
                         return double.NaN;
                     }
                     catch (ArithmeticException)
                     {
                         tb_Out.Text = "Nepovolená operace";
                         wasError = true;
+                        comma = false;
                         return double.NaN;
                     }
                 case "1/𝑥":
@@ -169,12 +184,14 @@ namespace CalculatorGUI
                     {
                         tb_Out.Text = "Dělení nulou";
                         wasError = true;
+                        comma = false;
                         return double.NaN;
                     }
                     catch (OverflowException)
                     {
                         tb_Out.Text = "Overflow chyba";
                         wasError = true;
+                        comma = false;
                         return double.NaN;
                     }
             }
@@ -186,9 +203,18 @@ namespace CalculatorGUI
                 tb_Out.Clear();
                 wasError = false;
                 wasCalculated = false;
+                comma = false;
             }
             Button button = (Button)sender;
-            tb_Out.Text += button.Text;
+            if (button.Text == ".") {
+                if (!comma) {
+                    tb_Out.Text += button.Text;
+                    comma = true;
+                }
+            } else {
+                tb_Out.Text += button.Text;
+            }
+            
         }
 
         private void btn_Back_Click(object sender, EventArgs e) {
@@ -201,6 +227,9 @@ namespace CalculatorGUI
             }
             else {
                 str = "";
+            }
+            if (!str.Contains('.')) {
+                comma = false;
             }
             tb_Out.Text = str;
         }
@@ -243,6 +272,9 @@ namespace CalculatorGUI
                             return;
                         }
                         lb_Next.Text = resultValue.ToString() + " " + operationPerfomed;
+                        if (resultValue % 1 == 0) {
+                            comma = false;
+                        }
 
                     }
                     else {
@@ -270,6 +302,9 @@ namespace CalculatorGUI
                     }
                     isChained = false;
                     tb_Out.Text = resultValue.ToString();
+                    if (resultValue % 1 == 0) {
+                        comma = false;
+                    }
                     operationPerfomed = "";
                     wasCalculated = true;
                     lb_Next.Text = "";
@@ -285,6 +320,9 @@ namespace CalculatorGUI
                         if (parseDouble(out result, tb_Out.Text)) {
                             resultValue = Calculate(operationPerfomed, result);
                             resultValue = Math.Round(resultValue, 9);
+                            if (resultValue % 1 == 0) {
+                                comma = false;
+                            }
                             if (wasError) {
                                 return;
                             }
@@ -316,6 +354,9 @@ namespace CalculatorGUI
                 if (parseDouble(out result, tb_Out.Text)) {
                     resultValue = Calculate(operationPerfomed, resultValue, result);
                     resultValue = Math.Round(resultValue, 9);
+                    if (resultValue % 1 == 0) {
+                        comma = false;
+                    }
                     if (wasError) {
                         return;
                     }
@@ -323,6 +364,7 @@ namespace CalculatorGUI
 
                     isChained = false;
                     wasCalculated = true;
+                    comma = false;
 
                     lb_Next.Text = "";
                     operationPerfomed = "";
@@ -379,6 +421,7 @@ namespace CalculatorGUI
             isChained = false;
             wasCalculated = false;
             wasError = false;
+            comma = false;
             tb_Out.Clear();
             lb_Next.Text = "";
 
