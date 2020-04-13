@@ -343,7 +343,7 @@
             this.btn_Comma.Size = new System.Drawing.Size(47, 36);
             this.btn_Comma.TabIndex = 11;
             this.btn_Comma.TabStop = false;
-            this.btn_Comma.Text = ",";
+            this.btn_Comma.Text = ".";
             this.btn_Comma.UseVisualStyleBackColor = false;
             this.btn_Comma.Click += new System.EventHandler(this.btn_Nbr_Click);
             // 
