@@ -431,7 +431,7 @@
             this.btn_Delete.Name = "btn_Delete";
             this.btn_Delete.Size = new System.Drawing.Size(47, 36);
             this.btn_Delete.TabIndex = 39;
-            this.btn_Delete.Text = "C";
+            this.btn_Delete.Text = "AC";
             this.btn_Delete.UseVisualStyleBackColor = false;
             this.btn_Delete.Click += new System.EventHandler(this.btn_Delete_Click);
             // 
