@@ -66,7 +66,7 @@
             this.btn_Nbr_3.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btn_Nbr_3.Font = new System.Drawing.Font("Microsoft YaHei UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Nbr_3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.btn_Nbr_3.Location = new System.Drawing.Point(110, 227);
+            this.btn_Nbr_3.Location = new System.Drawing.Point(110, 212);
             this.btn_Nbr_3.Name = "btn_Nbr_3";
             this.btn_Nbr_3.Size = new System.Drawing.Size(47, 36);
             this.btn_Nbr_3.TabIndex = 3;
@@ -81,7 +81,7 @@
             this.btn_Nbr_2.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btn_Nbr_2.Font = new System.Drawing.Font("Microsoft YaHei UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Nbr_2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.btn_Nbr_2.Location = new System.Drawing.Point(57, 227);
+            this.btn_Nbr_2.Location = new System.Drawing.Point(57, 212);
             this.btn_Nbr_2.Name = "btn_Nbr_2";
             this.btn_Nbr_2.Size = new System.Drawing.Size(47, 36);
             this.btn_Nbr_2.TabIndex = 2;
@@ -96,7 +96,7 @@
             this.btn_Nbr_6.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btn_Nbr_6.Font = new System.Drawing.Font("Microsoft YaHei UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Nbr_6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.btn_Nbr_6.Location = new System.Drawing.Point(110, 185);
+            this.btn_Nbr_6.Location = new System.Drawing.Point(110, 170);
             this.btn_Nbr_6.Name = "btn_Nbr_6";
             this.btn_Nbr_6.Size = new System.Drawing.Size(47, 36);
             this.btn_Nbr_6.TabIndex = 6;
@@ -111,7 +111,7 @@
             this.btn_Nbr_5.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btn_Nbr_5.Font = new System.Drawing.Font("Microsoft YaHei UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Nbr_5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.btn_Nbr_5.Location = new System.Drawing.Point(57, 185);
+            this.btn_Nbr_5.Location = new System.Drawing.Point(57, 170);
             this.btn_Nbr_5.Name = "btn_Nbr_5";
             this.btn_Nbr_5.Size = new System.Drawing.Size(47, 36);
             this.btn_Nbr_5.TabIndex = 5;
@@ -126,7 +126,7 @@
             this.btn_Nbr_8.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btn_Nbr_8.Font = new System.Drawing.Font("Microsoft YaHei UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Nbr_8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.btn_Nbr_8.Location = new System.Drawing.Point(57, 143);
+            this.btn_Nbr_8.Location = new System.Drawing.Point(57, 128);
             this.btn_Nbr_8.Name = "btn_Nbr_8";
             this.btn_Nbr_8.Size = new System.Drawing.Size(47, 36);
             this.btn_Nbr_8.TabIndex = 8;
@@ -141,7 +141,7 @@
             this.btn_Nbr_1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btn_Nbr_1.Font = new System.Drawing.Font("Microsoft YaHei UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Nbr_1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.btn_Nbr_1.Location = new System.Drawing.Point(4, 227);
+            this.btn_Nbr_1.Location = new System.Drawing.Point(4, 212);
             this.btn_Nbr_1.Name = "btn_Nbr_1";
             this.btn_Nbr_1.Size = new System.Drawing.Size(47, 36);
             this.btn_Nbr_1.TabIndex = 1;
@@ -156,7 +156,7 @@
             this.btn_Nbr_4.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btn_Nbr_4.Font = new System.Drawing.Font("Microsoft YaHei UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Nbr_4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.btn_Nbr_4.Location = new System.Drawing.Point(4, 185);
+            this.btn_Nbr_4.Location = new System.Drawing.Point(4, 170);
             this.btn_Nbr_4.Name = "btn_Nbr_4";
             this.btn_Nbr_4.Size = new System.Drawing.Size(47, 36);
             this.btn_Nbr_4.TabIndex = 4;
@@ -171,7 +171,7 @@
             this.btn_Nbr_7.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btn_Nbr_7.Font = new System.Drawing.Font("Microsoft YaHei UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Nbr_7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.btn_Nbr_7.Location = new System.Drawing.Point(4, 143);
+            this.btn_Nbr_7.Location = new System.Drawing.Point(4, 128);
             this.btn_Nbr_7.Name = "btn_Nbr_7";
             this.btn_Nbr_7.Size = new System.Drawing.Size(47, 36);
             this.btn_Nbr_7.TabIndex = 7;
@@ -186,7 +186,7 @@
             this.btn_Nbr_9.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btn_Nbr_9.Font = new System.Drawing.Font("Microsoft YaHei UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Nbr_9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.btn_Nbr_9.Location = new System.Drawing.Point(110, 143);
+            this.btn_Nbr_9.Location = new System.Drawing.Point(110, 128);
             this.btn_Nbr_9.Name = "btn_Nbr_9";
             this.btn_Nbr_9.Size = new System.Drawing.Size(47, 36);
             this.btn_Nbr_9.TabIndex = 9;
@@ -201,7 +201,7 @@
             this.btn_Nbr_0.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btn_Nbr_0.Font = new System.Drawing.Font("Microsoft YaHei UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Nbr_0.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.btn_Nbr_0.Location = new System.Drawing.Point(4, 269);
+            this.btn_Nbr_0.Location = new System.Drawing.Point(4, 254);
             this.btn_Nbr_0.Name = "btn_Nbr_0";
             this.btn_Nbr_0.Size = new System.Drawing.Size(100, 36);
             this.btn_Nbr_0.TabIndex = 10;
@@ -216,7 +216,7 @@
             this.btn_Div.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btn_Div.Font = new System.Drawing.Font("Microsoft YaHei UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Div.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.btn_Div.Location = new System.Drawing.Point(216, 143);
+            this.btn_Div.Location = new System.Drawing.Point(216, 128);
             this.btn_Div.Name = "btn_Div";
             this.btn_Div.Size = new System.Drawing.Size(47, 36);
             this.btn_Div.TabIndex = 19;
@@ -231,7 +231,7 @@
             this.btn_Mul.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btn_Mul.Font = new System.Drawing.Font("Microsoft YaHei UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Mul.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.btn_Mul.Location = new System.Drawing.Point(216, 185);
+            this.btn_Mul.Location = new System.Drawing.Point(216, 170);
             this.btn_Mul.Name = "btn_Mul";
             this.btn_Mul.Size = new System.Drawing.Size(47, 36);
             this.btn_Mul.TabIndex = 18;
@@ -247,7 +247,7 @@
             this.btn_Sub.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btn_Sub.Font = new System.Drawing.Font("Microsoft YaHei UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Sub.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.btn_Sub.Location = new System.Drawing.Point(216, 227);
+            this.btn_Sub.Location = new System.Drawing.Point(216, 212);
             this.btn_Sub.Name = "btn_Sub";
             this.btn_Sub.Size = new System.Drawing.Size(47, 36);
             this.btn_Sub.TabIndex = 17;
@@ -262,7 +262,7 @@
             this.btn_Add.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btn_Add.Font = new System.Drawing.Font("Microsoft YaHei UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Add.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.btn_Add.Location = new System.Drawing.Point(216, 269);
+            this.btn_Add.Location = new System.Drawing.Point(216, 254);
             this.btn_Add.Name = "btn_Add";
             this.btn_Add.Size = new System.Drawing.Size(47, 36);
             this.btn_Add.TabIndex = 16;
@@ -277,7 +277,7 @@
             this.btn_Res.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btn_Res.Font = new System.Drawing.Font("Microsoft YaHei UI", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Res.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.btn_Res.Location = new System.Drawing.Point(269, 227);
+            this.btn_Res.Location = new System.Drawing.Point(269, 212);
             this.btn_Res.Name = "btn_Res";
             this.btn_Res.Size = new System.Drawing.Size(47, 78);
             this.btn_Res.TabIndex = 20;
@@ -292,7 +292,7 @@
             this.btn_PowTo1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btn_PowTo1.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_PowTo1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.btn_PowTo1.Location = new System.Drawing.Point(269, 185);
+            this.btn_PowTo1.Location = new System.Drawing.Point(269, 170);
             this.btn_PowTo1.Name = "btn_PowTo1";
             this.btn_PowTo1.Size = new System.Drawing.Size(47, 36);
             this.btn_PowTo1.TabIndex = 21;
@@ -307,7 +307,7 @@
             this.btn_Root.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btn_Root.Font = new System.Drawing.Font("Microsoft YaHei UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Root.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.btn_Root.Location = new System.Drawing.Point(216, 101);
+            this.btn_Root.Location = new System.Drawing.Point(216, 86);
             this.btn_Root.Name = "btn_Root";
             this.btn_Root.Size = new System.Drawing.Size(47, 36);
             this.btn_Root.TabIndex = 24;
@@ -322,7 +322,7 @@
             this.btn_Power.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btn_Power.Font = new System.Drawing.Font("Microsoft YaHei UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Power.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.btn_Power.Location = new System.Drawing.Point(163, 101);
+            this.btn_Power.Location = new System.Drawing.Point(163, 86);
             this.btn_Power.Name = "btn_Power";
             this.btn_Power.Size = new System.Drawing.Size(47, 36);
             this.btn_Power.TabIndex = 25;
@@ -338,7 +338,7 @@
             this.btn_Comma.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btn_Comma.Font = new System.Drawing.Font("Microsoft YaHei UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Comma.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.btn_Comma.Location = new System.Drawing.Point(110, 269);
+            this.btn_Comma.Location = new System.Drawing.Point(110, 254);
             this.btn_Comma.Name = "btn_Comma";
             this.btn_Comma.Size = new System.Drawing.Size(47, 36);
             this.btn_Comma.TabIndex = 11;
@@ -353,7 +353,7 @@
             this.btn_sin.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btn_sin.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_sin.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.btn_sin.Location = new System.Drawing.Point(4, 101);
+            this.btn_sin.Location = new System.Drawing.Point(4, 86);
             this.btn_sin.Name = "btn_sin";
             this.btn_sin.Size = new System.Drawing.Size(47, 36);
             this.btn_sin.TabIndex = 28;
@@ -368,7 +368,7 @@
             this.btn_cos.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btn_cos.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_cos.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.btn_cos.Location = new System.Drawing.Point(57, 101);
+            this.btn_cos.Location = new System.Drawing.Point(57, 86);
             this.btn_cos.Name = "btn_cos";
             this.btn_cos.Size = new System.Drawing.Size(47, 36);
             this.btn_cos.TabIndex = 27;
@@ -383,7 +383,7 @@
             this.btn_tan.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btn_tan.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_tan.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.btn_tan.Location = new System.Drawing.Point(110, 101);
+            this.btn_tan.Location = new System.Drawing.Point(110, 86);
             this.btn_tan.Name = "btn_tan";
             this.btn_tan.Size = new System.Drawing.Size(47, 36);
             this.btn_tan.TabIndex = 26;
@@ -398,7 +398,7 @@
             this.btn_Back.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btn_Back.Font = new System.Drawing.Font("Microsoft YaHei UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Back.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.btn_Back.Location = new System.Drawing.Point(269, 143);
+            this.btn_Back.Location = new System.Drawing.Point(269, 128);
             this.btn_Back.Name = "btn_Back";
             this.btn_Back.Size = new System.Drawing.Size(47, 36);
             this.btn_Back.TabIndex = 22;
@@ -411,22 +411,22 @@
             // 
             this.lb_Next.AutoEllipsis = true;
             this.lb_Next.AutoSize = true;
-            this.lb_Next.Font = new System.Drawing.Font("Microsoft YaHei UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_Next.Font = new System.Drawing.Font("Microsoft YaHei UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lb_Next.Location = new System.Drawing.Point(4, 9);
             this.lb_Next.MinimumSize = new System.Drawing.Size(312, 0);
             this.lb_Next.Name = "lb_Next";
-            this.lb_Next.Size = new System.Drawing.Size(312, 25);
+            this.lb_Next.Size = new System.Drawing.Size(312, 28);
             this.lb_Next.TabIndex = 30;
             this.lb_Next.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // tb_Out
             // 
-            this.tb_Out.Font = new System.Drawing.Font("Microsoft YaHei UI", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tb_Out.Location = new System.Drawing.Point(4, 47);
+            this.tb_Out.Font = new System.Drawing.Font("Microsoft YaHei UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tb_Out.Location = new System.Drawing.Point(4, 40);
             this.tb_Out.MaxLength = 15;
             this.tb_Out.Name = "tb_Out";
             this.tb_Out.ReadOnly = true;
-            this.tb_Out.Size = new System.Drawing.Size(312, 48);
+            this.tb_Out.Size = new System.Drawing.Size(312, 38);
             this.tb_Out.TabIndex = 29;
             this.tb_Out.TabStop = false;
             this.tb_Out.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
@@ -437,7 +437,7 @@
             this.btn_Negative.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btn_Negative.Font = new System.Drawing.Font("Microsoft YaHei UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Negative.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.btn_Negative.Location = new System.Drawing.Point(163, 269);
+            this.btn_Negative.Location = new System.Drawing.Point(163, 254);
             this.btn_Negative.Name = "btn_Negative";
             this.btn_Negative.Size = new System.Drawing.Size(47, 36);
             this.btn_Negative.TabIndex = 12;
@@ -452,7 +452,7 @@
             this.btn_Delete.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btn_Delete.Font = new System.Drawing.Font("Microsoft YaHei UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Delete.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.btn_Delete.Location = new System.Drawing.Point(269, 101);
+            this.btn_Delete.Location = new System.Drawing.Point(269, 86);
             this.btn_Delete.Name = "btn_Delete";
             this.btn_Delete.Size = new System.Drawing.Size(47, 36);
             this.btn_Delete.TabIndex = 23;
@@ -467,7 +467,7 @@
             this.btn_Fac.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btn_Fac.Font = new System.Drawing.Font("Microsoft YaHei UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Fac.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.btn_Fac.Location = new System.Drawing.Point(163, 227);
+            this.btn_Fac.Location = new System.Drawing.Point(163, 212);
             this.btn_Fac.Name = "btn_Fac";
             this.btn_Fac.Size = new System.Drawing.Size(47, 36);
             this.btn_Fac.TabIndex = 13;
@@ -482,7 +482,7 @@
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button1.Font = new System.Drawing.Font("Microsoft YaHei UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.button1.Location = new System.Drawing.Point(163, 185);
+            this.button1.Location = new System.Drawing.Point(163, 170);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(47, 36);
             this.button1.TabIndex = 14;
@@ -497,7 +497,7 @@
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button2.Font = new System.Drawing.Font("Microsoft YaHei UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.button2.Location = new System.Drawing.Point(163, 143);
+            this.button2.Location = new System.Drawing.Point(163, 128);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(47, 36);
             this.button2.TabIndex = 15;
@@ -511,7 +511,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.AliceBlue;
-            this.ClientSize = new System.Drawing.Size(319, 307);
+            this.ClientSize = new System.Drawing.Size(319, 295);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.btn_Fac);

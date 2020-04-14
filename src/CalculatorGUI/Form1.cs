@@ -199,22 +199,31 @@ namespace CalculatorGUI
         }
 
         private void btn_Nbr_Click(object sender, EventArgs e) {
-            if (tb_Out.Text == "0" || wasError || wasCalculated) {
-                tb_Out.Clear();
-                wasError = false;
-                wasCalculated = false;
-                comma = false;
+            if (wasError || wasCalculated)
+            {
+                btn_Delete_Click(sender, e);
             }
-            Button button = (Button)sender;
-            if (button.Text == ".") {
-                if (!comma) {
-                    tb_Out.Text += button.Text;
-                    comma = true;
+            else if (tb_Out.Text.Length >= 19)
+            {
+                return;
+            }
+            else
+            {
+                Button button = (Button)sender;
+                if (button.Text == ".")
+                {
+                    if (!comma)
+                    {
+                        tb_Out.Text += button.Text;
+                        comma = true;
+                    }
                 }
-            } else {
-                tb_Out.Text += button.Text;
+                else
+                {
+                    tb_Out.Text += button.Text;
+                }
             }
-            
+
         }
 
         private void btn_Back_Click(object sender, EventArgs e) {
@@ -224,14 +233,18 @@ namespace CalculatorGUI
                 btn_Delete_Click(sender, e);
             } else if (str.Length > 1) {
                 str = str.Substring(0, str.Length - 1);
+                tb_Out.Text = str;
+                if (!str.Contains('.')) {
+                    comma = false;
+                }
             }
             else {
                 str = "";
+                tb_Out.Text = str;
+                if (!str.Contains('.')) {
+                    comma = false;
+                }
             }
-            if (!str.Contains('.')) {
-                comma = false;
-            }
-            tb_Out.Text = str;
         }
 
         private void btn_MultipleValuesOperation_Click(object sender, EventArgs e) {
@@ -241,7 +254,9 @@ namespace CalculatorGUI
 
             if (!isChained) {
                 double result;
-
+                if (tb_Out.Text == ".") {
+                    tb_Out.Text = "0";
+                }
                 if (tb_Out.Text == "") {
                     tb_Out.Text = "No input given";
                     wasError = true;
@@ -251,6 +266,7 @@ namespace CalculatorGUI
                     resultValue = result;
                     lb_Next.Text = tb_Out.Text + " " + operationPerfomed;
                     isChained = true;
+                    comma = false;
                 }
                 else {
                     tb_Out.Text = "Wrong input";
@@ -260,14 +276,15 @@ namespace CalculatorGUI
             }
             else {
                 double result;
+                if (tb_Out.Text == ".") {
+                    tb_Out.Text = "0";
+                }
                 if (tb_Out.Text == "") {
                     lb_Next.Text = resultValue.ToString() + " " + operationPerfomed;
                     return;
-                }
-                else {
+                } else {
                     if (parseDouble(out result, tb_Out.Text)) {
                         resultValue = Calculate(operationPerfomed, resultValue, result);
-                        resultValue = Math.Round(resultValue, 9);
                         if (wasError) {
                             return;
                         }
@@ -296,7 +313,9 @@ namespace CalculatorGUI
                 if (isChained)
                 {
                     resultValue = Calculate(operationPerfomed, resultValue);
-                    resultValue = Math.Round(resultValue, 9);
+                    if (resultValue % 1 == 0) {
+                        comma = false;
+                    }
                     if (wasError){
                         return;
                     }
@@ -317,9 +336,12 @@ namespace CalculatorGUI
                         return;
                     }
                     else {
+                        if (tb_Out.Text == ".") {
+                            tb_Out.Text = "0";
+                        }
                         if (parseDouble(out result, tb_Out.Text)) {
+                            lb_Next.Text = $"{tb_Out.Text}{operationPerfomed}";
                             resultValue = Calculate(operationPerfomed, result);
-                            resultValue = Math.Round(resultValue, 9);
                             if (resultValue % 1 == 0) {
                                 comma = false;
                             }
@@ -327,7 +349,6 @@ namespace CalculatorGUI
                                 return;
                             }
                             tb_Out.Text = resultValue.ToString();
-
                         }
                         else {
                             tb_Out.Text = "Wrong input";
@@ -353,7 +374,6 @@ namespace CalculatorGUI
                 double result;
                 if (parseDouble(out result, tb_Out.Text)) {
                     resultValue = Calculate(operationPerfomed, resultValue, result);
-                    resultValue = Math.Round(resultValue, 9);
                     if (resultValue % 1 == 0) {
                         comma = false;
                     }
@@ -424,7 +444,6 @@ namespace CalculatorGUI
             comma = false;
             tb_Out.Clear();
             lb_Next.Text = "";
-
         }
     }
 }
