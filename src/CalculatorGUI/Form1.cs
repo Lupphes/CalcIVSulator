@@ -235,7 +235,7 @@ namespace CalculatorGUI
         }
 
         private void btn_Nbr_Click(object sender, EventArgs e) {
-            if (wasError || wasCalculated) {
+            if (wasError || wasCalculated && !wasCalculated) {
                 btn_Delete_Click(sender, e);
             }
             else if (tb_Out.Text.Length >= 19) {
