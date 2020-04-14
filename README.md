@@ -14,7 +14,7 @@ Kalkulačka umí spočítat následující operace:
   - Základní aritmetické operace tj. sčítání, odčítání, násobení a dělení
   - Goniometrické funkce tj. sinus, cosinus, tangent
   - Mocninu na druhou a na Ntou
-  - Odmocninu na druhou a na Ntou
+  - Odmocninu na druhou a odmocninu Ntou
   - Inverzní číslo od zadaného čísla
   - Faktoriál
 
@@ -40,7 +40,7 @@ Kalkulačka a matematická knihovna je otestovaná v těchto systémech:
 TO DO!
 
 ## Licence
-Celý projekt je publikován pod licencí GPLv3. 
+Celý projekt je publikován pod licencí GNU GPLv2. 
 
 
    [loginRUC]: <https://www.vutbr.cz/lide/viktor-rucky-221908>
