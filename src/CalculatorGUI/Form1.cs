@@ -108,6 +108,12 @@ namespace CalculatorGUI
                     try {
                         return IVSMath.Root(x, Convert.ToInt32(y));
                     }
+                    catch (OverflowException) {
+                        tb_Out.Text = "Overflow chyba";
+                        wasError = true;
+                        comma = false;
+                        return double.NaN;
+                    }
                     catch (ArithmeticException) {
                         tb_Out.Text = "Nepovolená operace";
                         wasError = true;
@@ -121,6 +127,12 @@ namespace CalculatorGUI
                     catch (OverflowException)
                     {
                         tb_Out.Text = "Overflow chyba";
+                        wasError = true;
+                        comma = false;
+                        return double.NaN;
+                    }
+                    catch (ArithmeticException) {
+                        tb_Out.Text = "Nepovolená operace";
                         wasError = true;
                         comma = false;
                         return double.NaN;
@@ -155,22 +167,48 @@ namespace CalculatorGUI
                         return double.NaN;
                     }
                 case "sin":
-                    return IVSMath.Sine(x);
-                case "cos":
-                    return IVSMath.Cosine(x);
-                case "tan":
                     try {
-                        return IVSMath.Tangent(x);
+                        return IVSMath.Sine(x);
                     }
-                    catch (OverflowException)
-                    {
+                    catch (OverflowException) {
                         tb_Out.Text = "Overflow chyba";
                         wasError = true;
                         comma = false;
                         return double.NaN;
                     }
-                    catch (ArithmeticException)
-                    {
+                    catch (ArithmeticException) {
+                        tb_Out.Text = "Nepovolená operace";
+                        wasError = true;
+                        comma = false;
+                        return double.NaN;
+                    }
+                case "cos":
+                    try {
+                        return IVSMath.Cosine(x);
+                    }
+                    catch (OverflowException) {
+                        tb_Out.Text = "Overflow chyba";
+                        wasError = true;
+                        comma = false;
+                        return double.NaN;
+                    }
+                    catch (ArithmeticException) {
+                        tb_Out.Text = "Nepovolená operace";
+                        wasError = true;
+                        comma = false;
+                        return double.NaN;
+                    }
+                case "tan":
+                    try {
+                        return IVSMath.Tangent(x);
+                    }
+                    catch (OverflowException) {
+                        tb_Out.Text = "Overflow chyba";
+                        wasError = true;
+                        comma = false;
+                        return double.NaN;
+                    }
+                    catch (ArithmeticException) {
                         tb_Out.Text = "Nepovolená operace";
                         wasError = true;
                         comma = false;
@@ -180,15 +218,13 @@ namespace CalculatorGUI
                     try {
                         return IVSMath.Power(x, -1);
                     }
-                    catch (DivideByZeroException)
-                    {
+                    catch (DivideByZeroException) {
                         tb_Out.Text = "Dělení nulou";
                         wasError = true;
                         comma = false;
                         return double.NaN;
                     }
-                    catch (OverflowException)
-                    {
+                    catch (OverflowException) {
                         tb_Out.Text = "Overflow chyba";
                         wasError = true;
                         comma = false;
@@ -199,27 +235,21 @@ namespace CalculatorGUI
         }
 
         private void btn_Nbr_Click(object sender, EventArgs e) {
-            if (wasError || wasCalculated)
-            {
+            if (wasError || wasCalculated) {
                 btn_Delete_Click(sender, e);
             }
-            else if (tb_Out.Text.Length >= 19)
-            {
+            else if (tb_Out.Text.Length >= 19) {
                 return;
             }
-            else
-            {
+            else {
                 Button button = (Button)sender;
-                if (button.Text == ".")
-                {
-                    if (!comma)
-                    {
+                if (button.Text == ".") {
+                    if (!comma) {
                         tb_Out.Text += button.Text;
                         comma = true;
                     }
                 }
-                else
-                {
+                else {
                     tb_Out.Text += button.Text;
                 }
             }
