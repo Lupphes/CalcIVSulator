@@ -18,21 +18,30 @@ namespace CalculatorGUI
             InitializeComponent();
         }
 
-        double resultValue;
-        string operationPerfomed = "";
-        bool isChained, wasCalculated, wasError, comma = false;
+        double resultValue; // Value currently in buffer
+        string operationPerfomed = ""; // Operation currently in buffer
+        bool isChained, wasCalculated, wasError, comma = false; // Flags for states
+        string documatationLocation = "dokumentace.pdf"; // Where is stored documentation
 
+        /// <summary>Parses the text to number
+        ///    (<paramref name="object"/>,<paramref name="event"/>).</summary>
+        /// <param name="object">Object sender</param>
+        /// <param name="event">Event argument</param>
+        /// <returns>Returns bool if conversion was successful.</returns>
         private bool parseDouble(out double result, string number)
         {
-            if (Double.TryParse(number, out result))
+            if (Double.TryParse(number, out result)) // Try to parse the number
                 return true;
             return false;
         }
 
-        private double Calculate(string operation, double x, double y = 0)
-        {
-            switch (operation)
-            {
+        /// <summary>Calculates operations
+        ///    (<paramref name="object"/>,<paramref name="event"/>).</summary>
+        /// <param name="object">Object sender</param>
+        /// <param name="event">Event argument</param>
+        /// <returns>Returns calculated double number.</returns>
+        private double Calculate(string operation, double x, double y = 0) {
+            switch (operation) { // Decides what operation should be performed and If there is an error then its error string
                 case "+":
                     try {
                         return IVSMath.Add(x, y);
@@ -234,12 +243,16 @@ namespace CalculatorGUI
             return 0;
         }
 
+        /// <summary>Sets number or dot to text input
+        ///    (<paramref name="object"/>,<paramref name="event"/>).</summary>
+        /// <param name="object">Object sender</param>
+        /// <param name="event">Event argument</param>
         private void btn_Nbr_Click(object sender, EventArgs e) {
             if (wasError || wasCalculated && !wasCalculated) {
-                btn_Delete_Click(sender, e);
+                btn_Delete_Click(sender, e); // Sets calculator to initial state
             }
-            else if (tb_Out.Text.Length >= 19) {
-                return;
+            else if (tb_Out.Text.Length >= 19) { // Max lenght of number
+                return; 
             }
             else {
                 Button button = (Button)sender;
@@ -256,37 +269,39 @@ namespace CalculatorGUI
 
         }
 
+        /// <summary>Deletes one character from text input
+        ///    (<paramref name="object"/>,<paramref name="event"/>).</summary>
+        /// <param name="object">Object sender</param>
+        /// <param name="event">Event argument</param>
         private void btn_Back_Click(object sender, EventArgs e) {
             string str = tb_Out.Text;
 
-            if (wasError) {
+            if (wasError) { // Error state
                 btn_Delete_Click(sender, e);
-            } else if (str.Length > 1) {
+            } else if (str.Length > 1) { // Is able to go back
                 str = str.Substring(0, str.Length - 1);
                 tb_Out.Text = str;
-                if (!str.Contains('.')) {
-                    comma = false;
-                }
+                if (!str.Contains('.')) { comma = false; }
             }
             else {
                 str = "";
+                if (!str.Contains('.')) { comma = false; }
                 tb_Out.Text = str;
-                if (!str.Contains('.')) {
-                    comma = false;
-                }
             }
         }
 
+        /// <summary>Calculates operations with multiple values
+        ///    (<paramref name="object"/>,<paramref name="event"/>).</summary>
+        /// <param name="object">Object sender</param>
+        /// <param name="event">Event argument</param>
         private void btn_MultipleValuesOperation_Click(object sender, EventArgs e) {
 
             Button button = (Button)sender;
-            operationPerfomed = button.Text;
-
+            
+            if (tb_Out.Text == ".") { tb_Out.Text = "0"; } // Just dot -> change it on zero
             if (!isChained) {
+                operationPerfomed = button.Text;
                 double result;
-                if (tb_Out.Text == ".") {
-                    tb_Out.Text = "0";
-                }
                 if (tb_Out.Text == "") {
                     tb_Out.Text = "No input given";
                     wasError = true;
@@ -298,31 +313,24 @@ namespace CalculatorGUI
                     isChained = true;
                     comma = false;
                 }
-                else {
+                else { // Parse error
                     tb_Out.Text = "Wrong input";
                     wasError = true;
                     return;
                 }
             }
-            else {
-                double result;
-                if (tb_Out.Text == ".") {
-                    tb_Out.Text = "0";
-                }
+            else { 
                 if (tb_Out.Text == "") {
                     lb_Next.Text = resultValue.ToString() + " " + operationPerfomed;
                     return;
                 } else {
+                    double result;
                     if (parseDouble(out result, tb_Out.Text)) {
                         resultValue = Calculate(operationPerfomed, resultValue, result);
-                        if (wasError) {
-                            return;
-                        }
+                        operationPerfomed = button.Text;
+                        if (resultValue % 1 == 0) { comma = false; } else { comma = true; }
+                        if (wasError) { return; }
                         lb_Next.Text = resultValue.ToString() + " " + operationPerfomed;
-                        if (resultValue % 1 == 0) {
-                            comma = false;
-                        }
-
                     }
                     else {
                         tb_Out.Text = "Wrong input";
@@ -335,120 +343,122 @@ namespace CalculatorGUI
             tb_Out.Clear();
         }
 
+        /// <summary>Calculates operations with just one value
+        ///    (<paramref name="object"/>,<paramref name="event"/>).</summary>
+        /// <param name="object">Object sender</param>
+        /// <param name="event">Event argument</param>
         private void btn_SingleValueOperation_Click(object sender, EventArgs e) {
             Button button = (Button)sender;
-            operationPerfomed = button.Text;
 
-            if (!wasError) {
-                if (isChained)
-                {
+            if (!wasError) { // If error state
+                if (isChained) { // Previous operation is in buffer
                     resultValue = Calculate(operationPerfomed, resultValue);
-                    if (resultValue % 1 == 0) {
-                        comma = false;
-                    }
-                    if (wasError){
-                        return;
-                    }
-                    isChained = false;
+                    operationPerfomed = button.Text;
+                    resultValue = Calculate(operationPerfomed, resultValue);
+                    if (resultValue % 1 == 0) { comma = false; } else { comma = true; }
+                    if (wasError) { return; }
                     tb_Out.Text = resultValue.ToString();
-                    if (resultValue % 1 == 0) {
-                        comma = false;
-                    }
                     operationPerfomed = "";
                     wasCalculated = true;
+                    isChained = false;
                     lb_Next.Text = "";
                 }
-                else {
-                    double result;
+                else { // No input
                     if (tb_Out.Text == "") {
                         tb_Out.Text = "No input given";
                         wasError = true;
                         return;
                     }
                     else {
-                        if (tb_Out.Text == ".") {
-                            tb_Out.Text = "0";
-                        }
+                        double result;
+                        if (tb_Out.Text == ".") { tb_Out.Text = "0"; }
                         if (parseDouble(out result, tb_Out.Text)) {
-                            lb_Next.Text = $"{tb_Out.Text}{operationPerfomed}";
+                            operationPerfomed = button.Text;
+                            lb_Next.Text = $"{tb_Out.Text} {operationPerfomed}";
                             resultValue = Calculate(operationPerfomed, result);
-                            if (resultValue % 1 == 0) {
-                                comma = false;
-                            }
-                            if (wasError) {
-                                return;
-                            }
+                            if (resultValue % 1 == 0) { comma = false; } else { comma = true; }
+                            if (wasError) { return; }
                             tb_Out.Text = resultValue.ToString();
                         }
-                        else {
+                        else { // Parse error
                             tb_Out.Text = "Wrong input";
                             wasError = true;
                             return;
                         }
                     }
                 }
-            } else {
+            } else { // No input
                 tb_Out.Text = "No input given";
                 wasError = true;
                 return;
             }
         }
 
+        /// <summary>Resturn result to the text input and reset the calculator
+        ///    (<paramref name="object"/>,<paramref name="event"/>).</summary>
+        /// <param name="object">Object sender</param>
+        /// <param name="event">Event argument</param>
         private void btn_Res_Click(object sender, EventArgs e) {
-            if (tb_Out.Text == "") {
+            if (tb_Out.Text == "") { // If the input is empty
                 tb_Out.Text = resultValue.ToString();
+                if (resultValue % 1 == 0) { comma = false; } else { comma = true; }
                 isChained = false;
+
                 lb_Next.Text = "";
                 operationPerfomed = "";
             } else {
                 double result;
-                if (parseDouble(out result, tb_Out.Text)) {
-                    resultValue = Calculate(operationPerfomed, resultValue, result);
-                    if (resultValue % 1 == 0) {
-                        comma = false;
-                    }
-                    if (wasError) {
-                        return;
-                    }
+                if (parseDouble(out result, tb_Out.Text)) { // Parse successful -> calculate value
+                    resultValue = Calculate(operationPerfomed, resultValue, result); 
+                    
+                    if (wasError) { return; }
                     tb_Out.Text = resultValue.ToString();
 
                     isChained = false;
                     wasCalculated = true;
-                    comma = false;
-
+                    if (resultValue % 1 == 0) { comma = false; } else { comma = true; }
                     lb_Next.Text = "";
                     operationPerfomed = "";
                 }
-                else {
+                else { // Parse error
                     wasError = true;
                     return;
                 }
             }
         }
 
-        private void CalcForm_Load(object sender, EventArgs e)
-        {
+        /// <summary>Starts monitoring keys
+        ///    (<paramref name="object"/>,<paramref name="event"/>).</summary>
+        /// <param name="object">Object sender</param>
+        /// <param name="event">Event argument</param>
+        private void CalcForm_Load(object sender, EventArgs e) {
             this.KeyPreview = true;
             this.KeyDown += new KeyEventHandler(CalcForm_Load);
         }
 
-        private void CalcForm_KeyDown(object sender, KeyEventArgs e)
-        {
-            if (e.KeyCode.ToString() == "F1")
-            {
-                ProcessStartInfo startInfo = new ProcessStartInfo("dokumentace.pdf");
+        /// <summary>If key is pressed this function will react. It can react just on "F1" or "F2"
+        ///    (<paramref name="object"/>,<paramref name="event"/>).</summary>
+        /// <param name="object">Object sender</param>
+        /// <param name="event">Event argument</param>
+        private void CalcForm_KeyDown(object sender, KeyEventArgs e) {
+        
+            if (e.KeyCode.ToString() == "F1") {
+                ProcessStartInfo startInfo = new ProcessStartInfo(documatationLocation); // Opens this file
                 Process.Start(startInfo);
             }
-            if (e.KeyCode.ToString() == "F2")
-            {
-                About about = new About();
+            if (e.KeyCode.ToString() == "F2") {
+                About about = new About(); // Launches another form
                 about.ShowDialog();
             }
         }
 
-        private void btn_Negative_Click(object sender, EventArgs e) {
-            double result;
-            if (tb_Out.Text != "") { 
+        /// <summary>Changes the value of number in input to negative value
+        ///    (<paramref name="object"/>,<paramref name="event"/>).</summary>
+        /// <param name="object">Object sender</param>
+        /// <param name="event">Event argument</param>
+        private void btn_Negative_Click(object sender, EventArgs e) {   
+            if (tb_Out.Text != "") { // If input is not empty
+                double result;
                 if (parseDouble(out result, tb_Out.Text)) {
                     tb_Out.Text = (result * -1).ToString();
                 } else {
@@ -456,24 +466,26 @@ namespace CalculatorGUI
                     wasError = true;
                     return;
                 }
-            } else if (wasError) {
+            } else if (wasError) { // If error do nothing
                 return;
             }
-            else {
+            else { // Write an error for no input
                 tb_Out.Text = "No input given";
                 wasError = true;
                 return;
             }
         }
 
+        /// <summary>This method resets the calculator to its initial value.
+        ///    (<paramref name="object"/>,<paramref name="event"/>).</summary>
+        /// <param name="object">Object sender</param>
+        /// <param name="event">Event argument</param>
         private void btn_Delete_Click(object sender, EventArgs e) {
+            /* Reset kalkulacky */
             operationPerfomed = "";
-            isChained = false;
-            wasCalculated = false;
-            wasError = false;
-            comma = false;
-            tb_Out.Clear();
+            isChained = wasCalculated = wasError = comma = false;
             lb_Next.Text = "";
+            tb_Out.Clear();
         }
     }
 }
