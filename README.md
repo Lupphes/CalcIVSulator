@@ -14,7 +14,7 @@ Kalkulačka umí spočítat následující operace:
   - Základní aritmetické operace tj. sčítání, odčítání, násobení a dělení
   - Goniometrické funkce tj. sinus, cosinus, tangent
   - Mocninu na druhou a na Ntou
-  - Odmocninu na druhou a odmocninu Ntou
+  - Druhou odmocninu a Ntou odmocninu 
   - Inverzní číslo od zadaného čísla
   - Faktoriál
 
