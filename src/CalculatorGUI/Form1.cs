@@ -23,9 +23,8 @@ namespace CalculatorGUI
         string operationPerfomed = ""; // Operation currently in buffer
         bool isChained, wasCalculated, wasError, comma = false; // Flags for states
         string documatationLocation = "dokumentace.pdf"; // Where is stored documentation
-        NumberStyles styles = NumberStyles.Number;
-        CultureInfo culture = new CultureInfo("cs-CZ");
-
+        NumberStyles styles = NumberStyles.Any;
+        CultureInfo culture = CultureInfo.CreateSpecificCulture("cs-CZ");
 
         /// <summary>Parses the text to number
         ///    (<paramref name="object"/>,<paramref name="event"/>).</summary>
