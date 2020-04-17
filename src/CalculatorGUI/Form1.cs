@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using IVSMathLibrary;
+using System.Globalization;
 
 namespace CalculatorGUI
 {
@@ -22,6 +23,9 @@ namespace CalculatorGUI
         string operationPerfomed = ""; // Operation currently in buffer
         bool isChained, wasCalculated, wasError, comma = false; // Flags for states
         string documatationLocation = "dokumentace.pdf"; // Where is stored documentation
+        NumberStyles styles = NumberStyles.Number;
+        CultureInfo culture = new CultureInfo("cs-CZ");
+
 
         /// <summary>Parses the text to number
         ///    (<paramref name="object"/>,<paramref name="event"/>).</summary>
@@ -30,7 +34,9 @@ namespace CalculatorGUI
         /// <returns>Returns bool if conversion was successful.</returns>
         private bool parseDouble(out double result, string number)
         {
-            if (Double.TryParse(number, out result)) // Try to parse the number
+            CultureInfo.DefaultThreadCurrentCulture = culture;
+            CultureInfo.DefaultThreadCurrentUICulture = culture;
+            if (Double.TryParse(number, styles, culture, out result)) // Tries to parse the number
                 return true;
             return false;
         }
