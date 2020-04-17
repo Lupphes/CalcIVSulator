@@ -250,6 +250,7 @@ namespace IVSMathLibrary
             } while (Math.Abs(term - previousTerm) > IVSMath.precision);
             return result;
         }
+
         
         /// <summary>
         /// Calculates the cosine of a given angle in RADIANS.
