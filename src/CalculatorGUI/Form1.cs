@@ -23,8 +23,8 @@ namespace CalculatorGUI
         string operationPerfomed = ""; // Operation currently in buffer
         bool isChained, wasCalculated, wasError, comma = false; // Flags for states
         string documatationLocation = "dokumentace.pdf"; // Where is stored documentation
-        NumberStyles styles = NumberStyles.Any;
-        CultureInfo culture = CultureInfo.CreateSpecificCulture("cs-CZ");
+        NumberStyles styles = NumberStyles.Any; // Set number styles
+        CultureInfo culture = CultureInfo.CreateSpecificCulture("cs-CZ"); // Set number culture
 
         /// <summary>Parses the text to number
         ///    (<paramref name="object"/>,<paramref name="event"/>).</summary>
@@ -33,7 +33,7 @@ namespace CalculatorGUI
         /// <returns>Returns bool if conversion was successful.</returns>
         private bool parseDouble(out double result, string number)
         {
-            CultureInfo.DefaultThreadCurrentCulture = culture;
+            CultureInfo.DefaultThreadCurrentCulture = culture; // Define number culture
             CultureInfo.DefaultThreadCurrentUICulture = culture;
             if (Double.TryParse(number, styles, culture, out result)) // Tries to parse the number
                 return true;
@@ -448,8 +448,14 @@ namespace CalculatorGUI
         private void CalcForm_KeyDown(object sender, KeyEventArgs e) {
         
             if (e.KeyCode.ToString() == "F1") {
+                try { 
                 ProcessStartInfo startInfo = new ProcessStartInfo(documatationLocation); // Opens this file
                 Process.Start(startInfo);
+                }
+                catch
+                {
+                    MessageBox.Show("Sorry, but it appears that your file with documentation is deleted. Please include it in your folder with program or use our printed version.", "File opening error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
             if (e.KeyCode.ToString() == "F2") {
                 About about = new About(); // Launches another form
