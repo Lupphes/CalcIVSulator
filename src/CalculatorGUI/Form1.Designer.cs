@@ -52,12 +52,12 @@
             this.btn_tan = new System.Windows.Forms.Button();
             this.btn_Back = new System.Windows.Forms.Button();
             this.lb_Next = new System.Windows.Forms.Label();
-            this.tb_Out = new System.Windows.Forms.TextBox();
             this.btn_Negative = new System.Windows.Forms.Button();
             this.btn_Delete = new System.Windows.Forms.Button();
             this.btn_Fac = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
+            this.tb_Out = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // btn_Nbr_3
@@ -312,7 +312,7 @@
             this.btn_Root.Size = new System.Drawing.Size(47, 36);
             this.btn_Root.TabIndex = 24;
             this.btn_Root.TabStop = false;
-            this.btn_Root.Text = "√";
+            this.btn_Root.Text = "ⁿ√𝑥";
             this.btn_Root.UseVisualStyleBackColor = false;
             this.btn_Root.Click += new System.EventHandler(this.btn_MultipleValuesOperation_Click);
             // 
@@ -419,18 +419,6 @@
             this.lb_Next.TabIndex = 30;
             this.lb_Next.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // tb_Out
-            // 
-            this.tb_Out.Font = new System.Drawing.Font("Microsoft YaHei UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tb_Out.Location = new System.Drawing.Point(4, 40);
-            this.tb_Out.MaxLength = 15;
-            this.tb_Out.Name = "tb_Out";
-            this.tb_Out.ReadOnly = true;
-            this.tb_Out.Size = new System.Drawing.Size(312, 38);
-            this.tb_Out.TabIndex = 29;
-            this.tb_Out.TabStop = false;
-            this.tb_Out.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            // 
             // btn_Negative
             // 
             this.btn_Negative.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
@@ -506,19 +494,33 @@
             this.button2.UseVisualStyleBackColor = false;
             this.button2.Click += new System.EventHandler(this.btn_SingleValueOperation_Click);
             // 
+            // tb_Out
+            // 
+            this.tb_Out.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.tb_Out.BackColor = System.Drawing.SystemColors.Control;
+            this.tb_Out.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.tb_Out.Font = new System.Drawing.Font("Microsoft YaHei UI", 18F);
+            this.tb_Out.Location = new System.Drawing.Point(4, 40);
+            this.tb_Out.Name = "tb_Out";
+            this.tb_Out.Size = new System.Drawing.Size(312, 38);
+            this.tb_Out.TabIndex = 31;
+            this.tb_Out.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
             // CalcForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.AliceBlue;
             this.ClientSize = new System.Drawing.Size(319, 295);
+            this.Controls.Add(this.tb_Out);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.btn_Fac);
             this.Controls.Add(this.btn_Delete);
             this.Controls.Add(this.btn_Negative);
             this.Controls.Add(this.lb_Next);
-            this.Controls.Add(this.tb_Out);
             this.Controls.Add(this.btn_Back);
             this.Controls.Add(this.btn_tan);
             this.Controls.Add(this.btn_cos);
@@ -580,12 +582,12 @@
         private System.Windows.Forms.Button btn_tan;
         private System.Windows.Forms.Button btn_Back;
         private System.Windows.Forms.Label lb_Next;
-        private System.Windows.Forms.TextBox tb_Out;
         private System.Windows.Forms.Button btn_Negative;
         private System.Windows.Forms.Button btn_Delete;
         private System.Windows.Forms.Button btn_Fac;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Label tb_Out;
     }
 }
 

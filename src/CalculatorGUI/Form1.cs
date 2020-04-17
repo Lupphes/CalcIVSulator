@@ -13,8 +13,7 @@ using System.Globalization;
 
 namespace CalculatorGUI
 {
-    public partial class CalcForm : Form
-    {
+    public partial class CalcForm : Form {
         public CalcForm() {
             InitializeComponent();
         }
@@ -118,7 +117,7 @@ namespace CalculatorGUI
                         comma = false;
                         return double.NaN;
                     }
-                case "√":
+                case "ⁿ√𝑥":
                     try {
                         return IVSMath.Root(y, Convert.ToInt32(x));
                     }
@@ -345,7 +344,7 @@ namespace CalculatorGUI
                     }
                 }
             }
-            tb_Out.Clear();
+            tb_Out.Text = "";
         }
 
         /// <summary>Calculates operations with just one value
@@ -496,7 +495,7 @@ namespace CalculatorGUI
             operationPerfomed = "";
             isChained = wasCalculated = wasError = comma = false;
             lb_Next.Text = "";
-            tb_Out.Clear();
+            tb_Out.Text = "";
         }
     }
 }
