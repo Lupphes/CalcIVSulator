@@ -120,7 +120,7 @@ namespace CalculatorGUI
                     }
                 case "√":
                     try {
-                        return IVSMath.Root(x, Convert.ToInt32(y));
+                        return IVSMath.Root(y, Convert.ToInt32(x));
                     }
                     catch (OverflowException) {
                         tb_Out.Text = "Overflow chyba";
@@ -151,7 +151,7 @@ namespace CalculatorGUI
                         comma = false;
                         return double.NaN;
                     }
-                case "√𝑥":
+                case "²√":
                     try {
                         return IVSMath.Root(x, 2);
                     }
