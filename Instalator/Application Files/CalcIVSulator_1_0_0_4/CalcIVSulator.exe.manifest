@@ -1,0 +1,77 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<asmv1:assembly xsi:schemaLocation="urn:schemas-microsoft-com:asm.v1 assembly.adaptive.xsd" manifestVersion="1.0" xmlns:asmv1="urn:schemas-microsoft-com:asm.v1" xmlns="urn:schemas-microsoft-com:asm.v2" xmlns:asmv2="urn:schemas-microsoft-com:asm.v2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:co.v1="urn:schemas-microsoft-com:clickonce.v1" xmlns:asmv3="urn:schemas-microsoft-com:asm.v3" xmlns:dsig="http://www.w3.org/2000/09/xmldsig#" xmlns:co.v2="urn:schemas-microsoft-com:clickonce.v2">
+  <asmv1:assemblyIdentity name="CalcIVSulator.exe" version="1.0.0.4" publicKeyToken="28599f5a3618252a" language="neutral" processorArchitecture="msil" type="win32" />
+  <application />
+  <entryPoint>
+    <assemblyIdentity name="CalcIVSulator" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
+    <commandLine file="CalcIVSulator.exe" parameters="" />
+  </entryPoint>
+  <trustInfo>
+    <security>
+      <applicationRequestMinimum>
+        <PermissionSet Unrestricted="true" ID="Custom" SameSite="site" />
+        <defaultAssemblyRequest permissionSetReference="Custom" />
+      </applicationRequestMinimum>
+      <requestedPrivileges xmlns="urn:schemas-microsoft-com:asm.v3">
+        <!--
+          UAC Manifest Options
+          If you want to change the Windows User Account Control level replace the
+          requestedExecutionLevel node with one of the following.
+
+        <requestedExecutionLevel  level="asInvoker" uiAccess="false" />
+        <requestedExecutionLevel  level="requireAdministrator" uiAccess="false" />
+        <requestedExecutionLevel  level="highestAvailable" uiAccess="false" />
+
+         If you want to utilize File and Registry Virtualization for backward
+         compatibility then delete the requestedExecutionLevel node.
+    -->
+        <requestedExecutionLevel level="asInvoker" uiAccess="false" />
+      </requestedPrivileges>
+    </security>
+  </trustInfo>
+  <dependency>
+    <dependentOS>
+      <osVersionInfo>
+        <os majorVersion="5" minorVersion="1" buildNumber="2600" servicePackMajor="0" />
+      </osVersionInfo>
+    </dependentOS>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="preRequisite" allowDelayedBinding="true">
+      <assemblyIdentity name="Microsoft.Windows.CommonLanguageRuntime" version="4.0.30319.0" />
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="CalcIVSulator.exe" size="28128">
+      <assemblyIdentity name="CalcIVSulator" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+        <dsig:DigestValue>vEjtST5uLV20sy2DSnb5EkGu2O8NnNcITp66OD0iYgs=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="IVSMathLibrary.dll" size="7168">
+      <assemblyIdentity name="IVSMathLibrary" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+        <dsig:DigestValue>hj98W/F9hBUAP5FPOi784HtabG8obZnDHEgHkcKIZS0=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <file name="CalcIVSulator.exe.config" size="189">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>R+Wg8QGvQVHX8T0ta/qbhH1bXkqY0fRnS3wBV3J0bN8=</dsig:DigestValue>
+    </hash>
+  </file>
+<publisherIdentity name="CN=DESKTOP-0C9TUNE\vojti" issuerKeyHash="72aba930a550a82558d04df9d236f3a8b8046933" /><Signature Id="StrongNameSignature" xmlns="http://www.w3.org/2000/09/xmldsig#"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /><SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha256" /><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" /><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /></Transforms><DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" /><DigestValue>fpnXjtNUoHp1Arb3wOzYpYBtdjZc/3CIPHxnlCk/fN4=</DigestValue></Reference></SignedInfo><SignatureValue>WCnhBRMdHkUmRM3XzmCdSV5Y7j2eMU6V+wX+/AriNpRgB/0Zoqat53bw3rKUZTWqWNLU9tbUIhVRQusbFwyZpBjNF/PD8dittgRftyB3stArHld/MKSrKLfwBPF20FxlCFqTK2R4RKnlCB2Z76WTdimpFTxjr43mKrNW9PnrfrA=</SignatureValue><KeyInfo Id="StrongNameKeyInfo"><KeyValue><RSAKeyValue><Modulus>qyJd/eodkkz4ETP8fMchyW/JYL+v+h5Gd7YVLLvBRIkqz5fw1PnAvMT/uZywpE7QvksdPmReCQR+XIKji8nLSegaP9cBupqHMn70H7JQz/qrrHUZq0QNKYa4axj3jIPWyYpDb3yqmpp7IHo08/pgMYC/iV0J85NhQE0INOUS4V0=</Modulus><Exponent>AQAB</Exponent></RSAKeyValue></KeyValue><msrel:RelData xmlns:msrel="http://schemas.microsoft.com/windows/rel/2005/reldata"><r:license xmlns:r="urn:mpeg:mpeg21:2003:01-REL-R-NS" xmlns:as="http://schemas.microsoft.com/windows/pki/2005/Authenticode"><r:grant><as:ManifestInformation Hash="de7c3f2994677c3c8870ff5c36766d80a5d8ecc0f7b602757aa054d38ed7997e" Description="" Url=""><as:assemblyIdentity name="CalcIVSulator.exe" version="1.0.0.4" publicKeyToken="28599f5a3618252a" language="neutral" processorArchitecture="msil" type="win32" /></as:ManifestInformation><as:SignedBy /><as:AuthenticodePublisher><as:X509SubjectName>CN=DESKTOP-0C9TUNE\vojti</as:X509SubjectName></as:AuthenticodePublisher></r:grant><r:issuer><Signature Id="AuthenticodeSignature" xmlns="http://www.w3.org/2000/09/xmldsig#"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /><SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha256" /><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" /><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /></Transforms><DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" /><DigestValue>qAigS7wwOLvfqqlTN8EEn4N6wXKKq4ZJ5Xmo3f/g0lo=</DigestValue></Reference></SignedInfo><SignatureValue>AFilW57xcD7z9mlNR0tV7QKm9+BqTn3yAB/UQHvnIoBsHdVmkmbSQ0EHbWFgEUsNRu1VlVC0mhkNHoXTJHfF9ms0tHOZwGp8YX3GXGSc1qN51POn/JMmFmg/1Ack4XgKoCWK9851pBHBWdHvVFivHpXK0Xj/lzdd1U5KEuk7XRc=</SignatureValue><KeyInfo><KeyValue><RSAKeyValue><Modulus>qyJd/eodkkz4ETP8fMchyW/JYL+v+h5Gd7YVLLvBRIkqz5fw1PnAvMT/uZywpE7QvksdPmReCQR+XIKji8nLSegaP9cBupqHMn70H7JQz/qrrHUZq0QNKYa4axj3jIPWyYpDb3yqmpp7IHo08/pgMYC/iV0J85NhQE0INOUS4V0=</Modulus><Exponent>AQAB</Exponent></RSAKeyValue></KeyValue><X509Data><X509Certificate>MIIB7TCCAVagAwIBAgIQeF9hATmcSpxIdVGhlbOapDANBgkqhkiG9w0BAQsFADA1MTMwMQYDVQQDHioARABFAFMASwBUAE8AUAAtADAAQwA5AFQAVQBOAEUAXAB2AG8AagB0AGkwHhcNMjAwNDE3MjEyMjMwWhcNMjEwNDE4MDMyMjMwWjA1MTMwMQYDVQQDHioARABFAFMASwBUAE8AUAAtADAAQwA5AFQAVQBOAEUAXAB2AG8AagB0AGkwgZ8wDQYJKoZIhvcNAQEBBQADgY0AMIGJAoGBAKsiXf3qHZJM+BEz/HzHIclvyWC/r/oeRne2FSy7wUSJKs+X8NT5wLzE/7mcsKRO0L5LHT5kXgkEflyCo4vJy0noGj/XAbqahzJ+9B+yUM/6q6x1GatEDSmGuGsY94yD1smKQ298qpqaeyB6NPP6YDGAv4ldCfOTYUBNCDTlEuFdAgMBAAEwDQYJKoZIhvcNAQELBQADgYEAAo+3AglP2ttz858Vmkf2/7jyThrhEtty73HWzzQ5TlT9YElKdg0EIWt1wpuCipc8puVqIDrl2L+FyPACpIu/+PUR3dDSmkLQkCpVzAUFNTsljjhQGvxngVIkR5VEXzTojU9V/slMQol6Dpn4dsRClso3IKQw8boPlKwRkoktoIs=</X509Certificate></X509Data></KeyInfo></Signature></r:issuer></r:license></msrel:RelData></KeyInfo></Signature></asmv1:assembly>
