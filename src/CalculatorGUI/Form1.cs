@@ -260,7 +260,7 @@ namespace CalculatorGUI
             }
             else {
                 Button button = (Button)sender;
-                if (button.Text == ".") {
+                if (button.Text == ",") {
                     if (!comma) {
                         tb_Out.Text += button.Text;
                         comma = true;
@@ -302,7 +302,7 @@ namespace CalculatorGUI
 
             Button button = (Button)sender;
             
-            if (tb_Out.Text == ".") { tb_Out.Text = "0"; } // Just dot -> change it on zero
+            if (tb_Out.Text == ",") { tb_Out.Text = "0"; } // Just dot -> change it on zero
             if (!isChained) {
                 operationPerfomed = button.Text;
                 double result;
@@ -375,7 +375,7 @@ namespace CalculatorGUI
                     }
                     else {
                         double result;
-                        if (tb_Out.Text == ".") { tb_Out.Text = "0"; }
+                        if (tb_Out.Text == ",") { tb_Out.Text = "0"; }
                         if (parseDouble(out result, tb_Out.Text)) {
                             operationPerfomed = button.Text;
                             lb_Next.Text = $"{tb_Out.Text} {operationPerfomed}";
