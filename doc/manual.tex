@@ -2,16 +2,19 @@
 \usepackage[utf8]{inputenc}
 \usepackage[IL2]{fontenc}
 \usepackage{geometry}
+\geometry{outer=2cm,top=2cm,bottom=2cm}
 \usepackage{tikz}
 \usepackage{enumitem}
 \graphicspath{ {img/} }
-\usepackage[czech]{babel}
+\usepackage[english,main=czech]{babel}
 \usepackage{blindtext}
 \usepackage{pifont,mdframed}
 \usepackage{fourier}
 \usepackage{icomma}
 \usepackage{tabularx}
 \usepackage[unicode,hidelinks]{hyperref}
+\usepackage{multicol}
+\usepackage[compact]{titlesec}
 \newcommand{\email}[1]{\texttt{\href{mailto:#1}{#1}}}
 \newenvironment{warningBox}
   {\par\begin{mdframed}[linewidth=1pt,linecolor=black]%
@@ -44,6 +47,15 @@
   {\end{list}\par}
 
   \newcommand*\joinBox{\vspace{-0.9em}}
+
+  \newenvironment{law}{
+    \fontsize{3pt}{3.6pt}
+    \selectfont
+  }{}
+
+  \newcommand*\lawHead{\fontsize{3.5pt}{4.2pt}}
+
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % LaTeX Overlay Generator - Annotated Figures v0.0.1
 % Created with http://ff.cx/latex-overlay-generator/
@@ -64,7 +76,7 @@
   \clearpage
   \ifodd\value{page}\hbox{}\newpage\fi
 }
-\title{IVSKalkulátor\\Uživatelský manuál}
+\title{CalcIVSulator\\Uživatelský manuál}
 \usepackage{}
 \author{Lidé u výtahu}
 \date{\today}
@@ -73,14 +85,14 @@
     \setlength{\parindent}{0em}
     \setlength{\parskip}{1em}
     \begin{titlepage}
-        \newgeometry{top=0.75in,bottom=0.75in}
+        \newgeometry{top=2cm,bottom=2cm,left=2cm,right=2cm}
         \begin{center}
             {\LARGE \textsc{Lidé u výtahu}}
 
             \vspace{\stretch{0.382}}
             {\large Uživatelský manuál}
             
-            {\Huge KalkIVSulátor}\\
+            {\Huge CalcIVSulator}\\
             \vspace{1.5mm}
             {\huge Pokročilý výpočetní software}\\
             \vspace{\stretch{0.618}}
@@ -90,10 +102,21 @@
     
     %The following page is the LEFT INSIDE COVER; do not remove this page; keep it blank if need be!
     \thispagestyle{empty}
-    \begin{warningBox}
-        Skupina Lidé u výtahu se snaží, aby kalkuačka byla pouze co nejpřesnější. Přičemž avšak nemůže garantovat 100\% přesnost a nulovu chybovst výpočtů.
+    \begin{infoBox}
+            Copyright \textcopyright{} 2020 Viktor Rucký.
 
-        Používáním kalkulačky souhlasíte, že skupina Lidé u výtahu není zodpovědná za žádnou újmu, materiální či jiného druhu, způsobenou používaní tohoto software.
+            \foreignlanguage{english}{Permission is granted to copy, distribute and/or modify this document
+            under the terms of the GNU Free Documentation License, Version 1.3
+            or any later version published by the Free Software Foundation;
+            with no Invariant Sections, no Front-Cover Texts, and no Back-Cover Texts.
+            A copy of the license is included in the section entitled "GNU
+            Free Documentation License".}
+    \end{infoBox}
+    \joinBox
+    \begin{warningBox}
+        Skupina Lidé u výtahu se snaží, aby kalkuačka byla pouze co nejpřesnější. Přičemž nemůže garantovat 100\% přesnost a nulovu chybovst výpočtů.
+
+        Používáním kalkulačky souhlasíte, že skupina Lidé u výtahu není zodpovědná za žádnou újmu, materiální či jiného druhu, způsobenou používaní tohoto softwaru.
     \end{warningBox}
     \joinBox
     \begin{warningBox}
@@ -109,9 +132,9 @@
     \newpage
 
     \section*{Vítejte}
-    Děkujeme za pořízení kalkulačního software od skupiny Lidé~u~výtahu. Jsem si jistí, že náš software Vás nezklame. Ba naopak. Náš software prošel sofistikovaným plánování a vývojem, typické pro inženýry vycházející z nejprestižnějších univerzitních institucí, a zaručejeme Vám stoprocentní spokojenost.
+    Gratulujeme k pořízení kalkulačního software od skupiny Lidé~u~výtahu. Jsem si jistí, že náš software Vás nezklame. Ba naopak. Náš software prošel sofistikovaným plánování a vývojem, typické pro inženýry vycházející z nejprestižnějších univerzitních institucí, a zaručejeme Vám stoprocentní spokojenost.
 
-    Potřeba počítat je stará, jako písmo\,--\,mnohé nejstarší dochovalé písemnosti mluví o počtech, o daních. Čísla jsou prostě spjatá s lidskou civilizací. Již staří Egypťané vynalezli abakus\,--\,kuličkové počítadloq\,--\,zařízení pro zjednodušení počtů. A jak se velikost lidských společností zvětšovala, tak i její potřeba pro rychlé a efektivní výpočty. Historie moderních početních zařízení počala roku 1642 vynálezem mechanické kalkulačky Wilhelmem Schickerdem. A jak tato historie postupovala, přes logaritmická pravítka, elektromechanické kalkulátory, počítače založené na relé i tranzistorech, tak se dostala do rukou i nám. S radostí Vám představuje nejnovější eveluce ve světe výpočtů.
+    Potřeba počítat je stará, jako písmo\,--\,mnohé nejstarší dochovalé písemnosti mluví o počtech, o daních. Čísla jsou prostě spjatá s lidskou civilizací. Již staří Egypťané vynalezli abakus\,--\,kuličkové počítadlo\,--\,zařízení pro zjednodušení počtů. A jak se velikost lidských společností zvětšovala, tak i její potřeba pro rychlé a efektivní výpočty. Historie moderních početních zařízení počala roku 1642 vynálezem mechanické kalkulačky Wilhelmem Schickerdem. A jak tato historie postupovala, přes logaritmická pravítka, elektromechanické kalkulátory, počítače založené na relé i tranzistorech, tak se dostala do rukou i nám. S radostí Vám představuje nejnovější eveluci ve světe výpočtů.
 
     A tímto evoluce nekončí, jak vývoj dnešních technoligií postupuje raketově dopředu, tak postupujeme my: náš software je neustále aktualizován a vyvíjen; jsme odhodlaní přidávat funkce a zůstat na vrcholu výpočetního software.
     
@@ -124,7 +147,6 @@
     \cleartoleftpage
     \section{Užívání}
     \subsection{Uživatelské rozhraní\,--\,obecné}
-    \vfill
     \begin{figure}[h]
         \begin{center}
             \begin{annotatedFigure}
@@ -138,12 +160,10 @@
     \caption{Hlavní sekce uživatelského rozhraní}
     \label{fig:UI_main}
     \end{figure}
-    \vfill
-    \newpage
     Uživatelské rozhraní je tvořeno čtyřmi častmi:
 
     \subsubsection{Klávesnice}
-    Pomocí klávesnice lze zadat data do kalkulačky. Princip operace je vysvětlen v sekci \uv{zadá\-vání čísel} \nref{sec:entering_numbers}. Funkce jednotlivých tlačítek je vysvětlena v sekci \uv{uživatelské rohraní\,--\,klávesnice} \nref{sec:UI_keyboard}.
+    Pomocí klávesnice lze zadat data do kalkulačky. Princip operace je vysvětlen v sekci \uv{obecné používaní} \nref{sec:general_use}. Funkce jednotlivých tlačítek je vysvětlena v sekci \uv{uživatelské rohraní\,--\,klávesnice} \nref{sec:UI_keyboard}.
 
     \subsubsection{Výsledkový a zadávací displej}
     Zde se zobrazí výsledek Vaši operace nebo právě zadaný operand.
@@ -154,11 +174,8 @@
     \subsubsection{Ukončovací křížek}
     Pomocí křížku lze ukončit aplikaci.
 
-    \newpage
-
     \subsection{Uživatelské rohraní\,--\,klávesnice}
     \label{sec:UI_keyboard}
-    \vfill
     \begin{figure}[h]
         \begin{center}
         \begin{annotatedFigure}
@@ -177,8 +194,6 @@
         \caption{Rozdělení klávesnice}
         \label{fig:UI_keyboard}
     \end{figure}
-    \vfill
-    \newpage
     Klávesnici kalkulačky lze rozdělit do několika funkčních celků.
 
     \subsubsection{Numerické klávesy}
@@ -202,22 +217,18 @@
     \subsubsection{Rovná se / potrvrzení}
     Tímto se potvrdí zadané číslo a provede se zadaná binární operace. Viz. sekce \uv{obecné používaní} \nref{sec:general_use}.
 
-    \newpage
-
     \subsection{Obecné používání}
     \label{sec:general_use}
     Proces pro většinu operací s kalkulačkou je následující. Doporučujeme také přečíst sekci \uv{zadávaní čísel} \nref{sec:entering_numbers}. Jednotlivé funkce a operace kalkulačky jsou popsány v sekci \uv{funkce kalkulačky} \nref{sec:function_reference}.
     \begin{enumerate}
         \item Zadejte číslo prvního operandu pomocí \uv{numerických kláves}, a pokud je třeba, kláves \uv{desetinné čárky} anebo \uv{změny znaménka} \fref{fig:UI_keyboard}{.A/B/C}.
-        \item Vyberte požadovaou operaci pomocí \uv{klávesy funkce nebo operace} \fref{fig:UI_keyboard}{.F}.
+        \item Vyberte požadovanou operaci pomocí \uv{klávesy funkce nebo operace} \fref{fig:UI_keyboard}{.F}.
         \item Pokud je operace unární, zobrazí se výsledek (nebo chybové hlášení) na \uv{vý\-sled\-ko\-vém a zadávacím displeji} \fref{fig:UI_main}{.B}, jinak se zadáný operand a symbol operace zobrazí na \uv{displeji s předchozí operací} \fref{fig:UI_main}{.C}.
         \item Obdobně jako první operand, zadejte druhý operand.
         \item Potvrďte druhý operand pomocí klávesy \uv{rovná se / potrvrzení} \fref{fig:UI_keyboard}{.G}.
-        \item Na \uv{výsledkovém a zadávacím displeji} se zobrazí výsledek nebo chybové hlášení; o chybových hlášeních Vás informujeme v sekci \nref{sec:errors}.
+        \item Na \uv{výsledkovém a zadávacím displeji} se zobrazí výsledek nebo chybové hlášení; o chybových hlášeních Vás informujeme v sekci \uv{chybová hlášení} \nref{sec:errors}.
     \end{enumerate}
-    Pokud jste zadali první operand a vybrali operaci a chcete vybranou operaci změnit, stačí stisknout tlačítko Vaši požadované operace; první operand nebude smazán.
-
-    Pokud jste udělali chybu v zadání prvního operandu, stisknětě klávesu \uv{smazat vše} \fref{fig:UI_keyboard}{.E}; operaci bude třeba opět vybrat.
+    Pokud jste udělali chybu v zadání prvního operandu nebo ve výběru operace, stisknětě klávesu \uv{smazat vše} \fref{fig:UI_keyboard}{.E}.
     \begin{infoBox}
         Kalkulačka používá infixní notaci!
     \end{infoBox}
@@ -322,7 +333,7 @@
     \begin{function_reference}{btn_sqrt}
         Vypočítá druhou odmocninu zadaného čísla.
         \begin{infoBox}
-            Pro obecnou odmocninu využijte funkci \uv{obecná mocnina}\\ \nref{sec:root}.
+            Pro obecnou odmocninu využijte funkci \uv{obecná odmocnina}\\ \nref{sec:root}.
         \end{infoBox}
         \joinBox{}
         \begin{prohibitBox}
@@ -358,7 +369,7 @@
     \begin{function_reference}{btn_factorial}
         Vypočítá faktoriál operandu.
         \begin{infoBox}
-            Nejvyšší možný faktoriál je $170!$.
+            Kalkulačka dokáže spočítat faktoriálý čísel do hodnoty 170.
         \end{infoBox}
         \joinBox
         \begin{prohibitBox}
@@ -399,37 +410,55 @@
 
     Při operaci kalkulačky mohou nastat chybová hlášení.
 
-    \subsubsection{\texttt{No input given}}
+    \subsubsection{No input given}
     Nezadal jste žádný operand.
 
-    \subsubsection{\texttt{Overflow chyba}}
+    \subsubsection{Overflow chyba}
     Požadovaná operace vrátilo číslo mimo kalkulační rozsah kalkulátoru.
 
-    \subsubsection{\texttt{Dělení nulou}}
+    \subsubsection{Dělení nulou}
     Dělíte nulou nebo se pokušíte provést operaci, která interně se o dělení nulou snaží.
 
-    Podívejte se na nedefinované hodnoty funkce, kterou se snažíte použít v sekci \uv{jednotlivé funkce kalkualčky} \nref{sec:function_reference}.
+    Podívejte se na nedefinované vstupní hodnoty funkce, kterou se snažíte použít v sekci \uv{jednotlivé funkce kalkualčky} \nref{sec:function_reference}.
 
-    \subsubsection{\texttt{Nepovolená operace}}
+    \subsubsection{Nepovolená operace}
     Snažíte se provést operaci se vstupem, který není platný.
+    
+    Podívejte se na nedefinované vstupní hodnoty funkce, kterou se snažíte použít v sekci \uv{jednotlivé funkce kalkualčky} \nref{sec:function_reference}.
 
-    Podívejte se na nedefinované hodnoty funkce, kterou se snažíte použít v sekci \uv{jednotlivé funkce kalkualčky} \nref{sec:function_reference}.    
+    \subsubsection{Wrong input}
+    Zadaný vstup není platný.
+
+    Podívejte se na nedefinované vstupní hodnoty funkce, kterou se snažíte použít v sekci \uv{jednotlivé funkce kalkualčky} \nref{sec:function_reference}.    
+
+    \subsection{Zobrazení nápovědy}
+    Stisknutím klávesy \uv{F1} v otevřeném programu CalcIVSulator se zobrazí elektronická verze této uživatelské příručky; verze tištěné a elektronické příručky se mohou lišit.
+
+    \begin{infoBox}
+        Pro zobrazení uživatelské příručky je třeba mít ve Vašem počítači nainstalovaný prohlížeč souborů PDF (Portable Document Format). Prohlížeč souborů PDF můžete například zdarma stáhnout z této adresy \url{https://get.adobe.com/cz/reader/}.
+    \end{infoBox}
+
+    \subsection{Zobrazení informací o autorech a sestavení programu}
+    Stisknutím klávesy \uv{F2} v otevřeném programu CalcIVSulator se zobrazí informace o programu, jeho autorech a verzi.
 
     \section{Technické informace}
 
     \begin{table}[h]
-    \begin{tabular}{|p{19em}|p{19em}|}
+    \begin{tabularx}{\textwidth}{|X|X|}
     \hline
     Počet číslic využívaných při vnitřních výpočtech & 15 \\ \hline
     Přesnost & 10 desetinných míst (chyba se kumuluje při opakovaných operací s výsledkem) \\ \hline
-    Maximální hodnota & $1,7976931348623157 \cdot 10^{308}$ \\ \hline
-    Minimální hodnota & $-1,7976931348623157 \cdot 10^{308}$ \\ \hline
-    \end{tabular}
+    Maximální hodnota využívána kalkulačkou interně& $1,7976931348623157 \cdot 10^{308}$ \\ \hline
+    Minimální hodnota využívána kalkulačkou interně & $-1,7976931348623157 \cdot 10^{308}$ \\ \hline
+    Maximální vstupní hodnota& $9999999999999999999$ \\ \hline
+    Minimální vstupní hodnota& $-9999999999999999999$ \\ \hline
+    Nejmenší vstupní hodnota& $0,000000000000000001$ \\ \hline
+    \end{tabularx}
     \end{table}
 
     \section{Autoři}
 
-    Program KalkIVSulátor je autorským dílem skupiny Lidé u výtáhu, která je tvořena těmito lidmi:
+    Program CalcIVSulator je autorským dílem skupiny Lidé u výtáhu, která je tvořena těmito lidmi:
 
     \begin{itemize}
         \item Ondřej Sloup (\email{xsloup02@stud.fit.vutr.cz})
@@ -444,15 +473,47 @@
     \begin{tabularx}{\textwidth}{X X}
         \raisebox{-5em}{\includegraphics[scale=0.25]{logo_fit.pdf}} & Tento software byl vyvinut jako projekt předmětu IVS studenty Fakulty informačních technoligií Vysokéhu učení technického v Brně.
     \end{tabularx}
-    \section{Licence a právní náležitosti}
+    
+    \section{Historie}
+    \begin{tabularx}{\textwidth}{|l|X|l|}
+        \hline
+        Verze&Poznámky k verzi&Autoři změn \\ \hline
+        1.0&První vydání příručky&Viktor Rucký (\email{xrucky01@stud.fit.vutr.cz}) \\ \hline
+    \end{tabularx}
 
-    Tento program je šířen pod licencí \texttt{GNU GPL v. 3}.
+    \section{Licence a právní náležitosti}
+    
+    \subsection{Licence k programu}
+    Tato sekce se váže k softwaru, nikoliv k dokumentaci.
+    
+    \begin{otherlanguage}{english}
+    CalcIVSulator (Simple calculator with GUI and mathematical library)\\
+    Copyright \textcopyright{} 2020 Viktor Rucký, Ondřej Sloup, Vojtěch Vlach
+
+    CalcIVSulator is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    CalcIVSulator is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with CalcIVSulator.  If not, see \url{https://www.gnu.org/licenses/}.
+    \end{otherlanguage}
+
+    \subsection{GNU Free Documentation License}
+    Tato sekce se váže k této uživatelské příručce.
+
+    \input{GNU Free Documentation License.tex}
 
     %The following page is THE BACK COVER; do not remove the page; leave the page blank if need be.
     \cleartoleftpage
-    \newgeometry{top=0.75in,bottom=0.75in}
+    \newgeometry{top=2cm,bottom=2cm,left=2cm,right=2cm}
     \thispagestyle{empty}
     \null
     \vfill
-    {\large \textsc{Lidé u výtahu}}
+    {\large \textsc{\textcopyright{} Lidé u výtahu 2020}}
 \end{document}
