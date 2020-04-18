@@ -5,12 +5,12 @@ using System.Runtime.InteropServices;
 // Obecné informace o sestavení se řídí přes následující 
 // sadu atributů. Změnou hodnot těchto atributů se upraví informace
 // přidružené k sestavení.
-[assembly: AssemblyTitle("IVSMathLibrary")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyTitle("CalcIVSulator")]
+[assembly: AssemblyDescription("This file part of CalcIVSulator.")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("IVSMathLibrary")]
-[assembly: AssemblyCopyright("Copyright ©  2020")]
+[assembly: AssemblyCompany("Lidé u výtahu")]
+[assembly: AssemblyProduct("IVSMath Library")]
+[assembly: AssemblyCopyright("Copyright © 2020 Viktor Rucký, Ondřej Sloup, Vojtěch Vlach")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
