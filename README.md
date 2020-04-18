@@ -1,25 +1,25 @@
 ﻿
 # CalcIVSulator
 
-CalcIVSulator je revoluční kalkulačka vytvořená studenty VUT FIT. Využívá nově vytvořené knihovny 'IVSMath', která obsahuje veškeré operace, které kalkulačka musí mít. Mezi její hlavní funkce patří:
+CalcIVSulator je revoluční kalkulačka vytvořená studenty FIT VUT. Využívá nově vytvořené knihovny „IVSMath“, která obsahuje veškeré operace, které kalkulačka musí mít. Mezi její hlavní funkce patří:
 
   - Počítaní základních matematických operací
   - Spočtení složitějších goniometrických funkcí
-  - Počítání i s zápornými hodnotami
+  - Počítání i se zápornými hodnotami
   - Inverzní číslo!
 
 ## Funkce
 
 Kalkulačka umí spočítat následující operace:
-  - Základní aritmetické operace tj. sčítání, odčítání, násobení a dělení
-  - Goniometrické funkce tj. sinus, cosinus, tangent
+  - Základní aritmetické operace, tj. sčítání, odčítání, násobení a dělení
+  - Goniometrické funkce, tj. sinus, cosinus, tangent
   - Mocninu na druhou a na Ntou
-  - Odmocninu na druhou a na Ntou
+  - Druhou odmocninu a Ntou odmocninu 
   - Inverzní číslo od zadaného čísla
   - Faktoriál
 
-To však není vše. Kalkulačka vás překvapí přehledným UI a dokáže vypsat chyby v případě zadaného špatného vstupu!
-Vše je jasně popsáno v manuálu (viz [documentation.pdf][df1]), který můžete stáhnout zde, popř je dostupný přímo v kalkulačce po stisku klávesy "F1". 
+To však není vše. Kalkulačka Vás překvapí přehledným UI a dokáže vypsat chyby v případě zadaného špatného vstupu!
+Vše je jasně popsáno v manuálu (viz [documentation.pdf][df1]), který můžete stáhnout zde, popř. je dostupný přímo v kalkulačce po stisku klávesy „F1“. 
 
 ## Informace o autorech
 Jméno týmu: **Lidé u výtahu**
@@ -29,7 +29,7 @@ Jméno týmu: **Lidé u výtahu**
 | Ondřej Sloup | [xsloup02][loginSL] | [TheLupp][githubSL] |
 | Vojtěch Vlach | [xvlach22][loginVL] | [vlachvojta][githubVL] |
 
-Projekt byl vytvořen v rámci předmětu IVS na VUT FIT v roce 2020.
+Projekt byl vytvořen v rámci předmětu IVS na FIT VUT v roce 2020.
 
 ## Prostředí
 Kalkulačka a matematická knihovna je otestovaná v těchto systémech:
@@ -40,7 +40,7 @@ Kalkulačka a matematická knihovna je otestovaná v těchto systémech:
 TO DO!
 
 ## Licence
-Celý projekt je publikován pod licencí [GPLv3][license]. 
+Celý projekt je publikován pod licencí GNU GPL-3.0-or-later. 
 
 
    [loginRUC]: <https://www.vutbr.cz/lide/viktor-rucky-221908>
@@ -50,4 +50,3 @@ Celý projekt je publikován pod licencí [GPLv3][license].
    [githubSL]: <https://github.com/TheLupp>
    [githubVL]: <https://github.com/vlachvojta>
    [dokumentace]: <https://github.com/TheLupp/CalcIVSulator/blob/master/dokumentace.pdf>
-   [license]: <https://github.com/TheLupp/CalcIVSulator/blob/master/LICENSE>
