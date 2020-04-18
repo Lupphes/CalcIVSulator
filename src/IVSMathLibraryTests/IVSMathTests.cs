@@ -902,7 +902,7 @@ namespace IVSMathLibraryTests
             for (int i = 0; i < 5; ++i)
             {
                 double sine = IVSMath.Sine(values[i]);
-                for (int j = -2; j < 2; ++j) 
+                for (int j = -50; j < 50; ++j) 
                     Assert.AreEqual(sine, IVSMath.Sine(values[i] + 2 * j * Math.PI), precision);    // sin(1.5) = sin(1.5 + 2jPI)
             }
         }
@@ -957,7 +957,7 @@ namespace IVSMathLibraryTests
             for (int i = 0; i < 5; ++i)
             {
                 double cosine = IVSMath.Cosine(values[i]);
-                for (int j = -2; j < 2; ++j)
+                for (int j = -50; j < 50; ++j)
                     Assert.AreEqual(cosine, IVSMath.Cosine(values[i] + 2 * j * Math.PI), precision);    // cos(1.5) = cos(1.5 + 2jPI)
             }
         }
@@ -1043,7 +1043,7 @@ namespace IVSMathLibraryTests
             for (int i = 0; i < 5; ++i)
             {
                 double tangent = IVSMath.Tangent(values[i]);
-                for (int j = -2; j < 2; ++j)
+                for (int j = -50; j < 50; ++j)
                     Assert.AreEqual(tangent, IVSMath.Tangent(values[i] + j * Math.PI), precision);    // tan(1.5) = tan(1.5 + jPI)
             }
         }
