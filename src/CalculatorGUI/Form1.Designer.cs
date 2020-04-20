@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CalcForm));
             this.btn_Nbr_3 = new System.Windows.Forms.Button();
             this.btn_Nbr_2 = new System.Windows.Forms.Button();
             this.btn_Nbr_6 = new System.Windows.Forms.Button();
@@ -545,6 +546,7 @@
             this.Controls.Add(this.btn_Nbr_7);
             this.Controls.Add(this.btn_Nbr_9);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "CalcForm";
