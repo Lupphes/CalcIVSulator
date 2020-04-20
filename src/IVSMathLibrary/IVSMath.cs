@@ -254,6 +254,7 @@ namespace IVSMathLibrary
         /// <returns>The sine of the angle 'a'</returns>
         public static double Sine(double a)
         {
+            a %= Math.PI * 2;
             double result = a;
             bool add = false;
             double term = 0;
@@ -281,6 +282,7 @@ namespace IVSMathLibrary
         /// <returns>The cosine of the given angle</returns>
         public static double Cosine(double a)
         {
+            a %= Math.PI * 2;
             double result = 1;
             bool add = false;
             double term = 0;
