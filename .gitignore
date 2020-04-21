@@ -30,6 +30,3 @@
 
 # Visual Studio
 /.vs
-
-# Documentation
-/src/UserDocumentation/Help/fti/*

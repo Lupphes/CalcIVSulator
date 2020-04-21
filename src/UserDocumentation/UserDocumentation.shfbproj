@@ -41,7 +41,7 @@
     <DisableCodeBlockComponent>False</DisableCodeBlockComponent>
     <IndentHtml>False</IndentHtml>
     <BuildAssemblerVerbosity>OnlyWarningsAndErrors</BuildAssemblerVerbosity>
-    <SaveComponentCacheCapacity>200</SaveComponentCacheCapacity>
+    <SaveComponentCacheCapacity>100</SaveComponentCacheCapacity>
     <HelpTitle>CalcIVSulator - Code documentation</HelpTitle>
     <HelpFileVersion>1.0.0.0</HelpFileVersion>
     <NamingMethod>Guid</NamingMethod>
