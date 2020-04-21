@@ -35,6 +35,9 @@ Projekt byl vytvořen v rámci předmětu IVS na FIT VUT v roce 2020.
 Kalkulačka a matematická knihovna je otestovaná v těchto systémech:
 
  - Windows 10 x64 Pro (version 1903, build 18362.720)
+ - Windows 10 x64 Home (version 1909, build 18363.778)
+
+ Testováno pouze na bílých počítačích.
 
 ## Instalace
 TO DO!

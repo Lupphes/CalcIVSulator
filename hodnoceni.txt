@@ -1,3 +1,3 @@
-xrucky01 XX ()
-xsloup02 XX ()
-xvlach22 XX ()
+﻿xrucky01 100 (Plánování projektu, Kostra knihovny, Testy - Odmocnina, Testy - Inverzní číslo, Code review testu - Základní operace, Code review testu - Mocnina, Knihovna - Faktoriál, Knihovna - Gonimetrické funkce, Uživatelský manuál, Instalátor, Makefile, Licence - čtivo, Hodnocení)
+xsloup02 100 (Plánování projektu, Testy - Základní operace, Testy - Mocnina, Code review testu - Gonimetrické funkce, Code review testu - Faktoriál, Knihovna - Odmocnina, Knihovna - Inverzní číslo, GUI, Instalátor, Mock-up budoucí verze, Readme, Licence kódu, Hodnocení, Doxygen dokumentace)
+xvlach22 100 (Plánování projektu, Testy - Faktoriál, Testy - Goniometrické funkce, Code review testu - Odmocnina, Code review testu - Inverní číslo, Knihovna - Základní operace, Knihovna - Mocnina, Profilovací skript, Profilování, Instalátor, Hodnocení)
