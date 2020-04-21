@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Topics>
+  <Topic id="59f1154f-f1d4-4f20-8a42-c8d8f2ea7722" visible="True" isDefault="true" isSelected="true" title="CalcIVSulator - Code documentation" linkText="https://github.com/TheLupp/CalcIVSulator">
+    <HelpKeywords>
+      <HelpKeyword index="K" term="Welcome, home" />
+    </HelpKeywords>
+  </Topic>
+  <Topic id="f3dc6723-c31e-4ee8-8d8c-5c8abc87fd5b" visible="True" isExpanded="true" title="Version History">
+    <HelpKeywords>
+      <HelpKeyword index="K" term="version, history" />
+    </HelpKeywords>
+    <Topic id="fe917c97-9d46-4c46-b4ad-c95e6595062d" visible="True" title="Version 1.0.0.0">
+      <HelpKeywords>
+        <HelpKeyword index="K" term="version, 1.0.0.0" />
+      </HelpKeywords>
+    </Topic>
+  </Topic>
+</Topics>

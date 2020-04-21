@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<topic id="59f1154f-f1d4-4f20-8a42-c8d8f2ea7722" revisionNumber="1">
+  <developerConceptualDocument xmlns="http://ddue.schemas.microsoft.com/authoring/2003/5" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <introduction>
+      <para>Welcome to the code documentation of CalcIVSulator. We hope that this documentation will give you peace in mind, hope and understanding of this project.</para>
+    </introduction>
+
+    <section>
+      <title>Getting Started with the documentation</title>
+      <content>
+        <para>
+          You can find in this documentation all the functions which are used, its parameters and return values.
+          We even documented functions which are used from official Microsoft libraries.
+        </para>
+
+        <para>
+          You can simply choose from following sections:
+        </para>
+        <list class="bullet">
+          <listItem>
+            <para>
+              <localUri>CalculatorGUI</localUri> - Visual GUI for user. You can test on this application our math library. It is 
+              simple from application
+            </para>
+          </listItem>
+
+          <listItem>
+            <para>
+              <localUri>IVSMathLibrary</localUri> - Core mathematical library. Here you can find all functions which can be used in your application.
+            </para>
+          </listItem>
+
+          <listItem>
+            <para>
+              <localUri>IVSMathLibraryTests</localUri> - Test for library which confirms its functions.
+            </para>
+          </listItem>
+
+        </list>
+
+        <para>
+          Thank you for your interest in our CalcIVSulator and its math library. Feel free to give us feedback or create issue on our github.
+        </para>
+      </content>
+    </section>
+
+    <relatedTopics>
+      <link xlink:href="59f1154f-f1d4-4f20-8a42-c8d8f2ea7722" />
+    </relatedTopics>
+  </developerConceptualDocument>
+</topic>

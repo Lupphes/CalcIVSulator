@@ -26,8 +26,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace IVSMathLibrary
-{
+namespace IVSMathLibrary {
+    /// <summary>
+    /// Mathematical library consists of these functions: Add, Substract, Multiply, Divide, Root, Power, Factorial, Inverse, Sine, Cosine, Tangent
+    /// </summary>
     public class IVSMath
     {
         private static readonly double precision = 0.0000000001;
@@ -65,7 +67,7 @@ namespace IVSMathLibrary
         /// <param name="minuend">The number that is to be subtracted from.</param>
         /// <param name="subtrahend">The number that is to be subtracted.</param>
         /// <returns>Difference of two parametrs</returns>
-        public static double Substract(double minuend, double subtrahend)
+        public static double Subtract(double minuend, double subtrahend)
         {
             try
             {
@@ -205,7 +207,6 @@ namespace IVSMathLibrary
             return result;
         }
 
-
         /// <summary>
         /// Calculates the factorial of a given non-negative whole number.
         /// Note: returns a double, so not all digits are computed after a certain threshold.
@@ -273,8 +274,7 @@ namespace IVSMathLibrary
             } while (Math.Abs(term - previousTerm) > IVSMath.precision);
             return result;
         }
-
-        
+     
         /// <summary>
         /// Calculates the cosine of a given angle in RADIANS.
         /// </summary>
@@ -301,6 +301,7 @@ namespace IVSMathLibrary
             } while (Math.Abs(term - previousTerm) > IVSMath.precision);
             return result;
         }
+
         /// <summary>
         /// Checks whether a given angle (in RADIANS) is valid for the tangent function.
         /// </summary>

@@ -13,7 +13,13 @@ using System.Globalization;
 
 namespace CalculatorGUI
 {
+    /// <summary>
+    /// "CalcForm" derivates from Form structure
+    /// </summary>
     public partial class CalcForm : Form {
+        /// <summary>
+        /// "CalcForm" component (main) in GUI calculator
+        /// </summary>
         public CalcForm() {
             InitializeComponent();
         }
@@ -25,7 +31,7 @@ namespace CalculatorGUI
         NumberStyles styles = NumberStyles.Any; // Set number styles
         CultureInfo culture = CultureInfo.CreateSpecificCulture("cs-CZ"); // Set number culture
 
-        /// <summary>Parses the text to number
+        /// <summary>Parses the text to number 
         ///    (<paramref name="object"/>,<paramref name="event"/>).</summary>
         /// <param name="object">Object sender</param>
         /// <param name="event">Event argument</param>
@@ -59,7 +65,7 @@ namespace CalculatorGUI
                     }
                 case "-":
                     try {
-                        return IVSMath.Substract(x, y);
+                        return IVSMath.Subtract(x, y);
                     }
                     catch (OverflowException)
                     {
