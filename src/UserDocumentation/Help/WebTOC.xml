@@ -2,35 +2,35 @@
 <HelpTOC>
 
   <HelpTOCNode Title="CalcIVSulator - Code documentation" Url="html/59f1154f-f1d4-4f20-8a42-c8d8f2ea7722.htm" />
-  <HelpTOCNode Id="116c31a1-f6be-446b-856c-ea1291c0c1c7" Title="Version History" Url="html/f3dc6723-c31e-4ee8-8d8c-5c8abc87fd5b.htm">
+  <HelpTOCNode Id="fc5f5a66-8166-4359-a1e6-94becc45bced" Title="Version History" Url="html/f3dc6723-c31e-4ee8-8d8c-5c8abc87fd5b.htm">
     <HelpTOCNode Title="Version 1.0.0.0" Url="html/fe917c97-9d46-4c46-b4ad-c95e6595062d.htm" />
   </HelpTOCNode>
-  <HelpTOCNode Id="4420de30-d662-4f56-8af3-32a24dce0741" Title="CalculatorGUI" Url="html/5863011a-2a0b-555b-5155-0ddb73401dcb.htm">
-    <HelpTOCNode Id="1553c1a0-1edf-4781-a8a3-cdeb973606e4" Title="About Class" Url="html/483d4b05-2e52-6701-d1ee-d5998899f6f1.htm">
+  <HelpTOCNode Id="9d3c641e-140e-4d77-ab0a-bac10a139698" Title="CalculatorGUI" Url="html/5863011a-2a0b-555b-5155-0ddb73401dcb.htm">
+    <HelpTOCNode Id="1147f624-6a2e-45bc-a870-5c3658afb92c" Title="About Class" Url="html/483d4b05-2e52-6701-d1ee-d5998899f6f1.htm">
       <HelpTOCNode Title="About Constructor " Url="html/2bef13de-8de5-c227-a7c0-bbd43b7d2a2e.htm" />
       <HelpTOCNode Title="About Properties" Url="html/45c35106-6ba4-ea32-6606-811b0ed2882a.htm" />
-      <HelpTOCNode Id="d545dcc4-1ae2-4513-bc57-9d0523f15efc" Title="About Methods" Url="html/b7005dc4-29c8-5b93-b610-3f7edcd9dced.htm">
-        <HelpTOCNode Id="500b8ee5-71b4-4de3-8842-25e92e54cfb4" Title="Dispose Method " Url="html/c0249200-a365-9756-3441-a5b765927682.htm">
+      <HelpTOCNode Id="31778e95-d270-4095-983b-c6cf7487d696" Title="About Methods" Url="html/b7005dc4-29c8-5b93-b610-3f7edcd9dced.htm">
+        <HelpTOCNode Id="d52e22df-675d-4861-9d77-5423226e7376" Title="Dispose Method " Url="html/c0249200-a365-9756-3441-a5b765927682.htm">
           <HelpTOCNode Title="Dispose Method (Boolean)" Url="html/8895ca2a-3523-0fd1-d444-4e4b07125ccc.htm" />
         </HelpTOCNode>
       </HelpTOCNode>
       <HelpTOCNode Title="About Events" Url="html/26abcf1f-80ee-2e65-4f6f-2fc890eafefc.htm" />
     </HelpTOCNode>
-    <HelpTOCNode Id="7d85c3e4-220e-413d-9bc8-dbcbf14f1490" Title="CalcForm Class" Url="html/d9d1710b-c916-4ff7-8cb3-43c5cb4af5a6.htm">
+    <HelpTOCNode Id="7a12b667-566b-470c-a138-5d123cd270f9" Title="CalcForm Class" Url="html/d9d1710b-c916-4ff7-8cb3-43c5cb4af5a6.htm">
       <HelpTOCNode Title="CalcForm Constructor " Url="html/37384197-3ddc-7738-7a8a-0e0fa0724405.htm" />
       <HelpTOCNode Title="CalcForm Properties" Url="html/99e15f94-c6cc-626c-1578-1b309af41548.htm" />
-      <HelpTOCNode Id="d5dc5156-8605-4872-b548-39d4ba5ef373" Title="CalcForm Methods" Url="html/1d29b7bf-538f-565b-5fb4-54382adefbb8.htm">
-        <HelpTOCNode Id="bc944f1d-4d4d-43c9-853f-1be4cad17554" Title="Dispose Method " Url="html/83dd59e5-cdc1-bbcf-9284-11aff48b0edc.htm">
+      <HelpTOCNode Id="893e58a8-b940-4a57-a171-14eeda48a55f" Title="CalcForm Methods" Url="html/1d29b7bf-538f-565b-5fb4-54382adefbb8.htm">
+        <HelpTOCNode Id="c2f49530-8fd3-4fa3-8bb5-5c25f5163e73" Title="Dispose Method " Url="html/83dd59e5-cdc1-bbcf-9284-11aff48b0edc.htm">
           <HelpTOCNode Title="Dispose Method (Boolean)" Url="html/7a2a3e98-b398-5ae2-3403-82a89b14e278.htm" />
         </HelpTOCNode>
       </HelpTOCNode>
       <HelpTOCNode Title="CalcForm Events" Url="html/6cd8ca9c-43a1-13c9-2722-b9240d63625e.htm" />
     </HelpTOCNode>
   </HelpTOCNode>
-  <HelpTOCNode Id="1c4f8c2a-1771-4787-9659-5ab8ff1c90ef" Title="IVSMathLibrary" Url="html/da31acfe-c247-b727-20ed-8013c17ee88a.htm">
-    <HelpTOCNode Id="c63e8e42-a205-4af6-93b0-ecffa6fe7e92" Title="IVSMath Class" Url="html/73157b28-d481-a75f-069d-d34b87e02c3b.htm">
+  <HelpTOCNode Id="69c5ab9a-6c9f-497b-86a7-1695542c3719" Title="IVSMathLibrary" Url="html/da31acfe-c247-b727-20ed-8013c17ee88a.htm">
+    <HelpTOCNode Id="91d3d9dd-29b9-44ba-a94a-5de74fc566d3" Title="IVSMath Class" Url="html/73157b28-d481-a75f-069d-d34b87e02c3b.htm">
       <HelpTOCNode Title="IVSMath Constructor " Url="html/a03f2a2c-6e78-5a24-b992-da18188efffe.htm" />
-      <HelpTOCNode Id="edca62a5-1456-4aac-be5d-e78f7c5d31e9" Title="IVSMath Methods" Url="html/cd56ee31-981b-4686-9934-20cbda3ae123.htm">
+      <HelpTOCNode Id="2f3e45d3-84da-4805-8b56-59cc35de66a9" Title="IVSMath Methods" Url="html/cd56ee31-981b-4686-9934-20cbda3ae123.htm">
         <HelpTOCNode Title="Add Method " Url="html/3af256cd-9529-8eca-27bc-7262bd186468.htm" />
         <HelpTOCNode Title="Cosine Method " Url="html/a8ca7550-9f50-5695-9fc3-dca148b1ebd8.htm" />
         <HelpTOCNode Title="Divide Method " Url="html/8ae60a97-04b0-62ca-90e5-86281c1890ab.htm" />
@@ -45,10 +45,10 @@
       </HelpTOCNode>
     </HelpTOCNode>
   </HelpTOCNode>
-  <HelpTOCNode Id="10aa289b-fa48-4a53-a78f-2b79b557e5f7" Title="IVSMathLibraryTests" Url="html/d740c291-f226-6212-428e-12d5ecd89aae.htm">
-    <HelpTOCNode Id="be493cb4-7560-4d05-97a6-76d9bb48558c" Title="IVSMathTests Class" Url="html/cfb64194-2cd1-342d-a2ca-8496d5b6fda4.htm">
+  <HelpTOCNode Id="6ed5e18e-4c2a-4274-90bb-733ab010f8cc" Title="IVSMathLibraryTests" Url="html/d740c291-f226-6212-428e-12d5ecd89aae.htm">
+    <HelpTOCNode Id="e5aaa9c0-adce-48aa-89fe-5efb43f917ab" Title="IVSMathTests Class" Url="html/cfb64194-2cd1-342d-a2ca-8496d5b6fda4.htm">
       <HelpTOCNode Title="IVSMathTests Constructor " Url="html/1bdff6ef-b0ce-d2fd-f96a-55ed7934efcc.htm" />
-      <HelpTOCNode Id="958d58f3-eb5f-4811-b75c-918599279405" Title="IVSMathTests Methods" Url="html/4b4d084e-f3fb-50d0-e183-f31cf2433e5a.htm">
+      <HelpTOCNode Id="459414c9-635d-455d-bcca-c668baaf601d" Title="IVSMathTests Methods" Url="html/4b4d084e-f3fb-50d0-e183-f31cf2433e5a.htm">
         <HelpTOCNode Title="Add_CalculationDecimalNumbers_ReturnEqual Method " Url="html/c699248d-85b7-d7cc-e804-e051ff8aa05e.htm" />
         <HelpTOCNode Title="Add_CalculationIrrationalNumbers_ReturnEqual Method " Url="html/c275d82c-9572-d353-0662-750ea0e5d5fc.htm" />
         <HelpTOCNode Title="Add_CalculationNegativeDecimalNumbers_ReturnEqual Method " Url="html/6caba928-c6f7-0db2-9605-8e34040ed761.htm" />
