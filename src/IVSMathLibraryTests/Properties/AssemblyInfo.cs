@@ -2,12 +2,12 @@ using System.Reflection;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-[assembly: AssemblyTitle("IVSMathLibraryTests")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyTitle("CalcIVSulator")]
+[assembly: AssemblyDescription("IVSMathLibrary's tests")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("IVSMathLibraryTests")]
-[assembly: AssemblyCopyright("Copyright ©  2020")]
+[assembly: AssemblyCompany("Lidé u výtahu")]
+[assembly: AssemblyProduct("IVSMath Library")]
+[assembly: AssemblyCopyright("Copyright © 2020 Viktor Rucký, Ondřej Sloup, Vojtěch Vlach")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 

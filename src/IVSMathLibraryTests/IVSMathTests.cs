@@ -1,4 +1,26 @@
-﻿using System;
+﻿#region Copyright
+// <copyright file="IVSMathTests.cs" company="Lidé u výtahu">
+// CalcIVSulator (Simple calculator with GUI and mathematical library)
+// Copyright © 2020 Viktor Rucký, Ondřej Sloup, Vojtěch Vlach
+// 
+// This file is part of CalcIVSulator.
+// 
+// CalcIVSulator is free software: you can redistribute it and/or modify
+// it under the terms of the GNU General Public License as published by
+// the Free Software Foundation, either version 3 of the License, or
+// (at your option) any later version.
+// 
+// CalcIVSulator is distributed in the hope that it will be useful,
+// but WITHOUT ANY WARRANTY; without even the implied warranty of
+// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+// GNU General Public License for more details.
+// 
+// You should have received a copy of the GNU General Public License
+// along with CalcIVSulator.  If not, see <https://www.gnu.org/licenses/>.
+// </copyright>
+#endregion
+
+using System;
 using IVSMathLibrary;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
@@ -902,7 +924,7 @@ namespace IVSMathLibraryTests
             for (int i = 0; i < 5; ++i)
             {
                 double sine = IVSMath.Sine(values[i]);
-                for (int j = -2; j < 2; ++j) 
+                for (int j = -50; j < 50; ++j) 
                     Assert.AreEqual(sine, IVSMath.Sine(values[i] + 2 * j * Math.PI), precision);    // sin(1.5) = sin(1.5 + 2jPI)
             }
         }
@@ -957,7 +979,7 @@ namespace IVSMathLibraryTests
             for (int i = 0; i < 5; ++i)
             {
                 double cosine = IVSMath.Cosine(values[i]);
-                for (int j = -2; j < 2; ++j)
+                for (int j = -50; j < 50; ++j)
                     Assert.AreEqual(cosine, IVSMath.Cosine(values[i] + 2 * j * Math.PI), precision);    // cos(1.5) = cos(1.5 + 2jPI)
             }
         }
@@ -1043,7 +1065,7 @@ namespace IVSMathLibraryTests
             for (int i = 0; i < 5; ++i)
             {
                 double tangent = IVSMath.Tangent(values[i]);
-                for (int j = -2; j < 2; ++j)
+                for (int j = -50; j < 50; ++j)
                     Assert.AreEqual(tangent, IVSMath.Tangent(values[i] + j * Math.PI), precision);    // tan(1.5) = tan(1.5 + jPI)
             }
         }
