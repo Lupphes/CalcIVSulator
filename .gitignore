@@ -30,3 +30,31 @@
 
 # Visual Studio
 /.vs
+
+#Latex
+## Core latex/pdflatex auxiliary files:
+*.aux
+*.lof
+*.log
+*.lot
+*.fls
+*.out
+*.toc
+*.fmt
+*.fot
+*.cb
+*.cb2
+.*.lb
+## Intermediate documents:
+*.dvi
+*.xdv
+*-converted-to.*
+## Build tool auxiliary files:
+*.fdb_latexmk
+*.synctex
+*.synctex(busy)
+*.synctex.gz
+*.synctex.gz(busy)
+*.pdfsync
+##built user's manual (we don't want to ignore other PDF files)
+dokumentace.pdf
