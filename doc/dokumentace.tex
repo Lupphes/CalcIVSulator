@@ -2,7 +2,7 @@
 \usepackage[utf8]{inputenc}
 \usepackage[IL2]{fontenc}
 \usepackage{geometry}
-\geometry{outer=2cm,top=2cm,bottom=2cm}
+\geometry{outer=1.1cm,top=1.5cm,bottom=2cm}
 \usepackage{tikz}
 \usepackage{enumitem}
 \graphicspath{ {img/} }
@@ -15,6 +15,8 @@
 \usepackage[unicode,hidelinks]{hyperref}
 \usepackage{multicol}
 \usepackage[compact]{titlesec}
+\hyphenation{CalcIVSulator}
+\newcommand*{\appname}{CalcIVSulator}
 \newcommand{\email}[1]{\texttt{\href{mailto:#1}{#1}}}
 \newenvironment{warningBox}
   {\par\begin{mdframed}[linewidth=1pt,linecolor=black]%
@@ -49,11 +51,11 @@
   \newcommand*\joinBox{\vspace{-0.9em}}
 
   \newenvironment{law}{
-    \fontsize{3pt}{3.6pt}
+    \fontsize{3.6pt}{4.32pt}
     \selectfont
   }{}
 
-  \newcommand*\lawHead{\fontsize{3.5pt}{4.2pt}}
+  \newcommand*\lawHead{\fontsize{4.6pt}{5.52pt}}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -70,15 +72,15 @@
 \node[anchor=south west,inner sep=0] (image) at (0,0) { #1};\begin{scope}[x={(image.south east)},y={(image.north west)}]}{\end{scope}\end{tikzpicture}}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\newcommand*\nref[1]{\textbf{(\ref{#1}, str. \pageref{#1})}}
-\newcommand*\fref[2]{\textbf{(obr. \ref{#1}#2, str. \pageref{#1})}}
+\newcommand*\nref[1]{\textbf{(\ref{#1}, str.~\pageref{#1})}}
+\newcommand*\fref[2]{\textbf{(obr.~\ref{#1}#2, str.~\pageref{#1})}}
 \newcommand*\cleartoleftpage{%
   \clearpage
   \ifodd\value{page}\hbox{}\newpage\fi
 }
-\title{CalcIVSulator\\Uživatelský manuál}
+\title{\appname{}\\Uživatelský manuál}
 \usepackage{}
-\author{Lidé u výtahu}
+\author{Lidé u~výtahu}
 \date{\today}
 \begin{document}
     \renewcommand\thesubsubsection{\Alph{subsubsection}}
@@ -87,12 +89,12 @@
     \begin{titlepage}
         \newgeometry{top=2cm,bottom=2cm,left=2cm,right=2cm}
         \begin{center}
-            {\LARGE \textsc{Lidé u výtahu}}
+            {\LARGE \textsc{Lidé u~výtahu}}
 
             \vspace{\stretch{0.382}}
             {\large Uživatelský manuál}
             
-            {\Huge CalcIVSulator}\\
+            {\Huge \appname{}}\\
             \vspace{1.5mm}
             {\huge Pokročilý výpočetní software}\\
             \vspace{\stretch{0.618}}
@@ -114,15 +116,15 @@
     \end{infoBox}
     \joinBox
     \begin{warningBox}
-        Skupina Lidé u výtahu se snaží, aby kalkuačka byla pouze co nejpřesnější. Přičemž nemůže garantovat 100\% přesnost a nulovu chybovst výpočtů.
+        Skupina Lidé u~výtahu se snaží, aby kalkuačka byla pouze co nejpřesnější. Přičemž nemůže garantovat 100\% přesnost a~nulovu chybovst výpočtů.
 
-        Používáním kalkulačky souhlasíte, že skupina Lidé u výtahu není zodpovědná za žádnou újmu, materiální či jiného druhu, způsobenou používaní tohoto softwaru.
+        Používáním kalkulačky souhlasíte, že skupina Lidé u~výtahu není zodpovědná za žádnou újmu, materiální či jiného druhu, způsobenou používaní tohoto softwaru.
     \end{warningBox}
     \joinBox
     \begin{warningBox}
-        Skupina Lidé u výtahu opovrhuje využívaní tohoto softwaru v akademických kontextech, kde je využívaní kalkulaček zakázáno.
+        Skupina Lidé u~výtahu opovrhuje využívaní tohoto softwaru v~akademických kontextech, kde je využívaní kalkulaček zakázáno.
 
-        Skupina Lidé u výtahu nezodpovídá za stanutí před displinární komisí, špatnou známkou či vyloučením plynoucí z používaní tohoto softwaru v nepovelných kontextech.
+        Skupina Lidé u~výtahu nezodpovídá za stanutí před displinární komisí, špatnou známkou či vyloučením plynoucí z~používaní tohoto softwaru v~nepovelných kontextech.
     \end{warningBox}
     
     \newpage
@@ -132,19 +134,86 @@
     \newpage
 
     \section*{Vítejte}
-    Gratulujeme k pořízení kalkulačního software od skupiny Lidé~u~výtahu. Jsem si jistí, že náš software Vás nezklame. Ba naopak. Náš software prošel sofistikovaným plánování a vývojem, typické pro inženýry vycházející z nejprestižnějších univerzitních institucí, a zaručejeme Vám stoprocentní spokojenost.
+    Gratulujeme k~pořízení kalkulačního software od skupiny Lidé~u~výtahu. Jsem si jistí, že náš software Vás nezklame. Ba naopak. Náš software prošel sofistikovaným plánování a~vývojem, typické pro inženýry vycházející z~nejprestižnějších univerzitních institucí, a~zaručejeme Vám stoprocentní spokojenost.
 
-    Potřeba počítat je stará, jako písmo\,--\,mnohé nejstarší dochovalé písemnosti mluví o počtech, o daních. Čísla jsou prostě spjatá s lidskou civilizací. Již staří Egypťané vynalezli abakus\,--\,kuličkové počítadlo\,--\,zařízení pro zjednodušení počtů. A jak se velikost lidských společností zvětšovala, tak i její potřeba pro rychlé a efektivní výpočty. Historie moderních početních zařízení počala roku 1642 vynálezem mechanické kalkulačky Wilhelmem Schickerdem. A jak tato historie postupovala, přes logaritmická pravítka, elektromechanické kalkulátory, počítače založené na relé i tranzistorech, tak se dostala do rukou i nám. S radostí Vám představuje nejnovější eveluci ve světe výpočtů.
+    Potřeba počítat je stará, jako písmo\,--\,mnohé nejstarší dochovalé písemnosti mluví o~počtech, o~daních. Čísla jsou prostě spjatá s~lidskou civilizací. Již staří Egypťané vynalezli abakus\,--\,kuličkové počítadlo\,--\,zařízení pro zjednodušení počtů. A~jak se velikost lidských společností zvětšovala, tak i její potřeba pro rychlé a~efektivní výpočty. Historie moderních početních zařízení počala roku 1642 vynálezem mechanické kalkulačky Wilhelmem Schickerdem. A~jak tato historie postupovala, přes logaritmická pravítka, elektromechanické kalkulátory, počítače založené na relé i tranzistorech, tak se dostala do rukou i nám. S~radostí Vám představuje nejnovější evoluci ve světe výpočtů.
 
-    A tímto evoluce nekončí, jak vývoj dnešních technoligií postupuje raketově dopředu, tak postupujeme my: náš software je neustále aktualizován a vyvíjen; jsme odhodlaní přidávat funkce a zůstat na vrcholu výpočetního software.
+    A~tímto evoluce nekončí, jak vývoj dnešních technoligií postupuje raketově dopředu, tak postupujeme my: náš software je neustále aktualizován a~vyvíjen; jsme odhodlaní přidávat funkce a~zůstat na vrcholu výpočetního software.
     
-    ---Viktor Rucký, zakladatel skupiny Lidé u výtahu
+    ---Viktor Rucký, zakladatel skupiny Lidé u~výtahu
     \newpage
+    \section{Systémové požadavky}
+    Pro užívaní programu CalcIVSulator jsou potřeba následující minimální parametry počítače:
+    \begin{table}[h]
+        \begin{tabularx}{\textwidth}{|r|X|}
+        \hline
+        Operační systém & Windows 10 Anniversary Update
+        (version 1607) nebo vyšší, Windows 8.1, Windows 7 SP1 \\ \hline
+        Konfigurace počítače & Minimální požadavky vašeho operačního systému \\ \hline
+        Volné místo na disku & 2 MB \\ \hline
+        Různé & Je nutné mít nainstalovaný \emph{.NET Framework 4.7.2}. (Pokud není, instalátor ho stáhne automticky; vyžaduje připojení k~internetu a~dodatečné misto na disku.) \\ \hline
+        \end{tabularx}
+        \end{table}
     \section{Instalace}
-    TODO
+    \begin{enumerate}
+        \item \begin{tabularx}{\textwidth}{l X}
+            \includegraphics[scale=1.5]{installer_button} & Poklepejte na soubor \emph{\appname{}\_setup.exe}.
+            \end{tabularx}
+        \item Budete požádání o~povolení aplikace k~provádení změn; stiskněte ano.
+        \begin{center}
+            \begin{annotatedFigure}
+                {\includegraphics[width=0.75\linewidth]{installer_UAC}}
+                \draw[red,thick,rounded corners] (0.04,0.06) rectangle (0.51,0.18);
+            \end{annotatedFigure}
+        \end{center}
+        \item Spustí se instalační proces.
+        \item \vbox{Je možné, že instalátor se Vás zeptá, zda mu důvěřujete; stiskněte ano.
+        \begin{center}
+            \begin{annotatedFigure}
+                {\includegraphics[width=0.75\linewidth]{installer_trust}}
+                \draw[red,thick,rounded corners] (0.595,0.198) rectangle (0.79,0.29);
+            \end{annotatedFigure}
+        \end{center}}
+        \item Počkejte, až se instalace dokončí.
+        \item Po dokončení instalace se spustí program \appname{}.
+    \end{enumerate}
+    \begin{infoBox}
+        Vzhled ilustrací nemusí v~závislosti na konfiguraci Vašeho systému zcela odpovídat výstupu na Vaši obrazovce.
+    \end{infoBox}
+    \joinBox{}
+    \begin{infoBox}
+        Po dokončení instalace se vytvoří zástupce na ploše a~záznamy v~nabídce Start.
+    \end{infoBox}
+    \joinBox{}
+    \begin{infoBox}
+    Tento software vyžaduje mít nainstalovaný \emph{.NET Framework 4.7.2}. Pokud nemáte \emph{.NET Framework 4.7.2} nainstalován, instalátor ho stáhne a~nainstaluje (je nutné internetové připojení.)
+    \begin{warningBox}Váš poskytovatel internetového připojení Vám může účtovat poplatky za připojení k~internetu související se stažením \emph{.NET Framework 4.7.2}.\end{warningBox}
+    \end{infoBox}
     \section{Spuštění}
-    TODO
-    \cleartoleftpage
+    \subsection{Pomocí nabídky Start}
+        \label{sec:launch_startmenu}
+        \begin{tabularx}{\textwidth}{l X}
+        \raisebox{-5em}{\includegraphics[scale=1.5]{startmenu_icon.png}} & V~nabíde Start přejděte do složky \emph{Lidé u~výtahu} a~vyberte položku \emph{\appname{}}.
+        \end{tabularx}
+    \subsection{Pomocí ikonky na ploše}
+        \begin{tabularx}{\textwidth}{l X}
+            \raisebox{-4em}{\includegraphics[scale=1.25]{desktop_icon}} & Poklepejte na ikonku \emph{\appname{}} na ploše.
+        \end{tabularx}
+        \begin{infoBox}
+            Ikonka nemusí být na ploše, pokud jste ji smazal(a) nebo máte skryté ikonky na ploše. V~tom případě můžete stále využít možnost \uv{Pomocí nabídky start} \nref{sec:launch_startmenu}.
+        \end{infoBox}
+    \section{Odinstalace}
+    \begin{enumerate}
+        \item Pro odinstalaci možnost \uv{odinstalovat} v~sekci \uv{Přidat a~odebrat programy} v~operačním systému Windows. Umístění a~název sekce a~název možnosti se může lišit na verzi vašeho operačního systému Windows; konzuljte dokumentaci Vaši verze operačního systému Windows.
+        \item V~dialogu odinstalátoru zvolte (pokud není zvolená) možnost \uv{Odeberte aplikaci z~tohot počítače.} a~potvrďte tlačítkem \uv{OK}.
+        \begin{center}
+            \begin{annotatedFigure}
+                {\includegraphics[width=0.75\linewidth]{uninstaller_dialog}}
+                \draw[red,thick,rounded corners] (0.118,0.3178) rectangle (0.5855,0.42);
+                \draw[red,thick,rounded corners] (0.355,0.03) rectangle (0.5325,0.15);
+            \end{annotatedFigure}
+        \end{center}
+    \end{enumerate}
     \section{Užívání}
     \subsection{Uživatelské rozhraní\,--\,obecné}
     \begin{figure}[h]
@@ -163,13 +232,13 @@
     Uživatelské rozhraní je tvořeno čtyřmi častmi:
 
     \subsubsection{Klávesnice}
-    Pomocí klávesnice lze zadat data do kalkulačky. Princip operace je vysvětlen v sekci \uv{obecné používaní} \nref{sec:general_use}. Funkce jednotlivých tlačítek je vysvětlena v sekci \uv{uživatelské rohraní\,--\,klávesnice} \nref{sec:UI_keyboard}.
+    Pomocí klávesnice lze zadat data do kalkulačky. Princip operace je vysvětlen v~sekci \uv{obecné používaní} \nref{sec:general_use}. Funkce jednotlivých tlačítek je vysvětlena v~sekci \uv{uživatelské rohraní\,--\,klávesnice} \nref{sec:UI_keyboard}.
 
-    \subsubsection{Výsledkový a zadávací displej}
+    \subsubsection{Výsledkový a~zadávací displej}
     Zde se zobrazí výsledek Vaši operace nebo právě zadaný operand.
 
-    \subsubsection{Displej s předchozí operací}
-    Zde se zobrazí předchozí operand a operace, která je prováděna.
+    \subsubsection{Displej s~předchozí operací}
+    Zde se zobrazí předchozí operand a~operace, která je prováděna.
 
     \subsubsection{Ukončovací křížek}
     Pomocí křížku lze ukončit aplikaci.
@@ -197,7 +266,7 @@
     Klávesnici kalkulačky lze rozdělit do několika funkčních celků.
 
     \subsubsection{Numerické klávesy}
-    Používají se pro zadávání čísel operandů, spolu s klávesami \uv{desetinná čárka} \textbf{(B)} a \uv{změ\-na znaménka} \textbf{(C)}. Viz. sekce \uv{zadávání čísel} \nref{sec:entering_numbers}.
+    Používají se pro zadávání čísel operandů, spolu s~klávesami \uv{desetinná čárka} \textbf{(B)} a~\uv{změ\-na znaménka} \textbf{(C)}. Viz. sekce \uv{zadávání čísel} \nref{sec:entering_numbers}.
 
     \subsubsection{Desetinná čárka}
     Pro zadávní desetinné čarky při vkládání čísel. Viz. sekce \uv{zadávání čísel} \nref{sec:entering_numbers}.
@@ -206,29 +275,29 @@
     Pro změnu znaménka zadaného čísla. Viz. sekce \uv{zadávání čísel} \nref{sec:entering_numbers}.
 
     \subsubsection{Smazání číslice}
-    Smaže poslední číslici (číslici nejnižšího řádu) ve \uv{výsledkovém a zadávacím displeji} \fref{fig:UI_main}{.B}. Viz. sekce \uv{zadávání čísel} \nref{sec:entering_numbers}.
+    Smaže poslední číslici (číslici nejnižšího řádu) ve \uv{výsledkovém a~zadávacím displeji} \fref{fig:UI_main}{.B}. Viz. sekce \uv{zadávání čísel} \nref{sec:entering_numbers}.
 
     \subsubsection{Smazat vše}
-    Smaže obsah kalkulačky, včetně přechozího čísla a operace. Viz. sekce \uv{obecné používaní} \nref{sec:general_use}.
+    Smaže obsah kalkulačky, včetně přechozího čísla a~operace. Viz. sekce \uv{obecné používaní} \nref{sec:general_use}.
 
-    \subsubsection{Tlačítka funkcí a operací}
+    \subsubsection{Tlačítka funkcí a~operací}
     Tyto tlačítka slouží pro výběr provedené funkce či operace nad zadanými čísly. Viz. sekce \uv{funkce kalkulačky} \nref{sec:function_reference}.
 
     \subsubsection{Rovná se / potrvrzení}
-    Tímto se potvrdí zadané číslo a provede se zadaná binární operace. Viz. sekce \uv{obecné používaní} \nref{sec:general_use}.
+    Tímto se potvrdí zadané číslo a~provede se zadaná binární operace. Viz. sekce \uv{obecné používaní} \nref{sec:general_use}.
 
     \subsection{Obecné používání}
     \label{sec:general_use}
-    Proces pro většinu operací s kalkulačkou je následující. Doporučujeme také přečíst sekci \uv{zadávaní čísel} \nref{sec:entering_numbers}. Jednotlivé funkce a operace kalkulačky jsou popsány v sekci \uv{funkce kalkulačky} \nref{sec:function_reference}.
+    Proces pro většinu operací s~kalkulačkou je následující. Doporučujeme také přečíst sekci \uv{zadávaní čísel} \nref{sec:entering_numbers}. Jednotlivé funkce a~operace kalkulačky jsou popsány v~sekci \uv{funkce kalkulačky} \nref{sec:function_reference}.
     \begin{enumerate}
-        \item Zadejte číslo prvního operandu pomocí \uv{numerických kláves}, a pokud je třeba, kláves \uv{desetinné čárky} anebo \uv{změny znaménka} \fref{fig:UI_keyboard}{.A/B/C}.
+        \item Zadejte číslo prvního operandu pomocí \uv{numerických kláves}, a~pokud je třeba, kláves \uv{desetinné čárky} anebo \uv{změny znaménka} \fref{fig:UI_keyboard}{.A/B/C}.
         \item Vyberte požadovanou operaci pomocí \uv{klávesy funkce nebo operace} \fref{fig:UI_keyboard}{.F}.
-        \item Pokud je operace unární, zobrazí se výsledek (nebo chybové hlášení) na \uv{vý\-sled\-ko\-vém a zadávacím displeji} \fref{fig:UI_main}{.B}, jinak se zadáný operand a symbol operace zobrazí na \uv{displeji s předchozí operací} \fref{fig:UI_main}{.C}.
+        \item Pokud je operace unární, zobrazí se výsledek (nebo chybové hlášení) na \uv{vý\-sled\-ko\-vém a~zadávacím displeji} \fref{fig:UI_main}{.B}, jinak se zadáný operand a~symbol operace zobrazí na \uv{displeji s~předchozí operací} \fref{fig:UI_main}{.C}.
         \item Obdobně jako první operand, zadejte druhý operand.
         \item Potvrďte druhý operand pomocí klávesy \uv{rovná se / potrvrzení} \fref{fig:UI_keyboard}{.G}.
-        \item Na \uv{výsledkovém a zadávacím displeji} se zobrazí výsledek nebo chybové hlášení; o chybových hlášeních Vás informujeme v sekci \uv{chybová hlášení} \nref{sec:errors}.
+        \item Na \uv{výsledkovém a~zadávacím displeji} se zobrazí výsledek nebo chybové hlášení; o~chybových hlášeních Vás informujeme v~sekci \uv{chybová hlášení} \nref{sec:errors}.
     \end{enumerate}
-    Pokud jste udělali chybu v zadání prvního operandu nebo ve výběru operace, stisknětě klávesu \uv{smazat vše} \fref{fig:UI_keyboard}{.E}.
+    Pokud jste udělali chybu v~zadání prvního operandu nebo ve výběru operace, stisknětě klávesu \uv{smazat vše} \fref{fig:UI_keyboard}{.E}.
     \begin{infoBox}
         Kalkulačka používá infixní notaci!
     \end{infoBox}
@@ -238,17 +307,17 @@
     \end{infoBox}
     \joinBox
     \begin{warningBox}
-        Kalkulačka se snaží býti velice přesná a má nízkou chybu při výpočtech. Opakované využítí výsledku v operacích způsobuje kumulování chyby, což může snížit přesnost.
+        Kalkulačka se snaží býti velice přesná a~má nízkou chybu při výpočtech. Opakované využítí výsledku v~operacích způsobuje kumulování chyby, což může snížit přesnost.
     \end{warningBox}
     \subsection{Zadávání čísel}
     \label{sec:entering_numbers}
-    Kalkulačka dokáže pracovat s kladnímy celými čísly ale i čísly desetinnímy a zápornými.
+    Kalkulačka dokáže pracovat s~kladnímy celými čísly ale i čísly desetinnímy a~zápornými.
 
-    Aktualné zadávané číslo se zobrazí ve \uv{výsledkovém a zadávacím displeji} \fref{fig:UI_main}{.B}.
+    Aktualné zadávané číslo se zobrazí ve \uv{výsledkovém a~zadávacím displeji} \fref{fig:UI_main}{.B}.
 
-    Pomocí \uv{numerických kláves} \fref{fig:UI_keyboard}{.A} se zadávají jednotlivé číslice. Vložená číslice se zobrazí na místě jednotek a předchozí číslo se posune o řád doleva, aby vytvořilo místo pro novou číslici (mimo situaci po stisknutí klávesy \uv{desetinná čárka}).
+    Pomocí \uv{numerických kláves} \fref{fig:UI_keyboard}{.A} se zadávají jednotlivé číslice. Vložená číslice se zobrazí na místě jednotek a~předchozí číslo se posune o~řád doleva, aby vytvořilo místo pro novou číslici (mimo situaci po stisknutí klávesy \uv{desetinná čárka}).
 
-    Pomocí klávesy \uv{desetinná čárka} \fref{fig:UI_keyboard}{.B} se zobrazí desetinná čárka za číslicí řádu jednotek. Nyní se po stiknutí \uv{numerických kláves} nová číslice zobrazí na pravém konci čísla (tj. místě s řádem o jedna menší, než řád již zadané číslice s nejnižším řádem).
+    Pomocí klávesy \uv{desetinná čárka} \fref{fig:UI_keyboard}{.B} se zobrazí desetinná čárka za číslicí řádu jednotek. Nyní se po stiknutí \uv{numerických kláves} nová číslice zobrazí na pravém konci čísla (tj. místě s~řádem o~jedna menší, než řád již zadané číslice s~nejnižším řádem).
 
     \begin{prohibitBox}
         Opětovné stisknutí klávesy \uv{desetinná čárka} \textbf{nezpůsobí} změnu umístění desetinné čarky! Pomocí klávesy \uv{smazání číslice} je třeba desetinnou čá\-rku nejprve smazat!
@@ -263,13 +332,13 @@
     Pokud provedete chybu při zadávání čísla, lze smazat poslední číslici pomocí klávesy \\\uv{sma\-zá\-ní čí\-sli\-ce} \fref{fig:UI_keyboard}{.D}; klávesu lze použít opakovaně. Pokud chcete smazat celé číslo, můžete využít klávesu \uv{smazat vše} \fref{fig:UI_keyboard}{.E}.
 
     \begin{warningBox}
-        Použítí klávesy \uv{smazat vše} také smaže předchozí operand a vybranou operaci.
+        Použítí klávesy \uv{smazat vše} také smaže předchozí operand a~vybranou operaci.
     \end{warningBox}
 
     \renewcommand\thesubsubsection{\thesubsection.\arabic{subsubsection}}
     \subsection{Jednotlivé funkce kalkulačky}
     \label{sec:function_reference}
-    V této sekci jsou popsány funkce všech \uv{kláves funckí a operací} \fref{fig:UI_keyboard}{.F}.
+    V~této sekci jsou popsány funkce všech \uv{kláves funckí a~operací} \fref{fig:UI_keyboard}{.F}.
 
     \subsubsection{Sčítaní}
     \label{sec:addition}
@@ -298,7 +367,7 @@
         \end{infoBox}
         \joinBox
         \begin{prohibitBox}
-            Dělení nulou není definované a způsobí chybové hlášení!
+            Dělení nulou není definované a~způsobí chybové hlášení!
         \end{prohibitBox}
     \end{function_reference}
 
@@ -324,7 +393,7 @@
         \end{prohibitBox}
         \joinBox
         \begin{prohibitBox}
-            Operace $0^0$ není definována a způsobí chybové hlášení!
+            Operace $0^0$ není definována a~způsobí chybové hlášení!
         \end{prohibitBox}
     \end{function_reference}
 
@@ -338,7 +407,7 @@
         \joinBox{}
         \begin{prohibitBox}
             Kalkulačka nepodporuje komplexní odmocninu!\\
-            Odmocnina záporných čísel není definována a způsobí chybové hlášení!
+            Odmocnina záporných čísel není definována a~způsobí chybové hlášení!
         \end{prohibitBox}
     \end{function_reference}
 
@@ -352,15 +421,15 @@
         \joinBox
         \begin{prohibitBox}
             Kalkulačka nepodporuje komplexní odmocninu!\\
-            Odmocnina záporných čísel se sudým odmocněncem není definována a způsobí chybové hlášení!
+            Odmocnina záporných čísel se sudým odmocněncem není definována a~způsobí chybové hlášení!
         \end{prohibitBox}
         \joinBox
         \begin{prohibitBox}
-            Odmocnění nuly se záporným řádem není definována a způsobí chybové hlášení!
+            Odmocnění nuly se záporným řádem není definována a~způsobí chybové hlášení!
         \end{prohibitBox}
         \joinBox
         \begin{prohibitBox}
-            Odmocnina nultého řádu není definována a způsobí chybové hlášení!
+            Odmocnina nultého řádu není definována a~způsobí chybové hlášení!
         \end{prohibitBox}
     \end{function_reference}
 
@@ -373,7 +442,7 @@
         \end{infoBox}
         \joinBox
         \begin{prohibitBox}
-            Faktoriál záporných a desetinných čísel není definovaný a způsobí chybové hlašení!
+            Faktoriál záporných a~desetinných čísel není definovaný a~způsobí chybové hlašení!
         \end{prohibitBox}
     \end{function_reference}
 
@@ -382,13 +451,13 @@
     \begin{function_reference_bodge_trig}{btn_trig}
         Vypočítá vybranou goniometrickou funkci\,--\,sinus, kosinus, nebo tangens. Úhel
 
-        \vspace{-4.5em} je zadaný v radiánech.
+        \vspace{-4.5em} je zadaný v~radiánech.
         \begin{warningBox}
-            Je třeba zadat argument goniometrických funkcí v radiánech.
+            Je třeba zadat argument goniometrických funkcí v~radiánech.
         \end{warningBox}
         \joinBox
         \begin{prohibitBox}
-            Tangens $(2k+1)\pi, k \in \mathbb{Z} $ není definovaný a způsobí chybové hlášení.
+            Tangens $(2k+1)\pi, k \in \mathbb{Z} $ není definovaný a~způsobí chybové hlášení.
         \end{prohibitBox}
     \end{function_reference_bodge_trig}
 
@@ -397,11 +466,11 @@
     \begin{function_reference}{btn_inverse}
         Vypočíta obrácené číslo operandu.
         \begin{infoBox}
-            Tato operance je ekvivalentní k operaci $1 / X$ \nref{sec:division}.
+            Tato operance je ekvivalentní k~operaci $1 / X$ \nref{sec:division}.
         \end{infoBox}
         \joinBox
         \begin{prohibitBox}
-            Obrácené číslo nuly není definované a způsobí chybové hlášení.
+            Obrácené číslo nuly není definované a~způsobí chybové hlášení.
         \end{prohibitBox}
     \end{function_reference}
 
@@ -417,29 +486,32 @@
     Požadovaná operace vrátilo číslo mimo kalkulační rozsah kalkulátoru.
 
     \subsubsection{Dělení nulou}
-    Dělíte nulou nebo se pokušíte provést operaci, která interně se o dělení nulou snaží.
+    Dělíte nulou nebo se pokušíte provést operaci, která interně se o~dělení nulou snaží.
 
-    Podívejte se na nedefinované vstupní hodnoty funkce, kterou se snažíte použít v sekci \uv{jednotlivé funkce kalkualčky} \nref{sec:function_reference}.
+    Podívejte se na nedefinované vstupní hodnoty funkce, kterou se snažíte použít v~sekci \uv{jednotlivé funkce kalkualčky} \nref{sec:function_reference}.
 
     \subsubsection{Nepovolená operace}
     Snažíte se provést operaci se vstupem, který není platný.
     
-    Podívejte se na nedefinované vstupní hodnoty funkce, kterou se snažíte použít v sekci \uv{jednotlivé funkce kalkualčky} \nref{sec:function_reference}.
+    Podívejte se na nedefinované vstupní hodnoty funkce, kterou se snažíte použít v~sekci \uv{jednotlivé funkce kalkualčky} \nref{sec:function_reference}.
 
     \subsubsection{Wrong input}
     Zadaný vstup není platný.
 
-    Podívejte se na nedefinované vstupní hodnoty funkce, kterou se snažíte použít v sekci \uv{jednotlivé funkce kalkualčky} \nref{sec:function_reference}.    
+    Podívejte se na nedefinované vstupní hodnoty funkce, kterou se snažíte použít v~sekci \uv{jednotlivé funkce kalkualčky} \nref{sec:function_reference}.    
 
     \subsection{Zobrazení nápovědy}
-    Stisknutím klávesy \uv{F1} v otevřeném programu CalcIVSulator se zobrazí elektronická verze této uživatelské příručky; verze tištěné a elektronické příručky se mohou lišit.
+    Stisknutím klávesy \uv{F1} v~otevřeném programu \appname{} se zobrazí elektronická verze této uživatelské příručky; verze tištěné a~elektronické příručky se mohou lišit.
 
     \begin{infoBox}
-        Pro zobrazení uživatelské příručky je třeba mít ve Vašem počítači nainstalovaný prohlížeč souborů PDF (Portable Document Format). Prohlížeč souborů PDF můžete například zdarma stáhnout z této adresy \url{https://get.adobe.com/cz/reader/}.
+        Pro zobrazení uživatelské příručky je třeba mít ve Vašem počítači nainstalovaný prohlížeč souborů PDF (Portable Document Format). Prohlížeč souborů PDF můžete například zdarma stáhnout z~této adresy \url{https://get.adobe.com/cz/reader/}.
+        \begin{warningBox}
+            Váš poskytovatel internetového připojení Vám může účtovat poplatky za připojení k~internetu související se stažením dodatečného softwaru.
+        \end{warningBox}
     \end{infoBox}
 
-    \subsection{Zobrazení informací o autorech a sestavení programu}
-    Stisknutím klávesy \uv{F2} v otevřeném programu CalcIVSulator se zobrazí informace o programu, jeho autorech a verzi.
+    \subsection{Zobrazení informací o~autorech a~sestavení programu}
+    Stisknutím klávesy \uv{F2} v~otevřeném programu \appname{} se zobrazí informace o~programu, jeho autorech a~verzi.
 
     \section{Technické informace}
 
@@ -447,7 +519,7 @@
     \begin{tabularx}{\textwidth}{|X|X|}
     \hline
     Počet číslic využívaných při vnitřních výpočtech & 15 \\ \hline
-    Přesnost & 10 desetinných míst (chyba se kumuluje při opakovaných operací s výsledkem) \\ \hline
+    Přesnost & 10 desetinných míst (chyba se kumuluje při opakovaných operací s~výsledkem) \\ \hline
     Maximální hodnota využívána kalkulačkou interně& $1,7976931348623157 \cdot 10^{308}$ \\ \hline
     Minimální hodnota využívána kalkulačkou interně & $-1,7976931348623157 \cdot 10^{308}$ \\ \hline
     Maximální vstupní hodnota& $9999999999999999999$ \\ \hline
@@ -458,7 +530,7 @@
 
     \section{Autoři}
 
-    Program CalcIVSulator je autorským dílem skupiny Lidé u výtáhu, která je tvořena těmito lidmi:
+    Program \appname{} je autorským dílem skupiny Lidé u~výtáhu, která je tvořena těmito lidmi:
 
     \begin{itemize}
         \item Ondřej Sloup (\email{xsloup02@stud.fit.vutr.cz})
@@ -467,45 +539,45 @@
     \end{itemize}
 
     \begin{infoBox}
-        Viktor Rucký sbírá pohlednice. Pokud chcete, napište Viktorovi o poštovní adresu e-mailem a pošlete mu pohlednici!
+        Viktor Rucký sbírá pohlednice. Pokud chcete, napište Viktorovi o~poštovní adresu e-mailem a~pošlete mu pohlednici!
     \end{infoBox}
 
     \begin{tabularx}{\textwidth}{X X}
-        \raisebox{-5em}{\includegraphics[scale=0.25]{logo_fit.pdf}} & Tento software byl vyvinut jako projekt předmětu IVS studenty Fakulty informačních technoligií Vysokéhu učení technického v Brně.
+        \raisebox{-4.25em}{\includegraphics[scale=0.25]{logo_fit.pdf}} & Tento software byl vyvinut jako projekt předmětu IVS studenty Fakulty informačních technoligií Vysokéhu učení technického v~Brně.
     \end{tabularx}
     
-    \section{Historie}
+    \section{Historie dokumentu}
     \begin{tabularx}{\textwidth}{|l|X|l|}
         \hline
-        Verze&Poznámky k verzi&Autoři změn \\ \hline
+        Verze&Poznámky k~verzi&Autoři změn \\ \hline
         1.0&První vydání příručky&Viktor Rucký (\email{xrucky01@stud.fit.vutr.cz}) \\ \hline
     \end{tabularx}
 
-    \section{Licence a právní náležitosti}
+    \section{Licence a~právní náležitosti}
     
-    \subsection{Licence k programu}
-    Tato sekce se váže k softwaru, nikoliv k dokumentaci.
+    \subsection{Licence k~programu}
+    Tato sekce se váže k~softwaru, nikoliv k~dokumentaci.
     
     \begin{otherlanguage}{english}
-    CalcIVSulator (Simple calculator with GUI and mathematical library)\\
+    \appname{} (Simple calculator with GUI and mathematical library)\\
     Copyright \textcopyright{} 2020 Viktor Rucký, Ondřej Sloup, Vojtěch Vlach
 
-    CalcIVSulator is free software: you can redistribute it and/or modify
+    \appname{} is free software: you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
     the Free Software Foundation, either version 3 of the License, or
     (at your option) any later version.
 
-    CalcIVSulator is distributed in the hope that it will be useful,
+    \appname{} is distributed in the hope that it will be useful,
     but WITHOUT ANY WARRANTY; without even the implied warranty of
     MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
     GNU General Public License for more details.
 
     You should have received a copy of the GNU General Public License
-    along with CalcIVSulator.  If not, see \url{https://www.gnu.org/licenses/}.
+    along with \appname{}.  If not, see \url{https://www.gnu.org/licenses/}.
     \end{otherlanguage}
 
     \subsection{GNU Free Documentation License}
-    Tato sekce se váže k této uživatelské příručce.
+    Tato sekce se váže k~této uživatelské příručce.
 
     \input{GNU Free Documentation License.tex}
 
@@ -515,5 +587,5 @@
     \thispagestyle{empty}
     \null
     \vfill
-    {\large \textsc{\textcopyright{} Lidé u výtahu 2020}}
+    {\large \textsc{\textcopyright{} Lidé u~výtahu 2020}}
 \end{document}
