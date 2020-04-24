@@ -1,4 +1,3 @@
-﻿
 # CalcIVSulator
 
 CalcIVSulator je revoluční kalkulačka vytvořená studenty FIT VUT. Využívá nově vytvořené knihovny „IVSMath“, která obsahuje veškeré operace, které kalkulačka musí mít. Mezi její hlavní funkce patří:

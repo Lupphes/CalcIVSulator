@@ -31,6 +31,9 @@
 # Visual Studio
 /.vs
 
+# Programmers' documentation
+/src/UserDocumentation/Help/
+
 #Latex
 ## Core latex/pdflatex auxiliary files:
 *.aux

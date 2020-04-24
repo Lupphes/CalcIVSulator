@@ -10,8 +10,14 @@ using System.Windows.Forms;
 
 namespace CalculatorGUI
 {
+    /// <summary>
+    /// "About" derives from Form structure
+    /// </summary>
     public partial class About : Form
     {
+        /// <summary>
+        /// "About" component in GUI calculator
+        /// </summary>
         public About()
         {
             InitializeComponent();
