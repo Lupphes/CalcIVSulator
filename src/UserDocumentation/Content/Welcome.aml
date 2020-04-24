@@ -19,7 +19,7 @@
         <list class="bullet">
           <listItem>
             <para>
-              <localUri>CalculatorGUI</localUri> - Visual GUI for user. You can test on this application our math library. It is 
+              <localUri>CalculatorGUI</localUri> - Graphical User Interface for user. You can test on this application our math library. It is
               simple from application
             </para>
           </listItem>
@@ -32,14 +32,14 @@
 
           <listItem>
             <para>
-              <localUri>IVSMathLibraryTests</localUri> - Test for library which confirms its functions.
+              <localUri>IVSMathLibraryTests</localUri> - Tests for library which confirms its functions.
             </para>
           </listItem>
 
         </list>
 
         <para>
-          Thank you for your interest in our CalcIVSulator and its math library. Feel free to give us feedback or create issue on our github.
+          Thank you for your interest in our CalcIVSulator and its math library. Feel free to give us feedback or create an issue on our GitHub repository.
         </para>
       </content>
     </section>

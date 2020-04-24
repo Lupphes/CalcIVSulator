@@ -11,7 +11,7 @@ using System.Windows.Forms;
 namespace CalculatorGUI
 {
     /// <summary>
-    /// "About" derivates from Form structure
+    /// "About" derives from Form structure
     /// </summary>
     public partial class About : Form
     {

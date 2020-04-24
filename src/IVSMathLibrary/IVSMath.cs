@@ -28,7 +28,7 @@ using System.Threading.Tasks;
 
 namespace IVSMathLibrary {
     /// <summary>
-    /// Mathematical library consists of these functions: Add, Substract, Multiply, Divide, Root, Power, Factorial, Inverse, Sine, Cosine, Tangent
+    /// Mathematical library consists of these functions: Add, Subtract, Multiply, Divide, Root, Power, Factorial, Inverse, Sine, Cosine, Tangent
     /// </summary>
     public class IVSMath
     {

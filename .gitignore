@@ -32,4 +32,4 @@
 /.vs
 
 # Documentation
-/src/UserDocumentation/Help/fti/*
+/src/UserDocumentation/Help/

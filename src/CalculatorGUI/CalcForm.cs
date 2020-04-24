@@ -14,7 +14,7 @@ using System.Globalization;
 namespace CalculatorGUI
 {
     /// <summary>
-    /// "CalcForm" derivates from Form structure
+    /// "CalcForm" derives from Form structure
     /// </summary>
     public partial class CalcForm : Form {
         /// <summary>
