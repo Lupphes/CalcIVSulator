@@ -7,7 +7,7 @@ using System.Runtime.InteropServices;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 [assembly: AssemblyTitle("CalcIVSulator")]
-[assembly: AssemblyDescription("This is GUI for IVSMathLibrary")]
+[assembly: AssemblyDescription("This is the GUI for IVSMathLibrary")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Lidé u výtahu")]
 [assembly: AssemblyProduct("CalcIVSulator")]
