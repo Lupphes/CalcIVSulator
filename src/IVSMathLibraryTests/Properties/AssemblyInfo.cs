@@ -3,7 +3,7 @@ using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
 [assembly: AssemblyTitle("CalcIVSulator")]
-[assembly: AssemblyDescription("This file is testing CalcIVSulator.")]
+[assembly: AssemblyDescription("IVSMathLibrary's tests")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Lidé u výtahu")]
 [assembly: AssemblyProduct("IVSMath Library")]

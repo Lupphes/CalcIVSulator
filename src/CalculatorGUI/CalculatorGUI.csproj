@@ -50,6 +50,7 @@
   </PropertyGroup>
   <PropertyGroup>
     <ApplicationIcon>icon.ico</ApplicationIcon>
+    <StartupObject>CalculatorGUI.Program</StartupObject>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
