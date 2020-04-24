@@ -1,4 +1,4 @@
 ﻿Plán měl špatně rozdělené úkoly v sekci psaní testů. Někteří členové psali testy funkcí, které poté měli implementovat.
-COVID-19 — Němeli jsem možnost osobních meetingů; vše jsme řešili online.
+COVID-19 — Neměli jsme možnost osobních meetingů; vše jsme řešili online.
 Deadliny — Deadliny byly moc přísné (nešli stihnout s ostatními školními projekty), avšak z tohoto důvodu jsme si nechali rezervu v plánu.
 Zapomněli jsme naplánovat code review; kdybychom code review naplánovali, tak bychom zjistili problém se špatně rozdělenými úkoly psaní testů.
