@@ -51,11 +51,11 @@
   \newcommand*\joinBox{\vspace{-0.9em}}
 
   \newenvironment{law}{
-    \fontsize{3.6pt}{4.32pt}
+    \fontsize{5pt}{6pt}
     \selectfont
   }{}
 
-  \newcommand*\lawHead{\fontsize{4.6pt}{5.52pt}}
+  \newcommand*\lawHead{\fontsize{7pt}{8.4pt}}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -216,7 +216,7 @@
     \end{enumerate}
     \section{Užívání}
     \subsection{Uživatelské rozhraní\,--\,obecné}
-    \begin{figure}[h]
+    \begin{figure}[p]
         \begin{center}
             \begin{annotatedFigure}
                 {\includegraphics[width=0.75\linewidth]{calculator.PNG}}
@@ -245,6 +245,7 @@
 
     \subsection{Uživatelské rohraní\,--\,klávesnice}
     \label{sec:UI_keyboard}
+    \vfill
     \begin{figure}[h]
         \begin{center}
         \begin{annotatedFigure}
@@ -263,6 +264,8 @@
         \caption{Rozdělení klávesnice}
         \label{fig:UI_keyboard}
     \end{figure}
+    \vfill
+    \newpage
     Klávesnici kalkulačky lze rozdělit do několika funkčních celků.
 
     \subsubsection{Numerické klávesy}
@@ -322,13 +325,13 @@
     \begin{prohibitBox}
         Opětovné stisknutí klávesy \uv{desetinná čárka} \textbf{nezpůsobí} změnu umístění desetinné čarky! Pomocí klávesy \uv{smazání číslice} je třeba desetinnou čá\-rku nejprve smazat!
     \end{prohibitBox}
-
+    \joinBox
     Pokud chcete zadat číslo záporné, použijte klávesu \uv{změna znaménka} \fref{fig:UI_keyboard}{.C}. Opětovné stisknutí klávesy změní zadané číslo zpět na číslo kladné.
 
     \begin{prohibitBox}
         Nesnažte se zadat záporné číslo pomocí klávesy \uv{odčítání}! Je nutné použít klávesu \uv{změna znaménka}!
     \end{prohibitBox}
-
+    \joinBox
     Pokud provedete chybu při zadávání čísla, lze smazat poslední číslici pomocí klávesy \\\uv{sma\-zá\-ní čí\-sli\-ce} \fref{fig:UI_keyboard}{.D}; klávesu lze použít opakovaně. Pokud chcete smazat celé číslo, můžete využít klávesu \uv{smazat vše} \fref{fig:UI_keyboard}{.E}.
 
     \begin{warningBox}
@@ -338,13 +341,13 @@
     \renewcommand\thesubsubsection{\thesubsection.\arabic{subsubsection}}
     \subsection{Jednotlivé funkce kalkulačky}
     \label{sec:function_reference}
-    V~této sekci jsou popsány funkce všech \uv{kláves funckí a~operací} \fref{fig:UI_keyboard}{.F}.
+    \vbox{V~této sekci jsou popsány funkce všech \uv{kláves funckí a~operací} \fref{fig:UI_keyboard}{.F}.
 
     \subsubsection{Sčítaní}
     \label{sec:addition}
     \begin{function_reference}{btn_plus}
         Sečte operandy.
-    \end{function_reference}
+    \end{function_reference}}
     
     \subsubsection{Odčítaní}
     \label{sec:subtraction}
@@ -556,7 +559,7 @@
     \section{Licence a~právní náležitosti}
     
     \subsection{Licence k~programu}
-    Tato sekce se váže k~softwaru, nikoliv k~dokumentaci.
+    \vbox{Tato sekce se váže k~softwaru, nikoliv k~dokumentaci.
     
     \begin{otherlanguage}{english}
     \appname{} (Simple calculator with GUI and mathematical library)\\
@@ -574,7 +577,7 @@
 
     You should have received a copy of the GNU General Public License
     along with \appname{}.  If not, see \url{https://www.gnu.org/licenses/}.
-    \end{otherlanguage}
+    \end{otherlanguage}}
 
     \subsection{GNU Free Documentation License}
     Tato sekce se váže k~této uživatelské příručce.
