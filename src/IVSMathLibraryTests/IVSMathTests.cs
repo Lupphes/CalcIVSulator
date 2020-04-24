@@ -1,5 +1,5 @@
 ﻿#region Copyright
-// <copyright file="IVSMath Tests" company="Lidé u výtahu">
+// <copyright file="IVSMathTests.cs" company="Lidé u výtahu">
 // CalcIVSulator (Simple calculator with GUI and mathematical library)
 // Copyright © 2020 Viktor Rucký, Ondřej Sloup, Vojtěch Vlach
 // 

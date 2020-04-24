@@ -31,7 +31,7 @@ namespace CalculatorGUI
         NumberStyles styles = NumberStyles.Any; // Set number styles
         CultureInfo culture = CultureInfo.CreateSpecificCulture("cs-CZ"); // Set number culture
 
-        /// <summary>Parses the text to number 
+        /// <summary>Parses the text to a number
         ///    (<paramref name="object"/>,<paramref name="event"/>).</summary>
         /// <param name="object">Object sender</param>
         /// <param name="event">Event argument</param>
