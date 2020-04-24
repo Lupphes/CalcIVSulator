@@ -35,9 +35,15 @@ Projekt byl vytvořen v rámci předmětu IVS na FIT VUT v roce 2020.
 Kalkulačka a matematická knihovna je otestovaná v těchto systémech:
 
  - Windows 10 x64 Pro (version 1903, build 18362.720)
+ - Windows 10 x64 Home (version 1909, build 18363.778)
 
 ## Instalace
-TO DO!
+1. Spusťte soubor "CalcIVSulator_setup.exe".
+2. Budete požádání o povolení aplikace k provádění změn; stiskněte ano.
+3. Spustí se instalační proces.
+4. Je možné, že instalátor se Vás zeptá, zda mu důvěřujete; stiskněte ano.
+5. Počkejte, až se instalace dokončí.
+6. Po dokončení instalace se spustí program CalcIVSulator.
 
 ## Licence
 Celý projekt je publikován pod licencí GNU GPL-3.0-or-later. 

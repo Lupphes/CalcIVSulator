@@ -50,6 +50,7 @@ namespace CalculatorGUI
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(About));
             this.lb_Next = new System.Windows.Forms.Label();
             this.lb_version = new System.Windows.Forms.Label();
             this.lb_team = new System.Windows.Forms.Label();
@@ -182,6 +183,7 @@ namespace CalculatorGUI
             this.Controls.Add(this.lb_text);
             this.Controls.Add(this.lb_Next);
             this.Controls.Add(this.pnl);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "About";
             this.Text = "About";
             this.pnl.ResumeLayout(false);
