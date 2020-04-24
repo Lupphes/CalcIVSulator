@@ -82,9 +82,9 @@ namespace CalculatorGUI
             this.lb_version.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
             this.lb_version.Location = new System.Drawing.Point(196, 120);
             this.lb_version.Name = "lb_version";
-            this.lb_version.Size = new System.Drawing.Size(64, 13);
+            this.lb_version.Size = new System.Drawing.Size(46, 13);
             this.lb_version.TabIndex = 39;
-            this.lb_version.Text = "v1.ebb1124";
+            this.lb_version.Text = "v1.0.0.0";
             // 
             // lb_team
             // 
@@ -156,9 +156,9 @@ namespace CalculatorGUI
             this.license.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
             this.license.Location = new System.Drawing.Point(3, 120);
             this.license.Name = "license";
-            this.license.Size = new System.Drawing.Size(70, 13);
+            this.license.Size = new System.Drawing.Size(108, 13);
             this.license.TabIndex = 45;
-            this.license.Text = "GNU GPL v2";
+            this.license.Text = "GNU GPL-3.0-or-later";
             // 
             // pnl
             // 
