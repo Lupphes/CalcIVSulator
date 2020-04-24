@@ -133,9 +133,9 @@
             this.license.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
             this.license.Location = new System.Drawing.Point(3, 120);
             this.license.Name = "license";
-            this.license.Size = new System.Drawing.Size(70, 13);
+            this.license.Size = new System.Drawing.Size(108, 13);
             this.license.TabIndex = 45;
-            this.license.Text = "GNU GPL v3";
+            this.license.Text = "GNU GPL-3.0-or-later";
             // 
             // pnl
             // 
