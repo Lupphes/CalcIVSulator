@@ -2,7 +2,7 @@
   "profiles": {
     "SampleStandartDeviation": {
       "commandName": "Project",
-      "commandLineArgs": "< ../../../data/data10.txt"
+      "commandLineArgs": "< ../../../data/data1000.txt"
     }
   }
 }

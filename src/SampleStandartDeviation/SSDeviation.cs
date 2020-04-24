@@ -30,7 +30,8 @@ namespace SampleStandartDeviation
             
             double countMin1 = IVSMath.Substract(count, 1);     // countMin1 = count - 1
             double averageSq = IVSMath.Power(average, 2);       // averageSq = average^2
-            double SSDeviationSq = IVSMath.Multiply(IVSMath.Divide(1, countMin1), IVSMath.Substract(squaresum, IVSMath.Multiply(count, averageSq)));    // SSDevitaionSq = (1/countMin1)*(squaresum-count*averageSq
+            double SSDeviationSq = IVSMath.Multiply(IVSMath.Divide(1, countMin1), IVSMath.Substract(squaresum, IVSMath.Multiply(count, averageSq)));    
+            // SSDevitaionSq = (1/countMin1)*(squaresum-count*averageSq
             SSDeviation = IVSMath.Root(SSDeviationSq, 2);       // SSDeviation = SSDeviationSq^1/2
             // s = ((1/(N-1))*(squaresum-count*average^2))^1/2
 
