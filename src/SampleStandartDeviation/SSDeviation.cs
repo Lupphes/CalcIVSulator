@@ -26,6 +26,10 @@ namespace SampleStandartDeviation
                 }
             }
 
+            Random ran = new Random();
+            for (int i = 0; i < 5120; i++)
+                ran.Next();
+
             average = IVSMath.Divide(sum, count);       // average = sum/count
             
             double countMin1 = IVSMath.Substract(count, 1);     // countMin1 = count - 1
