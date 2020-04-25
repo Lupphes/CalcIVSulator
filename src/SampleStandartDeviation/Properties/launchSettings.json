@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "SampleStandartDeviation": {
+      "commandName": "Project",
+      "commandLineArgs": "< ../../../data/data1000.txt"
+    }
+  }
+}
