@@ -1,9 +1,9 @@
 ﻿using System;
 using IVSMathLibrary;
 
-namespace SampleStandartDeviation
+namespace SampleStandardDeviation
 {
-    class SSDeviation
+    class Program
     {
         static void Main(string[] args)
         {
@@ -16,7 +16,7 @@ namespace SampleStandartDeviation
             int count = 0;          // number count
 
             // reading all values from Console input (or file)
-            while((input = Console.ReadLine()) != null)
+            while ((input = Console.ReadLine()) != null)
             {
                 if (double.TryParse(input, out number))     // try parse string to double, when successfull process the number
                 {
@@ -31,10 +31,10 @@ namespace SampleStandartDeviation
                 ran.Next();
 
             average = IVSMath.Divide(sum, count);       // average = sum/count
-            
+
             double countMin1 = IVSMath.Subtract(count, 1);     // countMin1 = count - 1
             double averageSq = IVSMath.Power(average, 2);       // averageSq = average^2
-            double SSDeviationSq = IVSMath.Multiply(IVSMath.Divide(1, countMin1), IVSMath.Subtract(squaresum, IVSMath.Multiply(count, averageSq)));    
+            double SSDeviationSq = IVSMath.Multiply(IVSMath.Divide(1, countMin1), IVSMath.Subtract(squaresum, IVSMath.Multiply(count, averageSq)));
             // SSDevitaionSq = (1/countMin1)*(squaresum-count*averageSq
             SSDeviation = IVSMath.Root(SSDeviationSq, 2);       // SSDeviation = SSDeviationSq^1/2
             // s = ((1/(N-1))*(squaresum-count*average^2))^1/2
