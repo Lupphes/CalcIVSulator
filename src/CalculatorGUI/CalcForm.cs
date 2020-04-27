@@ -362,16 +362,23 @@ namespace CalculatorGUI
 
             if (!wasError) { // If error state
                 if (isChained) { // Previous operation is in buffer
-                    resultValue = Calculate(operationPerfomed, resultValue);
-                    operationPerfomed = button.Text;
-                    resultValue = Calculate(operationPerfomed, resultValue);
-                    if (resultValue % 1 == 0) { comma = false; } else { comma = true; }
-                    if (wasError) { return; }
-                    tb_Out.Text = resultValue.ToString();
-                    operationPerfomed = "";
-                    wasCalculated = true;
-                    isChained = false;
-                    lb_Next.Text = "";
+                    if (tb_Out.Text == "")
+                    {
+                        lb_Next.Text = resultValue.ToString() + " " + operationPerfomed;
+                        return;
+                    }
+                    else {
+                        resultValue = Calculate(operationPerfomed, resultValue);
+                        operationPerfomed = button.Text;
+                        resultValue = Calculate(operationPerfomed, resultValue);
+                        if (resultValue % 1 == 0) { comma = false; } else { comma = true; }
+                        if (wasError) { return; }
+                        tb_Out.Text = resultValue.ToString();
+                        operationPerfomed = "";
+                        wasCalculated = true;
+                        isChained = false;
+                        lb_Next.Text = "";
+                    }
                 }
                 else { // No input
                     if (tb_Out.Text == "") {
