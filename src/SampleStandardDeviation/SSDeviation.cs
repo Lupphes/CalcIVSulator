@@ -20,7 +20,7 @@ namespace SampleStandardDeviation
             // argument handling
             if(args.Length != 0)
                 if(!int.TryParse(args[0], out N))
-                    N = 1;
+                    N = 1;      // if conversion was not successful, use the default value
 
             // reading all values from Console input (or file)
             while ((input = Console.ReadLine()) != null)
