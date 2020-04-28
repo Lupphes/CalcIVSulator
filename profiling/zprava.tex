@@ -1,13 +1,19 @@
 \documentclass{article}
 \usepackage[utf8]{inputenc}
 \usepackage[czech]{babel}
+\usepackage{natbib}
+\usepackage{graphicx}
+\usepackage{listings}
+\usepackage{xcolor}
+\lstset {
+    language=bash,
+    backgroundcolor=\color{black!5}, % set backgroundcolor
+    basicstyle=\footnotesize,% basic font setting
+}
 
 \title{IVS - profiling}
 \author{Lidé u výtahu}
 \date{April 2020}
-
-\usepackage{natbib}
-\usepackage{graphicx}
 
 \begin{document}
 
@@ -16,40 +22,67 @@
 \tableofcontents
 
 \section{Úvod}
-Pro výpočet výběrové směrodatné odchylky naše skupina zvolila vývoj Konzolové aplikace s názvem SampleStandardDeviation.exe. Tato aplikace používá třídu IVSMath s matematickými operacemi. Ze standardního vstupu načte libovolný počet čísel a na standardní výstup vypíše výběrovou směrodatnou odchylku.
+Pro výpočet výběrové směrodatné odchylky naše skupina zvolila vývoj konzolové aplikace s názvem SampleStandardDeviation.exe. Tato aplikace používá třídu IVSMath s matematickými operacemi. Ze stdin načte libovolný počet čísel a na stdout vypíše výběrovou směrodatnou odchylku. Nepovinný argument N určí, kolikrát se má každá funkce třídy IVSMath spustit.
+
+Příklady spuštění:
+
+\begin{lstlisting}[language=bash]
+  $ ./SampleStandardDeviation.exe < /data/data10.txt
+  $ ./SampleStandardDeviation.exe 1000 < /data/data10.txt
+\end{lstlisting}
 
 \section{Profiling}
-Ve Visual Studiu 2019 jsme naši aplikaci profilovali pomocí Performance profileru, který jako výstup vytváří soubor s příponou .diagsession. Tento soubor obsahuje veškerá data zjištěná při profilování a dá se otevřít přímo ve Visual Studiu. 
+Ve Visual Studiu 2019 jsme naši aplikaci profilovali pomocí Performance profileru, který jako výstup vytváří soubor s příponou .diagsession. Tento soubor obsahuje veškerá data zjištěná při profilingu a dá se otevřít přímo ve Visual Studiu. Pro rychlejší a pohodlnější zobrazení jsme vytvořili i screenshoty funkce Main, které ale zdaleka nezobrazují vše potřebné. 
 
-Mimo jiné obsahuje tabulku funkcí s jednotkami CPU, které daná funkce spotřebovala za běhu aplikace. Zobrazuje funkce, které spotřebují alespoň jednu jednotku CPU, ostatní nezahrnuje. To stejné platí pro zobrazení náročnosti jednotlivých řádků. Na obrázku 1 je vidět příklad výstupu profileru pro vstup s 1000 čísel. Zobrazuje řádky, které zabírají v průběhu programu nejvíce CPU.
+Soubory *.diagsession mimo jiné obsahují tabulku funkcí s jednotkami CPU, které daná funkce spotřebovala za běhu aplikace. Zobrazuje funkce, které spotřebují alespoň jednu jednotku CPU, ostatní nezahrnuje. To stejné platí pro zobrazení náročnosti jednotlivých řádků. 
 
-\section{Závěr}
-Tato metoda profilování přinesla jasnou představu o tom, které řádky kódu jsou prováděné nejčastěji a zaberou nejvíce času na CPU. 
-Při případné optimalizaci bychom se měli soustředit právě na tyto klíčové oblasti.
+\subsection{Jednoduchý profiling}
+V první fázi jsme profilovali aplikaci bez argumentu N. Každá funkce se tedy vykonala pouze jednou. Výsledky jsou v souborech vystup-*.(diagsession$|$png). Viz Obrázek 1, kde je výsledek profilingu aplikace se vstupem ze souboru data/data1000.txt.
 
 \begin{figure}[h]
-\begin{center}
 \centering
-\includegraphics[scale=0.46,valign=t]{vystup-data1000}
-\caption{Výstup profileru}
-\label{fig:universe}
-\end{center}
+\includegraphics[scale=0.49]{vystup-data1000}
+\caption{Výstup jednoduchého profileru}
+\label{profiler:data1000}
 \end{figure}
+
+\subsection{Profiling s opakováním}
+Jednoduchý profiling nám přinesl zajímavá ale veskrze ne moc použitelná data pro případnou optimalizaci. Proto jsme profilovali s argumentem N = 100, 1000 a 10000. Každá funkce se při každém volání zopakuje Nkrát. Výstup profileru s opakováním nám ukáže mnohem přesněji, kde je potřeba optimalizovat. 
+
+Viz Obrázek 2, kde je výsledek profilingu aplikace se vstupem ze souboru data/data1000.txt a argumentem N=10000. Na tomto výstupu je vidět, že nejvíce času strávil program ve funkcích IVSMath.Add a IVSMath.Power. Na tyto funkce bychom se tedy měli soustředit při případné optimalizaci.
+
+\begin{figure}[h]
+\centering
+\includegraphics[scale=0.54]{vystup-data1000-withN-10000}
+\caption{Výstup profileru s opakováním}
+\label{profiler:data1000-withN-10000}
+\end{figure}
+
+\section{Závěr}
+Obě metody profilingu jsou v praxi přínosné. V našem případě bylo k dosažení cíle potřeba rozšířit původní zadání. Pomocí metody profilingu s opakováním jsme zjistili, které funkce jsou nejvíce náročné a měli by se optimalizovat pro zvýšení výkonu aplikace.
 
 \section{Přílohy}
 \begin{tabular}[pos]{ | c | c |}
 \hline
-Název souboru & Popis \\
+{\bf Název souboru} & {\bf Popis} \\
 \hline
-vystup-data10.diagsession & výstup profilování s 10 vstupy \\
-vystup-data10.png & screenshot využití kódu s 10 vstupy \\
+vystup-data10.diagsession & výstup profilingu s 10 vstupy \\
+vystup-data10.png & screenshot s 10 vstupy \\
 \hline
-vystup-data100.diagsession & výstup profilování se 100 vstupy \\
-vystup-data10.png & screenshot využití kódu se 100 vstupy \\
+vystup-data100.diagsession & výstup profilingu se 100 vstupy \\
+vystup-data10.png & screenshot se 100 vstupy \\
 \hline
-vystup-data1000.diagsession & výstup profilování s 1000 vstupů \\
-vystup-data10.png & screenshot využití kódu s 1000 vstupů \\
+vystup-data1000.diagsession & výstup profilingu s 1000 vstupů \\
+vystup-data10.png & screenshot s 1000 vstupů \\
+\hline
+vystup-data1000-withN-100.diagsession & výstup profilingu s opakováním, kde N=100 \\
+vystup-data1000-withN-100.png & screenshot s opakováním 100x \\
+\hline
+vystup-data1000-withN-1000.diagsession & výstup profilingu s opakováním, kde N=1000 \\
+vystup-data1000-withN-1000.png & screenshot s opakováním 1000x \\
+\hline
+vystup-data1000-withN-10000.diagsession & výstup profilingu s opakováním, kde N=10000 \\
+vystup-data1000-withN-10000.png & screenshot s opakováním 10000x \\
 \hline
 \end{tabular}
-
 \end{document}
