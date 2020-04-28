@@ -3,7 +3,7 @@ using IVSMathLibrary;
 
 namespace SampleStandardDeviation
 {
-    class Program
+    class SSDeviation
     {
         static void Main(string[] args)
         {

@@ -44,17 +44,27 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Program.cs" />
+    <Compile Include="SSDeviation.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <None Include="data\dataAll.xlsx" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\IVSMathLibrary\IVSMathLibrary.csproj">
       <Project>{10a79489-25f4-4477-a1f0-23ffe711470d}</Project>
       <Name>IVSMathLibrary</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="data\data10.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="data\data100.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="data\data1000.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
