@@ -32,12 +32,12 @@ Příklady spuštění:
 \end{lstlisting}
 
 \section{Profiling}
-Ve Visual Studiu 2019 jsme naši aplikaci profilovali pomocí Performance profileru, který jako výstup vytváří soubor s příponou .diagsession. Tento soubor obsahuje veškerá data zjištěná při profilingu a dá se otevřít přímo ve Visual Studiu. Pro rychlejší a pohodlnější zobrazení jsme vytvořili i screenshoty funkce Main, které ale zdaleka nezobrazují vše potřebné. 
+Ve Visual Studiu 2019 jsme naši aplikaci profilovali pomocí Performance profileru, který jako výstup vytváří soubor s příponou .diagsession. Tento soubor obsahuje veškerá data zjištěná při profilingu a dá se otevřít přímo ve Visual Studiu, ale z důvodu velikosti jsme je neuložili. Pro rychlejší a pohodlnější zobrazení jsme vytvořili screenshoty funkce Main s využitím jednotlivých řádků.
 
 Soubory *.diagsession mimo jiné obsahují tabulku funkcí s jednotkami CPU, které daná funkce spotřebovala za běhu aplikace. Zobrazuje funkce, které spotřebují alespoň jednu jednotku CPU, ostatní nezahrnuje. To stejné platí pro zobrazení náročnosti jednotlivých řádků. 
 
 \subsection{Jednoduchý profiling}
-V první fázi jsme profilovali aplikaci bez argumentu N. Každá funkce se tedy vykonala pouze jednou. Výsledky jsou v souborech vystup-*.(diagsession$|$png). Viz Obrázek 1, kde je výsledek profilingu aplikace se vstupem ze souboru data/data1000.txt.
+V první fázi jsme profilovali aplikaci bez argumentu N. Každá funkce se tedy vykonala pouze jednou. Výsledky jsou v souborech vystup-*.png. Viz Obrázek 1, kde je výsledek profilingu aplikace se vstupem ze souboru data/data1000.txt.
 
 \begin{figure}[h]
 \centering
@@ -66,22 +66,16 @@ Obě metody profilingu jsou v praxi přínosné. V našem případě bylo k dosa
 \hline
 {\bf Název souboru} & {\bf Popis} \\
 \hline
-vystup-data10.diagsession & výstup profilingu s 10 vstupy \\
-vystup-data10.png & screenshot s 10 vstupy \\
+vystup-data10.png & screenshot profilingu s 10 vstupy \\
 \hline
-vystup-data100.diagsession & výstup profilingu se 100 vstupy \\
-vystup-data10.png & screenshot se 100 vstupy \\
+vystup-data100.png & screenshot profilingu se 100 vstupy \\
 \hline
-vystup-data1000.diagsession & výstup profilingu s 1000 vstupů \\
-vystup-data10.png & screenshot s 1000 vstupů \\
+vystup-data1000.png & screenshot profilingu s 1000 vstupů \\
 \hline
-vystup-data1000-withN-100.diagsession & výstup profilingu s opakováním, kde N=100 \\
 vystup-data1000-withN-100.png & screenshot s opakováním 100x \\
 \hline
-vystup-data1000-withN-1000.diagsession & výstup profilingu s opakováním, kde N=1000 \\
 vystup-data1000-withN-1000.png & screenshot s opakováním 1000x \\
 \hline
-vystup-data1000-withN-10000.diagsession & výstup profilingu s opakováním, kde N=10000 \\
 vystup-data1000-withN-10000.png & screenshot s opakováním 10000x \\
 \hline
 \end{tabular}
