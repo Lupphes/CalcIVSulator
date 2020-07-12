@@ -1,7 +1,6 @@
 ﻿#region Copyright
 /// 
-/// @copyright
-/// CalcIVSulator (Simple calculator with GUI and mathematical library)
+/// @cond CalcIVSulator (Simple calculator with GUI and mathematical library)
 /// Copyright © 2020 Viktor Rucký, Ondřej Sloup, Vojtěch Vlach
 /// This file is part of CalcIVSulator.
 /// CalcIVSulator is free software: you can redistribute it and/or modify
@@ -14,7 +13,8 @@
 /// GNU General Public License for more details.
 /// You should have received a copy of the GNU General Public License
 /// along with CalcIVSulator.  If not, see <https://www.gnu.org/licenses/>.
-///
+/// @endcond
+/// 
 #endregion
 
 namespace CalculatorGUI
