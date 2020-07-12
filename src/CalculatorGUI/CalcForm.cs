@@ -11,31 +11,68 @@ using System.Windows.Forms;
 using IVSMathLibrary;
 using System.Globalization;
 
+#region Copyright
+/// 
+/// @copyright
+/// CalcIVSulator (Simple calculator with GUI and mathematical library)
+/// Copyright © 2020 Viktor Rucký, Ondřej Sloup, Vojtěch Vlach
+/// This file is part of CalcIVSulator.
+/// CalcIVSulator is free software: you can redistribute it and/or modify
+/// it under the terms of the GNU General Public License as published by
+/// the Free Software Foundation, either version 3 of the License, or
+/// (at your option) any later version.
+/// CalcIVSulator is distributed in the hope that it will be useful,
+/// but WITHOUT ANY WARRANTY; without even the implied warranty of
+/// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+/// GNU General Public License for more details.
+/// You should have received a copy of the GNU General Public License
+/// along with CalcIVSulator.  If not, see <https://www.gnu.org/licenses/>.
+///
+#endregion
+
+/// 
+/// @brief 
+/// Main GUI file with whole functionality
+/// @date 11.07.2020
+/// @author Ondřej Sloup
+/// 
 namespace CalculatorGUI
 {
-    /// <summary>
+    /// @brief 
     /// "CalcForm" derives from Form structure
-    /// </summary>
+    /// 
     public partial class CalcForm : Form {
-        /// <summary>
+        /// @brief 
         /// "CalcForm" component (main) in GUI calculator
-        /// </summary>
+        /// 
         public CalcForm() {
             InitializeComponent();
         }
 
-        double resultValue; // Value currently in buffer
-        string operationPerfomed = ""; // Operation currently in buffer
-        bool isChained, wasCalculated, wasError, comma = false; // Flags for states
-        string documatationLocation = "dokumentace.pdf"; // Where is stored documentation
-        NumberStyles styles = NumberStyles.Any; // Set number styles
-        CultureInfo culture = CultureInfo.CreateSpecificCulture("cs-CZ"); // Set number culture
+        /// @brief Value currently in buffer
+        double resultValue;
+        /// @brief Operation currently in buffer
+        string operationPerfomed = "";
+        /// @brief Flag If the calculator have previous operation in buffer
+        bool isChained;
+        /// @brief Flag If the result was calculated
+        bool wasCalculated;
+        /// @brief Flag If the calculator is in error state
+        bool wasError;
+        /// @brief Flag If in the calculator is comma
+        bool comma = false;
+        /// @brief Where is stored documentation
+        string documatationLocation = "dokumentace.pdf";
+        /// @brief Set number styles
+        NumberStyles styles = NumberStyles.Any;
+        /// @brief Set number culture
+        CultureInfo culture = CultureInfo.CreateSpecificCulture("cs-CZ"); 
 
-        /// <summary>Parses the text to a number
-        ///    (<paramref name="object"/>,<paramref name="event"/>).</summary>
-        /// <param name="object">Object sender</param>
-        /// <param name="event">Event argument</param>
-        /// <returns>Returns bool if conversion was successful.</returns>
+        /// @brief Parses the text to a number
+        /// @param[in] object - Object sender
+        /// @param[in] event - Event argument
+        /// @return Returns bool if conversion was successful.
+        /// 
         private bool parseDouble(out double result, string number)
         {
             CultureInfo.DefaultThreadCurrentCulture = culture; // Define number culture
@@ -45,11 +82,14 @@ namespace CalculatorGUI
             return false;
         }
 
-        /// <summary>Calculates operations
-        ///    (<paramref name="object"/>,<paramref name="event"/>).</summary>
-        /// <param name="object">Object sender</param>
-        /// <param name="event">Event argument</param>
-        /// <returns>Returns calculated double number.</returns>
+        /// @brief Calculates operations
+        /// @param[in] object - Object sender
+        /// @param[in] event - Event argument
+        /// @return Returns calculated double number.
+        /// @throw OverflowException Thrown when sum overflows the type double
+        /// @throw DivideByZeroException Thrown when result is divided by zero
+        /// @throw ArithmeticException Thrown when the arithmetical operation could not be processed
+        /// 
         private double Calculate(string operation, double x, double y = 0) {
             switch (operation) { // Decides what operation should be performed and If there is an error then its error string
                 case "+":
@@ -253,15 +293,16 @@ namespace CalculatorGUI
             return 0;
         }
 
-        /// <summary>Sets number or dot to text input
-        ///    (<paramref name="object"/>,<paramref name="event"/>).</summary>
-        /// <param name="object">Object sender</param>
-        /// <param name="event">Event argument</param>
+        /// @brief Sets number or dot to text input
+        /// @param[in] object - Object sender
+        /// @param[in] event - Event argument
+        /// @return void
+        /// 
         private void btn_Nbr_Click(object sender, EventArgs e) {
             if (wasError || wasCalculated && !wasCalculated) {
                 btn_Delete_Click(sender, e); // Sets calculator to initial state
             }
-            else if (tb_Out.Text.Length >= 19) { // Max lenght of number
+            else if (tb_Out.Text.Length >= 19) { // Max length of number
                 return; 
             }
             else {
@@ -279,10 +320,11 @@ namespace CalculatorGUI
 
         }
 
-        /// <summary>Deletes one character from text input
-        ///    (<paramref name="object"/>,<paramref name="event"/>).</summary>
-        /// <param name="object">Object sender</param>
-        /// <param name="event">Event argument</param>
+        /// @brief Deletes one character from text input
+        /// @param[in] object - Object sender
+        /// @param[in] event - Event argument
+        /// @return void
+        /// 
         private void btn_Back_Click(object sender, EventArgs e) {
             string str = tb_Out.Text;
 
@@ -300,10 +342,11 @@ namespace CalculatorGUI
             }
         }
 
-        /// <summary>Calculates operations with multiple values
-        ///    (<paramref name="object"/>,<paramref name="event"/>).</summary>
-        /// <param name="object">Object sender</param>
-        /// <param name="event">Event argument</param>
+        /// @brief Calculates operations with multiple values
+        /// @param[in] object - Object sender
+        /// @param[in] event - Event argument
+        /// @return void
+        /// 
         private void btn_MultipleValuesOperation_Click(object sender, EventArgs e) {
 
             Button button = (Button)sender;
@@ -353,10 +396,11 @@ namespace CalculatorGUI
             tb_Out.Text = "";
         }
 
-        /// <summary>Calculates operations with just one value
-        ///    (<paramref name="object"/>,<paramref name="event"/>).</summary>
-        /// <param name="object">Object sender</param>
-        /// <param name="event">Event argument</param>
+        /// @brief Calculates operations with just one value
+        /// @param[in] object - Object sender
+        /// @param[in] event - Event argument
+        /// @return void
+        /// 
         private void btn_SingleValueOperation_Click(object sender, EventArgs e) {
             Button button = (Button)sender;
 
@@ -411,10 +455,11 @@ namespace CalculatorGUI
             }
         }
 
-        /// <summary>Resturn result to the text input and reset the calculator
-        ///    (<paramref name="object"/>,<paramref name="event"/>).</summary>
-        /// <param name="object">Object sender</param>
-        /// <param name="event">Event argument</param>
+        /// @brief Return result to the text input and reset the calculator
+        /// @param[in] object - Object sender
+        /// @param[in] event - Event argument
+        /// @return void
+        /// 
         private void btn_Res_Click(object sender, EventArgs e) {
             if (tb_Out.Text == "") { // If the input is empty
                 tb_Out.Text = resultValue.ToString();
@@ -444,19 +489,21 @@ namespace CalculatorGUI
             }
         }
 
-        /// <summary>Starts monitoring keys
-        ///    (<paramref name="object"/>,<paramref name="event"/>).</summary>
-        /// <param name="object">Object sender</param>
-        /// <param name="event">Event argument</param>
+        /// @brief Starts monitoring keys
+        /// @param[in] object - Object sender
+        /// @param[in] event - Event argument
+        /// @return void
+        /// 
         private void CalcForm_Load(object sender, EventArgs e) {
             this.KeyPreview = true;
             this.KeyDown += new KeyEventHandler(CalcForm_Load);
         }
 
-        /// <summary>If key is pressed this function will react. It can react just on "F1" or "F2"
-        ///    (<paramref name="object"/>,<paramref name="event"/>).</summary>
-        /// <param name="object">Object sender</param>
-        /// <param name="event">Event argument</param>
+        /// @brief If key is pressed this function will react. It can react just on "F1" or "F2"
+        /// @param[in] object - Object sender
+        /// @param[in] event - Event argument
+        /// @return void
+        /// 
         private void CalcForm_KeyDown(object sender, KeyEventArgs e) {
         
             if (e.KeyCode.ToString() == "F1") {
@@ -475,10 +522,11 @@ namespace CalculatorGUI
             }
         }
 
-        /// <summary>Changes the value of number in input to negative value
-        ///    (<paramref name="object"/>,<paramref name="event"/>).</summary>
-        /// <param name="object">Object sender</param>
-        /// <param name="event">Event argument</param>
+        /// @brief Changes the value of number in input to negative value
+        /// @param[in] object - Object sender
+        /// @param[in] event - Event argument
+        /// @return void
+        /// 
         private void btn_Negative_Click(object sender, EventArgs e) {   
             if (tb_Out.Text != "") { // If input is not empty
                 double result;
@@ -499,12 +547,13 @@ namespace CalculatorGUI
             }
         }
 
-        /// <summary>This method resets the calculator to its initial value.
-        ///    (<paramref name="object"/>,<paramref name="event"/>).</summary>
-        /// <param name="object">Object sender</param>
-        /// <param name="event">Event argument</param>
+        /// @brief This method resets the calculator to its initial value.
+        /// @param[in] object - Object sender
+        /// @param[in] event - Event argument
+        /// @return void
+        /// 
         private void btn_Delete_Click(object sender, EventArgs e) {
-            /* Reset kalkulacky */
+            /* Reset of the calculator */
             operationPerfomed = "";
             isChained = wasCalculated = wasError = comma = false;
             lb_Next.Text = "";

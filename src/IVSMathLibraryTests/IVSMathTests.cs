@@ -1,43 +1,45 @@
-﻿#region Copyright
-// <copyright file="IVSMathTests.cs" company="Lidé u výtahu">
-// CalcIVSulator (Simple calculator with GUI and mathematical library)
-// Copyright © 2020 Viktor Rucký, Ondřej Sloup, Vojtěch Vlach
-// 
-// This file is part of CalcIVSulator.
-// 
-// CalcIVSulator is free software: you can redistribute it and/or modify
-// it under the terms of the GNU General Public License as published by
-// the Free Software Foundation, either version 3 of the License, or
-// (at your option) any later version.
-// 
-// CalcIVSulator is distributed in the hope that it will be useful,
-// but WITHOUT ANY WARRANTY; without even the implied warranty of
-// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-// GNU General Public License for more details.
-// 
-// You should have received a copy of the GNU General Public License
-// along with CalcIVSulator.  If not, see <https://www.gnu.org/licenses/>.
-// </copyright>
-#endregion
-
-using System;
+﻿using System;
 using IVSMathLibrary;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
+#region Copyright
+/// 
+/// @copyright
+/// CalcIVSulator (Simple calculator with GUI and mathematical library)
+/// Copyright © 2020 Viktor Rucký, Ondřej Sloup, Vojtěch Vlach
+/// This file is part of CalcIVSulator.
+/// CalcIVSulator is free software: you can redistribute it and/or modify
+/// it under the terms of the GNU General Public License as published by
+/// the Free Software Foundation, either version 3 of the License, or
+/// (at your option) any later version.
+/// CalcIVSulator is distributed in the hope that it will be useful,
+/// but WITHOUT ANY WARRANTY; without even the implied warranty of
+/// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+/// GNU General Public License for more details.
+/// You should have received a copy of the GNU General Public License
+/// along with CalcIVSulator.  If not, see <https://www.gnu.org/licenses/>.
+///
+#endregion
+
+/// @brief 
+/// IVSMathTests which checks the functionality of IVSMathLibrary
+/// 
 namespace IVSMathLibraryTests {
-    /// <summary>
-    /// IVSMath Tests which checks the functionality of IVSMath library
-    /// Mathematical library which has these functions: Add, Substract, Multiply, Divide, Root, Power, Factorial, Inverse, Sine, Cosine, Tangent
-    /// </summary>
+    /// @brief 
+    /// Mathematical library which checks these functions: Add, Subtract, Multiply, Divide, Root, Power, Factorial, Inverse, Sine, Cosine, Tangent
+    /// 
     [TestClass]
     public class IVSMathTests
     {
-        // Prepare
+        /// @brief Precision of the math operations.
         readonly double precision = 0.0000001f;
 
-        /// <summary>
+        /// @brief 
         /// Overflow test on Add operation
-        /// </summary>
+        /// @test Simple test of Add operation
+        /// @date 11.07.2020
+        /// @author Ondřej Sloup
+        /// 
         [TestMethod]
         [Timeout(2000)]
         public void NumberValidation_OverflowAdd_ReturnExeptions()
@@ -46,9 +48,12 @@ namespace IVSMathLibraryTests {
             Assert.ThrowsException<OverflowException>(() => IVSMath.Add(double.MinValue, -1));
         }
 
-        /// <summary>
+        /// @brief 
         /// Overflow test on Subtract operation
-        /// </summary>
+        /// @test Simple test of Subtract operation
+        /// @date 11.07.2020
+        /// @author Ondřej Sloup
+        /// 
         [TestMethod]
         [Timeout(2000)]
         public void NumberValidation_OverflowSubtract_ReturnExeptions()
@@ -57,9 +62,12 @@ namespace IVSMathLibraryTests {
             Assert.ThrowsException<OverflowException>(() => IVSMath.Subtract(double.MinValue, 5));
         }
 
-        /// <summary>
+        /// @brief 
         /// Overflow test on Multiply operation
-        /// </summary>
+        /// @test Simple test of Multiply operation
+        /// @date 11.07.2020
+        /// @author Ondřej Sloup
+        /// 
         [TestMethod]
         [Timeout(2000)]
         public void NumberValidation_OverflowMultiply_ReturnExeptions()
@@ -67,9 +75,12 @@ namespace IVSMathLibraryTests {
             Assert.ThrowsException<OverflowException>(() => IVSMath.Multiply(double.MaxValue, 2));
         }
 
-        /// <summary>
+        /// @brief 
         /// Overflow test on Divide operation
-        /// </summary>
+        /// @test Simple test of Divide operation
+        /// @date 11.07.2020
+        /// @author Ondřej Sloup
+        /// 
         [TestMethod]
         [Timeout(2000)]
         public void NumberValidation_OverflowDivide_ReturnExeptions()
@@ -77,9 +88,12 @@ namespace IVSMathLibraryTests {
             Assert.ThrowsException<OverflowException>(() => IVSMath.Divide(double.MaxValue, 0.5));
         }
 
-        /// <summary>
+        /// @brief 
         /// Add test - operation with zero
-        /// </summary>
+        /// @test Simple test of Divide operation
+        /// @date 11.07.2020
+        /// @author Ondřej Sloup
+        /// 
         [TestMethod]
         [Timeout(2000)]
         public void Add_CalculationZero_ReturnEqual()
@@ -87,9 +101,12 @@ namespace IVSMathLibraryTests {
             Assert.AreEqual(0, IVSMath.Add(0, 0), 0);
         }
 
-        /// <summary>
+        /// @brief 
         /// Add test - operations with whole numbers
-        /// </summary>
+        /// @test Whole numbers test of Add operation
+        /// @date 11.07.2020
+        /// @author Ondřej Sloup
+        /// 
         [TestMethod]
         [Timeout(2000)]
         public void Add_CalculationWholeNumbers_ReturnEqual()
@@ -98,9 +115,12 @@ namespace IVSMathLibraryTests {
             Assert.AreEqual(5, IVSMath.Add(0, 5), 0);
             Assert.AreEqual(5, IVSMath.Add(5, 0), 0);
         }
-        /// <summary>
+        /// @brief 
         /// Add test - operations with negative whole numbers
-        /// </summary>
+        /// @test Whole negative numbers test of Add operation
+        /// @date 11.07.2020
+        /// @author Ondřej Sloup
+        /// 
         [TestMethod]
         [Timeout(2000)]
         public void Add_CalculationNegativeWholeNumbers_ReturnEqual()
@@ -110,9 +130,12 @@ namespace IVSMathLibraryTests {
             Assert.AreEqual(-5, IVSMath.Add(-5, 0), 0);
         }
 
-        /// <summary>
+        /// @brief 
         /// Add test - operations with decimal numbers
-        /// </summary>
+        /// @test Decimal numbers test of Add operation
+        /// @date 11.07.2020
+        /// @author Ondřej Sloup
+        /// 
         [TestMethod]
         [Timeout(2000)]
         public void Add_CalculationDecimalNumbers_ReturnEqual()
@@ -122,9 +145,12 @@ namespace IVSMathLibraryTests {
             Assert.AreEqual(5.6, IVSMath.Add(5.6, 0), 0);
         }
 
-        /// <summary>
+        /// @brief 
         /// Add test - operations with negative decimal numbers
-        /// </summary>
+        /// @test Negative decimal numbers test of Add operation
+        /// @date 11.07.2020
+        /// @author Ondřej Sloup
+        /// 
         [TestMethod]
         [Timeout(2000)]
         public void Add_CalculationNegativeDecimalNumbers_ReturnEqual()
@@ -134,9 +160,12 @@ namespace IVSMathLibraryTests {
             Assert.AreEqual(-5.2, IVSMath.Add(-5.2, 0), 0);
         }
 
-        /// <summary>
+        /// @brief 
         /// Add test - operations with irrational numbers
-        /// </summary>
+        /// @test Irrational numbers test of Add operation
+        /// @date 11.07.2020
+        /// @author Ondřej Sloup
+        /// 
         [TestMethod]
         [Timeout(2000)]
         public void Add_CalculationIrrationalNumbers_ReturnEqual()
@@ -145,9 +174,12 @@ namespace IVSMathLibraryTests {
             Assert.AreEqual(0, IVSMath.Add(Math.PI, -Math.PI), 0);
         }
 
-        /// <summary>
+        /// @brief 
         /// Subtract test - operation with zero
-        /// </summary>
+        /// @test Zero test of Subtract operation
+        /// @date 11.07.2020
+        /// @author Ondřej Sloup
+        /// 
         [TestMethod]
         [Timeout(2000)]
         public void Subtract_CalculationZero_ReturnEqual()
@@ -155,9 +187,12 @@ namespace IVSMathLibraryTests {
             Assert.AreEqual(0, IVSMath.Subtract(0, 0), 0);
         }
 
-        /// <summary>
+        /// @brief 
         /// Subtract test - operations with whole numbers
-        /// </summary>
+        /// @test Whole numbers test of Subtract operation
+        /// @date 11.07.2020
+        /// @author Ondřej Sloup
+        /// 
         [TestMethod]
         [Timeout(2000)]
         public void Subtract_CalculationWholeNumbers_ReturnEqual()
@@ -167,9 +202,12 @@ namespace IVSMathLibraryTests {
             Assert.AreEqual(5, IVSMath.Subtract(5, 0), 0);
         }
 
-        /// <summary>
+        /// @brief 
         /// Subtract test - operations with negative whole numbers
-        /// </summary>
+        /// @test Whole negative numbers test of Subtract operation
+        /// @date 11.07.2020
+        /// @author Ondřej Sloup
+        /// 
         [TestMethod]
         [Timeout(2000)]
         public void Subtract_CalculationNegativeWholeNumbers_ReturnEqual() {
@@ -179,9 +217,12 @@ namespace IVSMathLibraryTests {
             Assert.AreEqual(-5, IVSMath.Subtract(-5, 0), 0);
         }
 
-        /// <summary>
+        /// @brief 
         /// Subtract test - operations with decimal numbers
-        /// </summary>
+        /// @test Decimal numbers test of Subtract operation
+        /// @date 11.07.2020
+        /// @author Ondřej Sloup
+        /// 
         [TestMethod]
         [Timeout(2000)]
         public void Subtract_CalculationDecimalNumbers_ReturnEqual()
@@ -191,9 +232,12 @@ namespace IVSMathLibraryTests {
             Assert.AreEqual(5.6, IVSMath.Subtract(5.6, 0), 0);
         }
 
-        /// <summary>
+        /// @brief 
         /// Subtract test - operations with negative decimal numbers
-        /// </summary>
+        /// @test Decimal negative numbers test of Subtract operation
+        /// @date 11.07.2020
+        /// @author Ondřej Sloup
+        /// 
         [TestMethod]
         [Timeout(2000)]
         public void Subtract_CalculationNegativeDecimalNumbers_ReturnEqual()
@@ -203,9 +247,12 @@ namespace IVSMathLibraryTests {
             Assert.AreEqual(-5.2, IVSMath.Subtract(-5.2, 0));
         }
 
-        /// <summary>
+        /// @brief 
         /// Subtract test - operations with irrational numbers
-        /// </summary>
+        /// @test Decimal negative numbers test of Subtract operation
+        /// @date 11.07.2020
+        /// @author Ondřej Sloup
+        /// 
         [TestMethod]
         [Timeout(2000)]
         public void Subtract_CalculationIrrationalNumbers_ReturnEqual()
@@ -216,9 +263,12 @@ namespace IVSMathLibraryTests {
             Assert.AreEqual(0, IVSMath.Subtract(-Math.PI, -Math.PI), 0);
         }
 
-        /// <summary>
+        /// @brief 
         /// Multiply test - operation with zero
-        /// </summary>
+        /// @test Zero test of Multiply operation
+        /// @date 11.07.2020
+        /// @author Ondřej Sloup
+        /// 
         [TestMethod]
         [Timeout(2000)]
         public void Multiply_CalculationZero_ReturnTrue()
@@ -226,9 +276,12 @@ namespace IVSMathLibraryTests {
             Assert.AreEqual(0, IVSMath.Multiply(0, 0), 0);
         }
 
-        /// <summary>
+        /// @brief 
         /// Multiply test - operations with whole numbers
-        /// </summary>
+        /// @test Whole numbers test of Multiply operation
+        /// @date 11.07.2020
+        /// @author Ondřej Sloup
+        /// 
         [TestMethod]
         [Timeout(2000)]
         public void Multiply_CalculationWholeNumbers_ReturnTrue()
@@ -238,9 +291,12 @@ namespace IVSMathLibraryTests {
             Assert.AreEqual(0, IVSMath.Multiply(5, 0), 0);
         }
 
-        /// <summary>
+        /// @brief 
         /// Multiply test - operations with negative whole numbers
-        /// </summary>
+        /// @test Whole numbers test of Multiply operation
+        /// @date 11.07.2020
+        /// @author Ondřej Sloup
+        /// 
         [TestMethod]
         [Timeout(2000)]
         public void Multiply_CalculationNegativeWholeNumbers_ReturnTrue()
@@ -252,9 +308,12 @@ namespace IVSMathLibraryTests {
             Assert.AreEqual(0, IVSMath.Multiply(-5, 0), 0);
         }
 
-        /// <summary>
+        /// @brief 
         /// Multiply test - operations with decimal numbers
-        /// </summary>
+        /// @test Decimal numbers test of Multiply operation
+        /// @date 11.07.2020
+        /// @author Ondřej Sloup
+        /// 
         [TestMethod]
         [Timeout(2000)]
         public void Multiply_CalculationDecimalNumbers_ReturnTrue()
@@ -264,9 +323,12 @@ namespace IVSMathLibraryTests {
             Assert.AreEqual(0, IVSMath.Multiply(5.6, 0), 0);
         }
 
-        /// <summary>
+        /// @brief 
         /// Multiply test - operations with negative decimal numbers
-        /// </summary>
+        /// @test Decimal negative numbers test of Multiply operation
+        /// @date 11.07.2020
+        /// @author Ondřej Sloup
+        /// 
         [TestMethod]
         [Timeout(2000)]
         public void Multiply_CalculationNegativeDecimalNumbers_ReturnTrue()
@@ -276,9 +338,12 @@ namespace IVSMathLibraryTests {
             Assert.AreEqual(0, IVSMath.Multiply(-5.2, 0), 0);
         }
 
-        /// <summary>
+        /// @brief 
         /// Multiply test - operations with irrational numbers
-        /// </summary>
+        /// @test Irrational numbers test of Multiply operation
+        /// @date 11.07.2020
+        /// @author Ondřej Sloup
+        ///  
         [TestMethod]
         [Timeout(2000)]
         public void Multiply_CalculationIrrationalNumbers_ReturnTrue()
@@ -289,9 +354,12 @@ namespace IVSMathLibraryTests {
             Assert.AreEqual(-Math.PI * -Math.PI, IVSMath.Multiply(-Math.PI, -Math.PI), precision);
         }
 
-        /// <summary>
+        /// @brief 
         /// Divide test - operation with zero
-        /// </summary>
+        /// @test Zero test of Divide operation
+        /// @date 11.07.2020
+        /// @author Ondřej Sloup
+        ///  
         [TestMethod]
         [Timeout(2000)]
         public void Divide_ByZero_ReturnExeptions()
@@ -299,9 +367,12 @@ namespace IVSMathLibraryTests {
             Assert.ThrowsException<DivideByZeroException>(() => IVSMath.Divide(10, 0));
         }
 
-        /// <summary>
+        /// @brief 
         /// Divide test - operations with whole numbers
-        /// </summary>
+        /// @test Whole numbers test of Divide operation
+        /// @date 11.07.2020
+        /// @author Ondřej Sloup
+        /// 
         [TestMethod]
         [Timeout(2000)]
         public void Divide_CalculationWholeNumbers_ReturnTrue()
@@ -310,9 +381,12 @@ namespace IVSMathLibraryTests {
             Assert.AreEqual(0, IVSMath.Divide(0, 5), 0);
         }
 
-        /// <summary>
+        /// @brief 
         /// Divide test - operations with negative whole numbers
-        /// </summary>
+        /// @test Whole negative numbers test of Divide operation
+        /// @date 11.07.2020
+        /// @author Ondřej Sloup
+        ///  
         [TestMethod]
         [Timeout(2000)]
         public void Divide_CalculationNegativeWholeNumbers_ReturnTrue()
@@ -322,9 +396,12 @@ namespace IVSMathLibraryTests {
             Assert.AreEqual(0, IVSMath.Divide(0, -5), 0);
         }
 
-        /// <summary>
+        /// @brief 
         /// Divide test - operations with decimal numbers
-        /// </summary>
+        /// @test Decimal numbers test of Divide operation
+        /// @date 11.07.2020
+        /// @author Ondřej Sloup
+        ///  
         [TestMethod]
         [Timeout(2000)]
         public void Divide_CalculationDecimalNumbers_ReturnTrue()
@@ -333,9 +410,12 @@ namespace IVSMathLibraryTests {
             Assert.AreEqual(0, IVSMath.Divide(0, 5.4), 0);
         }
 
-        /// <summary>
+        /// @brief 
         /// Divide test - operations with negative decimal numbers
-        /// </summary>
+        /// @test Negative decimal numbers test of Divide operation
+        /// @date 11.07.2020
+        /// @author Ondřej Sloup
+        ///   
         [TestMethod]
         [Timeout(2000)]
         public void Divide_CalculationNegativeDecimalNumbers_ReturnTrue()
@@ -344,9 +424,12 @@ namespace IVSMathLibraryTests {
             Assert.AreEqual(0, IVSMath.Divide(0, -5.9), 0);
         }
 
-        /// <summary>
-        /// Divide test - operations with irratinal numbers
-        /// </summary>
+        /// @brief 
+        /// Divide test - operations with irrational numbers
+        /// @test Irrational numbers test of Divide operation
+        /// @date 11.07.2020
+        /// @author Ondřej Sloup
+        ///   
         [TestMethod]
         [Timeout(2000)]
         public void Divide_CalculationIrrationalNumbers_ReturnTrue()
@@ -357,9 +440,12 @@ namespace IVSMathLibraryTests {
             Assert.AreEqual(1, IVSMath.Divide(-Math.PI, -Math.PI));
         }
 
-        /// <summary>
+        /// @brief 
         /// Overflow test on Power operation
-        /// </summary>
+        /// @test Power operation overflow
+        /// @date 11.07.2020
+        /// @author Ondřej Sloup
+        ///
         [TestMethod]
         [Timeout(2000)]
         public void NumberValidation_OverflowPower_ReturnExeption()
@@ -367,9 +453,12 @@ namespace IVSMathLibraryTests {
             Assert.ThrowsException<OverflowException>(() => IVSMath.Power(double.MaxValue, 5));
         }
 
-        /// <summary>
+        /// @brief 
         /// Power test - operations with whole numbers
-        /// </summary>
+        /// @test Whole numbers test of Power operation
+        /// @date 11.07.2020
+        /// @author Ondřej Sloup
+        /// 
         [TestMethod]
         [Timeout(2000)]
         public void Power_CalculationWholeNumbers_ReturnsTrue()
@@ -379,9 +468,12 @@ namespace IVSMathLibraryTests {
             Assert.AreEqual(1, IVSMath.Power(5, 0), 0);
         }
 
-        /// <summary>
+        /// @brief 
         /// Power test - operations with negative whole numbers
-        /// </summary>
+        /// @test Whole negative numbers test of Power operation
+        /// @date 11.07.2020
+        /// @author Ondřej Sloup
+        /// 
         [TestMethod]
         [Timeout(2000)]
         public void Power_CalculationNegativeWholeNumbers_ReturnsTrue()
@@ -395,9 +487,12 @@ namespace IVSMathLibraryTests {
             Assert.AreEqual((1.0 / 16.0), IVSMath.Power((-2), -4), precision);
         }
 
-        /// <summary>
+        /// @brief 
         /// DivideByZero test on Power operation
-        /// </summary>
+        /// @test DivideByZero test of Power operation
+        /// @date 11.07.2020
+        /// @author Ondřej Sloup
+        ///  
         [TestMethod]
         [Timeout(2000)]
         public void Power_ArithmeticExceptionNegative_ReturnExeptions()
@@ -405,9 +500,12 @@ namespace IVSMathLibraryTests {
             Assert.ThrowsException<DivideByZeroException>(() => IVSMath.Power(0, -5));
         }
 
-        /// <summary>
+        /// @brief 
         /// ArithmeticException test on Power operation with zero 
-        /// </summary>
+        /// @test  Arithmetic test on Power operation with zero 
+        /// @date 11.07.2020
+        /// @author Ondřej Sloup
+        /// 
         [TestMethod]
         [Timeout(2000)]
         public void Power_ArithmeticExceptionZero_ReturnExeptions()
@@ -424,9 +522,12 @@ namespace IVSMathLibraryTests {
             }
         }
 
-        /// <summary>
+        /// @brief 
         /// Power test - operations with decimal numbers
-        /// </summary>
+        /// @test DivideByZero test of Power operation
+        /// @date 11.07.2020
+        /// @author Ondřej Sloup
+        ///
         [TestMethod]
         [Timeout(2000)]
         public void Power_CalculationDecimalNumbers_ReturnsTrue()
@@ -434,9 +535,12 @@ namespace IVSMathLibraryTests {
             Assert.AreEqual((25.0 / 4.0), IVSMath.Power(2.5, 2), precision);
         }
 
-        /// <summary>
+        /// @brief 
         /// Power test - operations with negative decimal numbers
-        /// </summary>
+        /// @test Negative decimal numbers test of Power operation
+        /// @date 11.07.2020
+        /// @author Ondřej Sloup
+        ///
         [TestMethod]
         [Timeout(2000)]
         public void Power_CalculationNegativeDecimalNumbers_ReturnsTrue()
@@ -446,9 +550,12 @@ namespace IVSMathLibraryTests {
             Assert.AreEqual((4.0 / 25.0), IVSMath.Power((-2.5), -2), precision);
         }
 
-        /// <summary>
+        /// @brief 
         /// Power test - operations with irrational numbers
-        /// </summary>
+        /// @test Irrational numbers test of Power operation
+        /// @date 11.07.2020
+        /// @author Ondřej Sloup
+        ///
         [TestMethod]
         [Timeout(2000)]
         public void Power_CalculationIrrationalNumbers_ReturnsTrue()
@@ -456,9 +563,12 @@ namespace IVSMathLibraryTests {
             Assert.AreEqual(Math.PI * Math.PI, IVSMath.Power(Math.PI, 2), precision);
         }
 
-        /// <summary>
+        /// @brief 
         /// Root test - square operations with positive whole radicant
-        /// </summary>
+        /// @test Positive whole radicant test of Root operation
+        /// @date 11.07.2020
+        /// @author Viktor Rucký
+        ///
         [TestMethod]
         [Timeout(2000)]
         public void Root_Square_RadicandIntegerPositive_ReturnsTrue()
@@ -468,9 +578,12 @@ namespace IVSMathLibraryTests {
             Assert.AreEqual(2, IVSMath.Root(2, 2) * IVSMath.Root(2, 2), precision);
         }
 
-        /// <summary>
+        /// @brief 
         /// Root test - square operations with real radicant
-        /// </summary>
+        /// @test Real radicant test of Root operation
+        /// @date 11.07.2020
+        /// @author Viktor Rucký
+        ///
         [TestMethod]
         [Timeout(2000)]
         public void Root_Square_RadicandRealPositive_ReturnsTrue()
@@ -480,9 +593,12 @@ namespace IVSMathLibraryTests {
             Assert.AreEqual(138.6576, IVSMath.Root(138.6576, 2) * IVSMath.Root(138.6576, 2), precision);
         }
 
-        /// <summary>
+        /// @brief 
         /// Root test - square operations with whole negative radicant
-        /// </summary>
+        /// @test Real negative radicant test of Root operation
+        /// @date 11.07.2020
+        /// @author Viktor Rucký
+        ///
         [TestMethod]
         [Timeout(2000)]
         public void Root_Square_RadicandIntegerNegative_ReturnsExceptions()
@@ -498,9 +614,12 @@ namespace IVSMathLibraryTests {
             }
         }
 
-        /// <summary>
+        /// @brief 
         /// Root test - square operations with real negative radicant
-        /// </summary>
+        /// @test Real negative radicant test of Root operation
+        /// @date 11.07.2020
+        /// @author Viktor Rucký
+        ///
         [TestMethod]
         [Timeout(2000)]
         public void Root_Square_RadicandRealNegative_ReturnsExceptions()
@@ -517,9 +636,12 @@ namespace IVSMathLibraryTests {
             }
         }
 
-        /// <summary>
+        /// @brief 
         /// Root test - square operation with radicant equal to zero
-        /// </summary>
+        /// @test Real zero radicant test of Root operation
+        /// @date 11.07.2020
+        /// @author Viktor Rucký
+        ///
         [TestMethod]
         [Timeout(2000)]
         public void Root_Square_RadicandZero_ReturnsTrue()
@@ -527,9 +649,12 @@ namespace IVSMathLibraryTests {
             Assert.AreEqual(0, IVSMath.Root(0, 2), 0);
         }
 
-        /// <summary>
+        /// @brief 
         /// Root test - square operation with radicant equal to one
-        /// </summary>
+        /// @test Real negative radicant test of Root operation
+        /// @date 11.07.2020
+        /// @author Viktor Rucký
+        ///
         [TestMethod]
         [Timeout(2000)]
         public void Root_Square_RadicandOne_ReturnsTrue()
@@ -537,9 +662,12 @@ namespace IVSMathLibraryTests {
             Assert.AreEqual(1, IVSMath.Root(1, 2), 0);
         }
 
-        /// <summary>
+        /// @brief 
         /// Root test - cube operations with radicant
-        /// </summary>
+        /// @test Real negative radicant test of cubic Root operation
+        /// @date 11.07.2020
+        /// @author Viktor Rucký
+        ///
         [TestMethod]
         [Timeout(2000)]
         public void Root_Cube_RadicandIntegerPositive_ReturnsTrue()
@@ -550,9 +678,12 @@ namespace IVSMathLibraryTests {
             Assert.AreEqual(3, root * root * root, precision);
         }
 
-        /// <summary>
+        /// @brief 
         /// Root test - cube operations with real radicant
-        /// </summary>
+        /// @test Real radicant test of cubic Root operation
+        /// @date 11.07.2020
+        /// @author Viktor Rucký
+        ///
         [TestMethod]
         [Timeout(2000)]
         public void Root_Cube_RadicandRealPositive_ReturnsTrue()
@@ -566,9 +697,12 @@ namespace IVSMathLibraryTests {
             Assert.AreEqual(1568.13148, root * root * root, precision);
         }
 
-        /// <summary>
+        /// @brief 
         /// Root test - cube operations with real negative radicant
-        /// </summary>
+        /// @test Real radicant test of cubic Root operation
+        /// @date 11.07.2020
+        /// @author Viktor Rucký
+        ///
         [TestMethod]
         [Timeout(2000)]
         public void Root_Cube_RadicandIntegerNegative_ReturnsTrue()
@@ -582,9 +716,12 @@ namespace IVSMathLibraryTests {
             Assert.AreEqual(-3, root * root * root, precision);
         }
 
-        /// <summary>
+        /// @brief 
         /// Root test - cube operations with radicant
-        /// </summary>
+        /// @test Real radicant test of cubic Root operation
+        /// @date 11.07.2020
+        /// @author Viktor Rucký
+        ///
         [TestMethod]
         [Timeout(2000)]
         public void Root_Cube_RadicandRealNegative_ReturnsTrue()
@@ -598,9 +735,12 @@ namespace IVSMathLibraryTests {
             Assert.AreEqual(-1568.13148, root * root * root, precision);
         }
 
-        /// <summary>
+        /// @brief 
         /// Root test - cube operation with radicant equal to zero
-        /// </summary>
+        /// @test Zero test of cubic Root operation
+        /// @date 11.07.2020
+        /// @author Viktor Rucký
+        ///
         [TestMethod]
         [Timeout(2000)]
         public void Root_Cube_RadicandZero_ReturnsTrue()
@@ -608,9 +748,12 @@ namespace IVSMathLibraryTests {
             Assert.AreEqual(0, IVSMath.Root(0, 3), 0);
         }
 
-        /// <summary>
+        /// @brief 
         /// Root test - cube operation with radicant equal to one
-        /// </summary>
+        /// @test Equal to one test of cubic Root operation
+        /// @date 11.07.2020
+        /// @author Viktor Rucký
+        ///
         [TestMethod]
         [Timeout(2000)]
         public void Root_Cube_RadicandOne_ReturnsTrue()
@@ -618,9 +761,12 @@ namespace IVSMathLibraryTests {
             Assert.AreEqual(1, IVSMath.Root(1, 3), 0);
         }
 
-        /// <summary>
+        /// @brief 
         /// Root test - cube operation with radicant equal to negative one
-        /// </summary>
+        /// @test Negative to one test of cubic Root operation
+        /// @date 11.07.2020
+        /// @author Viktor Rucký
+        ///
         [TestMethod]
         [Timeout(2000)]
         public void Root_Cube_RadicandNegativeOne_ReturnsTrue()
@@ -628,9 +774,12 @@ namespace IVSMathLibraryTests {
             Assert.AreEqual(-1, IVSMath.Root(-1, 3), 0);
         }
 
-        /// <summary>
+        /// @brief 
         /// Root test - first degree operations
-        /// </summary>
+        /// @test First degree operations test of cubic Root operation
+        /// @date 11.07.2020
+        /// @author Viktor Rucký
+        /// 
         [TestMethod]
         [Timeout(2000)]
         public void Root_FirstDegree_ReturnsTrue()
@@ -644,9 +793,12 @@ namespace IVSMathLibraryTests {
 
         }
 
-        /// <summary>
+        /// @brief 
         /// Root test - various positive degrees operations
-        /// </summary>
+        /// @test Positive degrees operations test of cubic Root operation
+        /// @date 11.07.2020
+        /// @author Viktor Rucký
+        ///  
         [TestMethod]
         [Timeout(2000)]
         public void Root_VariousPositiveDegrees_RadicandPositive_ReturnsTrue()
@@ -686,9 +838,12 @@ namespace IVSMathLibraryTests {
             Assert.AreEqual(radicand, acc, precision);
         }
 
-        /// <summary>
+        /// @brief 
         /// Root test - various negative degrees operations
-        /// </summary>
+        /// @test Positive degrees operations test of cubic Root operation
+        /// @date 11.07.2020
+        /// @author Viktor Rucký
+        /// 
         [TestMethod]
         [Timeout(2000)]
         public void Root_VariousNegativeDegrees_RadicandPositive_ReturnsTrue()
@@ -699,9 +854,12 @@ namespace IVSMathLibraryTests {
             Assert.AreEqual(1.120572042801258390814818630883392608801637382192571644905, IVSMath.Root(0.56598, -5), precision);
         }
 
-        /// <summary>
+        /// @brief 
         /// Root test - various positive degrees operations when radicant is negative
-        /// </summary>
+        /// @test Positive degrees operations test of cubic Root operation
+        /// @date 11.07.2020
+        /// @author Viktor Rucký
+        ///  
         [TestMethod]
         [Timeout(2000)]
         public void Root_VariousPositiveDegrees_RadicandNegativeInvalid_ReturnsExceptions()
@@ -738,9 +896,12 @@ namespace IVSMathLibraryTests {
             }
         }
 
-        /// <summary>
+        /// @brief 
         /// Root test - various negative degrees operations when radicant is negative
-        /// </summary>
+        /// @test Positive degrees operations test of cubic Root operation
+        /// @date 11.07.2020
+        /// @author Viktor Rucký
+        ///
         [TestMethod]
         [Timeout(2000)]
         public void Root_VariousNegativeDegrees_RadicandNegativeInvalid_ReturnsExceptions()
@@ -777,9 +938,12 @@ namespace IVSMathLibraryTests {
             }
         }
 
-        /// <summary>
+        /// @brief 
         /// Root test - various positive degrees operations when radicant is negative
-        /// </summary>
+        /// @test Various positive degrees test of negative radicant Root operation
+        /// @date 11.07.2020
+        /// @author Viktor Rucký
+        /// 
         [TestMethod]
         [Timeout(2000)]
         public void Root_VariousPositiveDegrees_RadicandNegativeValid_ReturnsTrue()
@@ -819,9 +983,12 @@ namespace IVSMathLibraryTests {
             Assert.AreEqual(radicand, acc, precision);
         }
 
-        /// <summary>
+        /// @brief 
         /// Root test - various negative degrees operations when radicant is negative
-        /// </summary>
+        /// @test Various negative degrees test of negative radicant Root operation
+        /// @date 11.07.2020
+        /// @author Viktor Rucký
+        /// 
         [TestMethod]
         [Timeout(2000)]
         public void Root_VariousNegativeDegrees_RadicandNegativeValid_ReturnsTrue()
@@ -832,9 +999,12 @@ namespace IVSMathLibraryTests {
             Assert.AreEqual(-1.12057204280125839081481863088339260880163738219257164490, IVSMath.Root(-0.56598, -5), precision);
         }
 
-        /// <summary>
+        /// @brief 
         /// Root test - various positive degrees operations when radicant is zero
-        /// </summary>
+        /// @test Various positive degrees test of radicant zero Root operation
+        /// @date 11.07.2020
+        /// @author Viktor Rucký
+        /// 
         [TestMethod]
         [Timeout(2000)]
         public void Root_VariousPositiveDegrees_RadicandZero_ReturnsTrue()
@@ -845,9 +1015,12 @@ namespace IVSMathLibraryTests {
             Assert.AreEqual(0, IVSMath.Root(0, 241628), 0);
         }
 
-        /// <summary>
+        /// @brief 
         /// Root test - various negative degrees operations when radicant is zero
-        /// </summary>
+        /// @test Various negative degrees test of radicant zero Root operation
+        /// @date 11.07.2020
+        /// @author Viktor Rucký
+        ///  
         [TestMethod]
         [Timeout(2000)]
         public void Root_VariousNegativeDegrees_RadicandZero_ReturnsExceptions()
@@ -893,9 +1066,12 @@ namespace IVSMathLibraryTests {
             }
         }
 
-        /// <summary>
+        /// @brief 
         /// Root test - various positive degrees operations when radicant is one
-        /// </summary>
+        /// @test Various positive degrees test of radicant one Root operation
+        /// @date 11.07.2020
+        /// @author Viktor Rucký
+        ///   
         [TestMethod]
         [Timeout(2000)]
         public void Root_VariousPositiveDegrees_RadicandOne_ReturnsTrue()
@@ -906,9 +1082,12 @@ namespace IVSMathLibraryTests {
             Assert.AreEqual(1, IVSMath.Root(1, 241628), 0);
         }
 
-        /// <summary>
+        /// @brief 
         /// Root test - various negative degrees operations when radicant is one
-        /// </summary>
+        /// @test Various negative degrees test of radicant one Root operation
+        /// @date 11.07.2020
+        /// @author Viktor Rucký
+        ///   
         [TestMethod]
         [Timeout(2000)]
         public void Root_VariousNegativeDegrees_RadicandOne_ReturnsTrue()
@@ -919,9 +1098,12 @@ namespace IVSMathLibraryTests {
             Assert.AreEqual(1, IVSMath.Root(1, -241628), 0);
         }
 
-        /// <summary>
+        /// @brief 
         /// Root test - various positive degrees operations when radicant is negative one
-        /// </summary>
+        /// @test Various positive degrees test of radicant negative one Root operation
+        /// @date 11.07.2020
+        /// @author Viktor Rucký
+        /// 
         [TestMethod]
         [Timeout(2000)]
         public void Root_VariousPositiveDegrees_RadicandNegativeOne_Valid_ReturnsTrue()
@@ -932,9 +1114,12 @@ namespace IVSMathLibraryTests {
             Assert.AreEqual(-1, IVSMath.Root(-1, 241627), 0);
         }
 
-        /// <summary>
+        /// @brief 
         /// Root test - various negative degrees operations when radicant is negative one
-        /// </summary>
+        /// @test Various positive degrees test of radicant negative one Root operation
+        /// @date 11.07.2020
+        /// @author Viktor Rucký
+        /// 
         [TestMethod]
         [Timeout(2000)]
         public void Root_VariousNegativeDegrees_RadicandNegativeOne_Valid_ReturnsTrue()
@@ -945,9 +1130,12 @@ namespace IVSMathLibraryTests {
             Assert.AreEqual(-1, IVSMath.Root(-1, -241627), 0);
         }
 
-        /// <summary>
+        /// @brief 
         /// Root test - zeroth degree test
-        /// </summary>
+        /// @test zeroth test of Root operation
+        /// @date 11.07.2020
+        /// @author Viktor Rucký
+        /// 
         [TestMethod]
         [Timeout(2000)]
         public void Root_ZerothDegree_ReturnsExceptions()
@@ -1024,9 +1212,12 @@ namespace IVSMathLibraryTests {
             }
         }
 
-        /// <summary>
+        /// @brief 
         /// Inverse test - operation with one
-        /// </summary>
+        /// @test "One" test of Inverse operation
+        /// @date 11.07.2020
+        /// @author Viktor Rucký
+        ///  
         [TestMethod]
         [Timeout(2000)]
         public void Inverse_CalculationOnePositive_ReturnsTrue()
@@ -1034,9 +1225,12 @@ namespace IVSMathLibraryTests {
             Assert.AreEqual(1, IVSMath.Inverse(1), 0);
         }
 
-        /// <summary>
+        /// @brief 
         /// Inverse test - operation with negative one
-        /// </summary>
+        /// @test "Negative One" test of Inverse operation
+        /// @date 11.07.2020
+        /// @author Viktor Rucký
+        ///   
         [TestMethod]
         [Timeout(2000)]
         public void Inverse_CalculationOneNegative_ReturnsTrue()
@@ -1044,9 +1238,12 @@ namespace IVSMathLibraryTests {
             Assert.AreEqual(-1, IVSMath.Inverse(-1), 0);
         }
 
-        /// <summary>
+        /// @brief 
         /// Inverse test - operation with zero
-        /// </summary>
+        /// @test "Zero" test of Inverse operation
+        /// @date 11.07.2020
+        /// @author Viktor Rucký
+        ///   
         [TestMethod]
         [Timeout(2000)]
         public void Inverse_CalculationZero_ReturnsExceptions()
@@ -1054,9 +1251,12 @@ namespace IVSMathLibraryTests {
             Assert.ThrowsException<DivideByZeroException>(() => IVSMath.Inverse(0));
         }
 
-        /// <summary>
+        /// @brief 
         /// Inverse test - operation with whole positive numbers
-        /// </summary>
+        /// @test Whole positive numbers test of Inverse operation
+        /// @date 11.07.2020
+        /// @author Viktor Rucký
+        ///  
         [TestMethod]
         [Timeout(2000)]
         public void Inverse_CalculationIntegerPositive_ReturnsTrue()
@@ -1066,9 +1266,12 @@ namespace IVSMathLibraryTests {
             Assert.AreEqual(1.0 / 42.0, IVSMath.Inverse(42), precision);
         }
 
-        /// <summary>
+        /// @brief 
         /// Inverse test - operation with decimal numbers (greater than 1)
-        /// </summary>
+        /// @test Decimal numbers (greater than 1) test of Inverse operation
+        /// @date 11.07.2020
+        /// @author Viktor Rucký
+        ///   
         [TestMethod]
         [Timeout(2000)]
         public void Inverse_CalculationRealPositiveAbsGreaterThanOne_ReturnsTrue()
@@ -1078,9 +1281,12 @@ namespace IVSMathLibraryTests {
             Assert.AreEqual(50.0 / 2121.0, IVSMath.Inverse(42.42), precision);
         }
 
-        /// <summary>
+        /// @brief 
         /// Inverse test - operation with decimal numbers (less than 1)
-        /// </summary>
+        /// @test Decimal numbers (less than 1) test of Inverse operation
+        /// @date 11.07.2020
+        /// @author Viktor Rucký
+        ///   
         [TestMethod]
         [Timeout(2000)]
         public void Inverse_CalculationRealPositiveAbsLessThanOne_ReturnsTrue()
@@ -1090,9 +1296,12 @@ namespace IVSMathLibraryTests {
             Assert.AreEqual(50.0 / 21.0, IVSMath.Inverse(0.42), precision);
         }
 
-        /// <summary>
+        /// @brief 
         /// Inverse test - operation with whole numbers
-        /// </summary>
+        /// @test Whole numbers test of Inverse operation
+        /// @date 11.07.2020
+        /// @author Viktor Rucký
+        ///    
         [TestMethod]
         [Timeout(2000)]
         public void Inverse_CalculationIntegerNegative_ReturnsTrue()
@@ -1102,9 +1311,12 @@ namespace IVSMathLibraryTests {
             Assert.AreEqual(-(1.0 / 42.0), IVSMath.Inverse(-42), precision);
         }
 
-        /// <summary>
-        /// Inverse test - operation with decimal numbers (greater than 1)
-        /// </summary>
+        /// @brief 
+        /// Inverse test - operation with decimal negative numbers (greater than 1)
+        /// @test Decimal negative numbers (greater than 1) test of Inverse operation
+        /// @date 11.07.2020
+        /// @author Viktor Rucký
+        ///    
         [TestMethod]
         [Timeout(2000)]
         public void Inverse_CalculationRealNegativeAbsGreaterThanOne_ReturnsTrue()
@@ -1114,9 +1326,12 @@ namespace IVSMathLibraryTests {
             Assert.AreEqual(-(50.0 / 2121.0), IVSMath.Inverse(-42.42), precision);
         }
 
-        /// <summary>
+        /// @brief 
         /// Inverse test - operation with decimal negative numbers (less than 1)
-        /// </summary>
+        /// @test Decimal negative numbers (less than 1) test of Inverse operation
+        /// @date 11.07.2020
+        /// @author Viktor Rucký
+        ///    
         [TestMethod]
         [Timeout(2000)]
         public void Inverse_CalculationRealNegativeAbsLessThanOne_ReturnsTrue()
@@ -1126,9 +1341,12 @@ namespace IVSMathLibraryTests {
             Assert.AreEqual(-(50.0 / 21.0), IVSMath.Inverse(-0.42), precision);
         }
 
-        /// <summary>
+        /// @brief 
         /// Overflow Inverse test 
-        /// </summary>
+        /// @test Overflow test of Inverse operation
+        /// @date 11.07.2020
+        /// @author Viktor Rucký
+        ///  
         [TestMethod]
         [Timeout(2000)]
         public void Inverse_CalculationOverflow_ReturnsExceptions()
@@ -1136,9 +1354,12 @@ namespace IVSMathLibraryTests {
             Assert.ThrowsException<OverflowException>(() => IVSMath.Inverse(Double.Epsilon));
         }
 
-        /// <summary>
+        /// @brief 
         /// Sine test - Inputs only numbers so the result is integer
-        /// </summary>
+        /// @test Integer test of Sine operation
+        /// @date 11.07.2020
+        /// @author Vojta Vlach
+        ///
         [TestMethod]
         [Timeout(2000)]
         public void Sine_Calculation_Integers_ReturnsTrue()
@@ -1153,9 +1374,12 @@ namespace IVSMathLibraryTests {
                 Assert.AreEqual(-1, IVSMath.Sine(-(Math.PI/2) + (2 * i * Math.PI)), precision);     // sin(-PI/2 + 2iPI) = -1  
         }
 
-        /// <summary>
+        /// @brief 
         /// Sine test - Inputs decimal numbers, expects decimal number as a result
-        /// </summary>
+        /// @test Decimal numbers test of Sine operation with decimal number as a result
+        /// @date 11.07.2020
+        /// @author Vojta Vlach
+        ///
         [TestMethod]
         [Timeout(2000)]
         public void Sine_Calculation_DecimalNumbers_ReturnsTrue()
@@ -1169,9 +1393,12 @@ namespace IVSMathLibraryTests {
             Assert.AreEqual(-0.9999232, IVSMath.Sine(4.7), precision);
         }
 
-        /// <summary>
+        /// @brief 
         /// Sine test - Inputs decimal numbers, tests periodicity of values
-        /// </summary>
+        /// @test  Test of Sine periodicity
+        /// @date 11.07.2020
+        /// @author Vojta Vlach
+        ///
         [TestMethod]
         [Timeout(2000)]
         public void Sine_Calculation_PeriodicityTest_ReturnsTrue()
@@ -1185,9 +1412,12 @@ namespace IVSMathLibraryTests {
             }
         }
 
-        /// <summary>
+        /// @brief 
         /// Cosine test - Inputs only numbers so the result is integer
-        /// </summary>
+        /// @test Test of Cosine periodicity with integer result
+        /// @date 11.07.2020
+        /// @author Vojta Vlach
+        ///
         [TestMethod]
         [Timeout(2000)]
         public void Cosine_Calculation_Integers_ReturnsTrue()
@@ -1202,9 +1432,12 @@ namespace IVSMathLibraryTests {
                 Assert.AreEqual(-1, IVSMath.Cosine(Math.PI + 2 * i * Math.PI), precision);     // cos(PI + 2iPI) = -1  
         }
 
-        /// <summary>
+        /// @brief 
         /// Cosine test - Inputs decimal numbers, expects decimal number as a result
-        /// </summary>
+        /// @test Decimal numbers test of Cosine operation with decimal result
+        /// @date 11.07.2020
+        /// @author Vojta Vlach
+        ///
         [TestMethod]
         [Timeout(2000)]
         public void Cosine_Calculation_DecimalNumbers_ReturnsTrue()
@@ -1218,9 +1451,12 @@ namespace IVSMathLibraryTests {
             Assert.AreEqual(-0.0123887, IVSMath.Cosine(4.7), precision);
         }
 
-        /// <summary>
+        /// @brief 
         /// Cosine test - Inputs decimal numbers, tests periodicity of values
-        /// </summary>
+        /// @test Decimal numbers test of Cosine operation with periodical values
+        /// @date 11.07.2020
+        /// @author Vojta Vlach
+        /// 
         [TestMethod]
         [Timeout(2000)]
         public void Cosine_Calculation_PeriodicityTest_ReturnsTrue()
@@ -1234,9 +1470,12 @@ namespace IVSMathLibraryTests {
             }
         }
 
-        /// <summary>
+        /// @brief 
         /// Tangent test - Inputs PI/2 and expects exception
-        /// </summary>
+        /// @test PI/2 test of Tangent operation
+        /// @date 11.07.2020
+        /// @author Vojta Vlach
+        ///  
         [TestMethod]
         [Timeout(2000)]
         public void Tangent_PIpulException_ReturnsException()
@@ -1263,9 +1502,12 @@ namespace IVSMathLibraryTests {
             }
         }
 
-        /// <summary>
+        /// @brief 
         /// Tangent test - Inputs only numbers so the result is integer
-        /// </summary>
+        /// @test Test of Tangent operation with integer result
+        /// @date 11.07.2020
+        /// @author Vojta Vlach
+        ///   
         [TestMethod]
         [Timeout(2000)]
         public void Tangent_Calculation_Integers_ReturnsTrue()
@@ -1280,9 +1522,12 @@ namespace IVSMathLibraryTests {
                 Assert.AreEqual(-1, IVSMath.Tangent(-(Math.PI / 4) + i * Math.PI), precision);          // tan(-PI/4 + iPI) = -1
         }
 
-        /// <summary>
+        /// @brief 
         /// Tangent test - Inputs decimal numbers, expects decimal number as a result
-        /// </summary>
+        /// @test Decimal numbers test of Tangent operation with decimal result
+        /// @date 11.07.2020
+        /// @author Vojta Vlach
+        ///   
         [TestMethod]
         [Timeout(2000)]
         public void Tangent_Calculation_DecimalNumbers_ReturnsTrue()
@@ -1296,9 +1541,12 @@ namespace IVSMathLibraryTests {
             Assert.AreEqual(80.71276296747361169735821765792218589590549715980917724763, IVSMath.Tangent(4.7), precision);
         }
 
-        /// <summary>
+        /// @brief 
         /// Tangent test - Inputs decimal numbers, tests periodicity of values
-        /// </summary>
+        /// @test Decimal numbers test of Tangent operation with periodical results
+        /// @date 11.07.2020
+        /// @author Vojta Vlach
+        ///  
         [TestMethod]
         [Timeout(2000)]
         public void Tangent_Calculation_PeriodicityTest_ReturnsTrue()
@@ -1312,9 +1560,12 @@ namespace IVSMathLibraryTests {
             }
         }
 
-        /// <summary>
+        /// @brief 
         /// Factorial test - Inputs natural numbers only
-        /// </summary>
+        /// @test Test of Factorial operation with natural numbers
+        /// @date 11.07.2020
+        /// @author Vojta Vlach
+        /// 
         [TestMethod]
         [Timeout(2000)]
         public void Factorial_Calculation_NaturalNumbers_ReturnsTrue()
@@ -1328,9 +1579,12 @@ namespace IVSMathLibraryTests {
             Assert.AreEqual(7.2574156153079989673967282111292631147169916812964513E+306, IVSMath.Factorial(170), 1E+295); //MSTest doesn't do significant-figures comparing; it does absolute. So we need to use a "lower" precision here.
         }
 
-        /// <summary>
+        /// @brief 
         /// Overflow Factorial test - Inputs numbers so high that their factorial cannot fit into type double
-        /// </summary>
+        /// @test Overflow test of Factorial operation 
+        /// @date 11.07.2020
+        /// @author Vojta Vlach
+        /// 
         [TestMethod]
         [Timeout(2000)]
         public void Factorial_Calculation_Overflow_ReturnOverflowException()
@@ -1340,9 +1594,12 @@ namespace IVSMathLibraryTests {
             Assert.ThrowsException<OverflowException>(() => IVSMath.Factorial(200));
         }
 
-        /// <summary>
+        /// @brief 
         /// Factorial test - zero
-        /// </summary>
+        /// @test Zero test of Factorial operation 
+        /// @date 11.07.2020
+        /// @author Vojta Vlach
+        ///  
         [TestMethod]
         [Timeout(2000)]
         public void Factorial_Calculation_Zero_ReturnsTrue()
@@ -1350,9 +1607,12 @@ namespace IVSMathLibraryTests {
             Assert.AreEqual(1, IVSMath.Factorial(0), 0);
         }
 
-        /// <summary>
+        /// @brief 
         /// Factorial test - Inputs negative numbers
-        /// </summary>
+        /// @test Negative number test of Factorial operation 
+        /// @date 11.07.2020
+        /// @author Vojta Vlach
+        ///   
         [TestMethod]
         [Timeout(2000)]
         public void Factorial_Calculation_NegativeNumbers_ReturnExceptions()

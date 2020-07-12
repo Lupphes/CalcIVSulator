@@ -1,38 +1,36 @@
 ﻿#region Copyright
-// <copyright file="CalcForm.Designer" company="Lidé u výtahu">
-// CalcIVSulator (Simple calculator with GUI and mathematical library)
-// Copyright © 2020 Viktor Rucký, Ondřej Sloup, Vojtěch Vlach
-// 
-// This file is part of CalcIVSulator.
-// 
-// CalcIVSulator is free software: you can redistribute it and/or modify
-// it under the terms of the GNU General Public License as published by
-// the Free Software Foundation, either version 3 of the License, or
-// (at your option) any later version.
-// 
-// CalcIVSulator is distributed in the hope that it will be useful,
-// but WITHOUT ANY WARRANTY; without even the implied warranty of
-// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-// GNU General Public License for more details.
-// 
-// You should have received a copy of the GNU General Public License
-// along with CalcIVSulator.  If not, see <https://www.gnu.org/licenses/>.
-// </copyright>
+/// 
+/// @copyright
+/// CalcIVSulator (Simple calculator with GUI and mathematical library)
+/// Copyright © 2020 Viktor Rucký, Ondřej Sloup, Vojtěch Vlach
+/// This file is part of CalcIVSulator.
+/// CalcIVSulator is free software: you can redistribute it and/or modify
+/// it under the terms of the GNU General Public License as published by
+/// the Free Software Foundation, either version 3 of the License, or
+/// (at your option) any later version.
+/// CalcIVSulator is distributed in the hope that it will be useful,
+/// but WITHOUT ANY WARRANTY; without even the implied warranty of
+/// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+/// GNU General Public License for more details.
+/// You should have received a copy of the GNU General Public License
+/// along with CalcIVSulator.  If not, see <https://www.gnu.org/licenses/>.
+///
 #endregion
 
 namespace CalculatorGUI
 {
     partial class CalcForm
     {
-        /// <summary>
+        /// @brief 
         /// Required designer variable.
-        /// </summary>
+        /// 
         private System.ComponentModel.IContainer components = null;
 
-        /// <summary>
+        /// @brief 
         /// Clean up any resources being used.
-        /// </summary>
-        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        /// 
+        /// @param[in] disposing - true if managed resources should be disposed; otherwise, false.
+        /// @retrun void
         protected override void Dispose(bool disposing)
         {
             if (disposing && (components != null))
@@ -44,10 +42,10 @@ namespace CalculatorGUI
 
         #region Windows Form Designer generated code
 
-        /// <summary>
+        /// @brief 
         /// Required method for Designer support - do not modify
         /// the contents of this method with the code editor.
-        /// </summary>
+        /// 
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CalcForm));

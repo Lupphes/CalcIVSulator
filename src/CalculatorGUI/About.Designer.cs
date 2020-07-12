@@ -1,38 +1,37 @@
 ﻿#region Copyright
-// <copyright file="About.Designer.cs" company="Lidé u výtahu">
-// CalcIVSulator (Simple calculator with GUI and mathematical library)
-// Copyright © 2020 Viktor Rucký, Ondřej Sloup, Vojtěch Vlach
-// 
-// This file is part of CalcIVSulator.
-// 
-// CalcIVSulator is free software: you can redistribute it and/or modify
-// it under the terms of the GNU General Public License as published by
-// the Free Software Foundation, either version 3 of the License, or
-// (at your option) any later version.
-// 
-// CalcIVSulator is distributed in the hope that it will be useful,
-// but WITHOUT ANY WARRANTY; without even the implied warranty of
-// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-// GNU General Public License for more details.
-// 
-// You should have received a copy of the GNU General Public License
-// along with CalcIVSulator.  If not, see <https://www.gnu.org/licenses/>.
-// </copyright>
+/// 
+/// @copyright
+/// CalcIVSulator (Simple calculator with GUI and mathematical library)
+/// Copyright © 2020 Viktor Rucký, Ondřej Sloup, Vojtěch Vlach
+/// This file is part of CalcIVSulator.
+/// CalcIVSulator is free software: you can redistribute it and/or modify
+/// it under the terms of the GNU General Public License as published by
+/// the Free Software Foundation, either version 3 of the License, or
+/// (at your option) any later version.
+/// CalcIVSulator is distributed in the hope that it will be useful,
+/// but WITHOUT ANY WARRANTY; without even the implied warranty of
+/// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+/// GNU General Public License for more details.
+/// You should have received a copy of the GNU General Public License
+/// along with CalcIVSulator.  If not, see <https://www.gnu.org/licenses/>.
+///
 #endregion
 
 namespace CalculatorGUI
 {
     partial class About
     {
-        /// <summary>
+        /// @brief 
         /// Required designer variable.
-        /// </summary>
+        /// 
         private System.ComponentModel.IContainer components = null;
 
-        /// <summary>
+        /// @brief 
         /// Clean up any resources being used.
-        /// </summary>
-        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        /// 
+        /// @param[in] disposing - True if managed resources should be disposed; otherwise, false.
+        /// @return void
+        /// 
         protected override void Dispose(bool disposing)
         {
             if (disposing && (components != null))
@@ -44,10 +43,10 @@ namespace CalculatorGUI
 
         #region Windows Form Designer generated code
 
-        /// <summary>
+        /// @brief 
         /// Required method for Designer support - do not modify
         /// the contents of this method with the code editor.
-        /// </summary>
+        /// 
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(About));
@@ -56,8 +55,8 @@ namespace CalculatorGUI
             this.lb_team = new System.Windows.Forms.Label();
             this.lb_text = new System.Windows.Forms.Label();
             this.lb_name2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
+            this.mainText = new System.Windows.Forms.Label();
+            this.subText = new System.Windows.Forms.Label();
             this.license = new System.Windows.Forms.Label();
             this.pnl = new System.Windows.Forms.Panel();
             this.pnl.SuspendLayout();
@@ -125,29 +124,29 @@ namespace CalculatorGUI
             // 
             // label1
             // 
-            this.label1.AutoEllipsis = true;
-            this.label1.BackColor = System.Drawing.Color.PowderBlue;
-            this.label1.Font = new System.Drawing.Font("Microsoft YaHei UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.label1.Location = new System.Drawing.Point(2, 27);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(167, 28);
-            this.label1.TabIndex = 43;
-            this.label1.Text = "Viktor Rucký (xrucky01)";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.mainText.AutoEllipsis = true;
+            this.mainText.BackColor = System.Drawing.Color.PowderBlue;
+            this.mainText.Font = new System.Drawing.Font("Microsoft YaHei UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.mainText.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.mainText.Location = new System.Drawing.Point(2, 27);
+            this.mainText.Name = "label1";
+            this.mainText.Size = new System.Drawing.Size(167, 28);
+            this.mainText.TabIndex = 43;
+            this.mainText.Text = "Viktor Rucký (xrucky01)";
+            this.mainText.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // label2
             // 
-            this.label2.AutoEllipsis = true;
-            this.label2.BackColor = System.Drawing.Color.PowderBlue;
-            this.label2.Font = new System.Drawing.Font("Microsoft YaHei UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.label2.Location = new System.Drawing.Point(14, 149);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(167, 28);
-            this.label2.TabIndex = 44;
-            this.label2.Text = "Vojtěch Vlach (xvlach22)";
-            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.subText.AutoEllipsis = true;
+            this.subText.BackColor = System.Drawing.Color.PowderBlue;
+            this.subText.Font = new System.Drawing.Font("Microsoft YaHei UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.subText.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.subText.Location = new System.Drawing.Point(14, 149);
+            this.subText.Name = "label2";
+            this.subText.Size = new System.Drawing.Size(167, 28);
+            this.subText.TabIndex = 44;
+            this.subText.Text = "Vojtěch Vlach (xvlach22)";
+            this.subText.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // license
             // 
@@ -164,7 +163,7 @@ namespace CalculatorGUI
             // 
             this.pnl.BackColor = System.Drawing.Color.PowderBlue;
             this.pnl.Controls.Add(this.license);
-            this.pnl.Controls.Add(this.label1);
+            this.pnl.Controls.Add(this.mainText);
             this.pnl.Controls.Add(this.lb_version);
             this.pnl.Controls.Add(this.lb_team);
             this.pnl.Location = new System.Drawing.Point(12, 66);
@@ -178,7 +177,7 @@ namespace CalculatorGUI
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.AliceBlue;
             this.ClientSize = new System.Drawing.Size(281, 208);
-            this.Controls.Add(this.label2);
+            this.Controls.Add(this.subText);
             this.Controls.Add(this.lb_name2);
             this.Controls.Add(this.lb_text);
             this.Controls.Add(this.lb_Next);
@@ -199,8 +198,8 @@ namespace CalculatorGUI
         private System.Windows.Forms.Label lb_team;
         private System.Windows.Forms.Label lb_text;
         private System.Windows.Forms.Label lb_name2;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label mainText;
+        private System.Windows.Forms.Label subText;
         private System.Windows.Forms.Label license;
         private System.Windows.Forms.Panel pnl;
     }
