@@ -1,0 +1,35 @@
+﻿/*! \mainpage Introduction
+ *
+ * Welcome to the code documentation of CalcIVSulator. We hope that this documentation will give you peace of mind, hope and understanding of this project.
+ *
+ * \subsection getting_started_sec Getting Started with the documentation
+ *
+ * You can find in this documentation all the functions which are used, its parameters and return values.        
+ * We even documented functions which are used from official Microsoft libraries.
+ *
+ * You can simply choose from following sections:
+ *  - CalculatorGUI -- Graphical User Interface for user. You can test on this application our math library. It is simple form application.
+ *  - IVSMathLibrary -- Core mathematical library. Here you can find all functions which can be used in your application.
+ *  - IVSMathLibrary -- Tests for library which confirms its functions.
+ *
+ * Thank you for your interest in our CalcIVSulator and its math library. Feel free to give us feedback or create an issue on our GitHub repository.
+ *
+ * https://github.com/TheLupp/CalcIVSulator
+ *
+ * 
+ * @copyright
+ * CalcIVSulator (Simple calculator with GUI and mathematical library)
+ * Copyright © 2020 Viktor Rucký, Ondřej Sloup, Vojtěch Vlach
+ * This file is part of CalcIVSulator.
+ * CalcIVSulator is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ * CalcIVSulator is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ * You should have received a copy of the GNU General Public License
+ * along with CalcIVSulator.  If not, see <https://www.gnu.org/licenses/>.
+ *
+ */
