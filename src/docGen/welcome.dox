@@ -10,7 +10,7 @@
  * You can simply choose from following sections:
  *  - CalculatorGUI -- Graphical User Interface for user. You can test on this application our math library. It is simple form application.
  *  - IVSMathLibrary -- Core mathematical library. Here you can find all functions which can be used in your application.
- *  - IVSMathLibrary -- Tests for library which confirms its functions.
+ *  - IVSMathLibraryTests -- Tests for library which confirms its functions.
  *
  * Thank you for your interest in our CalcIVSulator and its math library. Feel free to give us feedback or create an issue on our GitHub repository.
  *

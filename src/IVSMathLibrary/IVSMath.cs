@@ -45,7 +45,7 @@ namespace IVSMathLibrary {
         /// @return Sum of two arguments
         /// 
         /// @date 11.07.2020
-        /// @author Viktor Rucký
+        /// @author Vojta Vlach
         /// 
         public static double Add(double augend, double addend)
         {
@@ -74,7 +74,7 @@ namespace IVSMathLibrary {
         /// @return Difference of two parameters
         ///
         /// @date 11.07.2020
-        /// @author Viktor Rucký
+        /// @author Vojta Vlach
         /// 
         public static double Subtract(double minuend, double subtrahend)
         {
@@ -103,7 +103,7 @@ namespace IVSMathLibrary {
         /// @return Returns multiplier x multiplicand
         ///
         /// @date 11.07.2020
-        /// @author Viktor Rucký
+        /// @author Vojta Vlach
         /// 
         public static double Multiply(double multiplier, double multiplicand)
         {
@@ -126,7 +126,7 @@ namespace IVSMathLibrary {
         /// @return Returns dividend / divisor
         /// 
         /// @date 11.07.2020
-        /// @author Viktor Rucký
+        /// @author Vojta Vlach
         /// 
         public static double Divide(double dividend, double divisor)
         {
@@ -150,7 +150,7 @@ namespace IVSMathLibrary {
         /// @return If the function is successful, it returns value of Nth root.
         ///  
         /// @date 11.07.2020
-        /// @author Viktor Rucký
+        /// @author Ondřej Sloup
         /// 
         public static double Root(double radicand, int degree) {
             if (radicand < 0 && degree % 2 == 0) {
@@ -242,7 +242,7 @@ namespace IVSMathLibrary {
         /// @return The factorial of the given number
         /// 
         /// @date 11.07.2020
-        /// @author Vojta Vlach
+        /// @author Viktor Rucký
         /// 
         public static double Factorial(int a)
         {
